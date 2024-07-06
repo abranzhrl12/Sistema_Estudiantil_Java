@@ -23,20 +23,7 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
         initComponents();
         cambiar();
     }
-/*public void color (int x,int b,int c){
-   
-     Color rgbColor = new Color(x, b, c);
-       this.setBackground(rgbColor);
-     
-       x1=x; 
-       x2=b;
-       x3=c;
-        try {
-           //  jPanel2.setBackground(rgbColor);
-        } catch (Exception e) {
-        }
-}*/
-   
+
        public void cambiar() {
     // Crea una instancia de tu ScrollPanelPersonalizado y configúrala según tus necesidades
     ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
