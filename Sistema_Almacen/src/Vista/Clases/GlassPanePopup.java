@@ -1,4 +1,4 @@
-package Vista;
+package Vista.Clases;
 
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -9,10 +9,10 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.SwingUtilities;
-import Vista.GlassPanePopup;
-import Vista.Option;
-import Vista.Popup;
-import Vista.WindowSnapshots;
+import Vista.Clases.GlassPanePopup;
+import Vista.Clases.Option;
+import Vista.Clases.Popup;
+import Vista.Clases.WindowSnapshots;
 
 /**
  *

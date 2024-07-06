@@ -1,6 +1,6 @@
-package Vista;
+package Vista.Clases;
 
-import Vista.GlassPanePopup;
+import Vista.Clases.GlassPanePopup;
 import java.awt.AlphaComposite;
 import java.awt.Component;
 import java.awt.Graphics;
@@ -15,8 +15,8 @@ import javax.swing.SwingUtilities;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
-import Vista.GlassPanePopup;
-import Vista.Option;
+import Vista.Clases.GlassPanePopup;
+import Vista.Clases.Option;
 
 /**
  *

@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
-import Vista.GlassPanePopup;
+import Vista.Clases.GlassPanePopup;
 import Vista.Clases.Button;
 
 /**

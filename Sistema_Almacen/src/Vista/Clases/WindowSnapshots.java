@@ -1,4 +1,4 @@
-package Vista;
+package Vista.Clases;
 
 import java.awt.Graphics;
 import java.awt.image.VolatileImage;
