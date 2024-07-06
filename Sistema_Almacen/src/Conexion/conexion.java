@@ -15,10 +15,9 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author STEFANY isdfhsdbhfikisdddddddddddddddddddddddd
- * joylerrrrr
  */
 public class conexion {
-    
+    //holaa
   private static String bd = "sistema_salazar";
     private static String url = "jdbc:mysql://localhost:3306/" + bd;
     private static String usuario = "root";
