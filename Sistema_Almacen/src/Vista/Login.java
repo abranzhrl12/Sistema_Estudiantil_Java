@@ -4,11 +4,8 @@ package Vista;
 
 import Vista.Clases.ValidarC_Vacios;
 import FiveCodMover.FiveCodMoverJFrame;
-
 import javax.swing.UIManager;
 import Controlador.LoignControlador;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 public class Login extends javax.swing.JFrame {
  LoignControlador log=new LoignControlador(this);
     public Login() {
@@ -25,8 +22,7 @@ public class Login extends javax.swing.JFrame {
 
         rSScaleLabel1 = new rsscalelabel.RSScaleLabel();
         jPanel5 = new javax.swing.JPanel();
-        lblClose = new javax.swing.JLabel();
-        lblMinimize = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnconectar = new rojerusan.RSButtonRound();
@@ -77,21 +73,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home20/images/icons8_multiply_18px_1.png"))); // NOI18N
-        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosBarra/icons8_multiply_18px_1.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCloseMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblCloseMousePressed(evt);
-            }
-        });
-
-        lblMinimize.setBackground(new java.awt.Color(0, 0, 0));
-        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home20/images/icons8_minus_18px_1.png"))); // NOI18N
-        lblMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblMinimizeMousePressed(evt);
+                jLabel3MouseClicked(evt);
             }
         });
 
@@ -99,21 +84,17 @@ public class Login extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(806, Short.MAX_VALUE)
-                .addComponent(lblMinimize)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblClose)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(836, Short.MAX_VALUE)
+                .addComponent(jLabel3)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblMinimize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(615, 615, 615))
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 32));
@@ -284,18 +265,6 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jPanel5MouseDragged
 
-    private void lblMinimizeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizeMousePressed
-        this.setState(this.ICONIFIED);
-    }//GEN-LAST:event_lblMinimizeMousePressed
-
-    private void lblCloseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMousePressed
-
-    }//GEN-LAST:event_lblCloseMousePressed
-
-    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_lblCloseMouseClicked
-
     private void btnconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconectarActionPerformed
         ValidarC_Vacios val=new ValidarC_Vacios();
        boolean a= val.camposTextoVacios(txtusuario,txtpass);
@@ -328,6 +297,10 @@ public class Login extends javax.swing.JFrame {
         int initialY = evt.getY();
     }//GEN-LAST:event_jPanel1MouseMoved
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+      this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
     public static void main(String args[]) {
  try {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
@@ -355,10 +328,9 @@ public void setResultado(String respuesta) {
     private Vista.Clases.CustomCheckbox customCheckbox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblMinimize;
     private Vista.Clases.PanelRoundshadow panelRoundshadow1;
     private Vista.Clases.PanelRoundshadow panelRoundshadow2;
     private Vista.Clases.PanelRoundshadow panelRoundshadow3;
