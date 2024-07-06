@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author STEFANY
+ * @author STEFANY isdfhsdbhfikisdddddddddddddddddddddddd
  */
 public class conexion {
     
