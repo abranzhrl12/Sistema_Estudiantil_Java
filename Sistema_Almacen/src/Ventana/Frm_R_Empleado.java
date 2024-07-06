@@ -14,11 +14,9 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
     int x1;
    int x2;
    int x3;
-    /**
-     * Creates new form Frm_R_Marca2
-     */
+  
     public Frm_R_Empleado() {
-         //color(x1,x2, x3);
+   
     
         initComponents();
         cambiar();
