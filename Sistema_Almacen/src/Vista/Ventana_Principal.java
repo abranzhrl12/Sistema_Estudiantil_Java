@@ -1023,7 +1023,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     }//GEN-LAST:event_jPanel5MouseMoved
     
     
-    Frm_R_Empleado p = new Frm_R_Empleado();
+    Frm_R_Estudiante p = new Frm_R_Estudiante();
 
     public void btn_equipo() {
       

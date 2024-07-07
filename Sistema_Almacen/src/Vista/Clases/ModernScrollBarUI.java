@@ -35,7 +35,7 @@ public class ModernScrollBarUI extends BasicScrollBarUI {
             graphics2D.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, ALPHA));
 
             // Ajustar el ancho de la barra de desplazamiento
-            int thumbX = thumbBounds.x + (thumbBounds.width - THUMB_WIDTH) / 2;
+            int thumbX = thumbBounds.x + (thumbBounds.width - THUMB_WIDTH) / 1;
             int thumbY = thumbBounds.y;
             int thumbHeight = thumbBounds.height;
 

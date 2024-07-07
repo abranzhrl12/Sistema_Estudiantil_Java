@@ -27,11 +27,11 @@ public class ScrollPanelPersonalizado extends JScrollPane{
         JPanel cornerPanel = new JPanel();
         cornerPanel.setBackground(Color.WHITE);
         setCorner(JScrollPane.UPPER_RIGHT_CORNER, cornerPanel);
-        setPreferredSize(new Dimension(400, 200)); // Establece el tamaño preferido
+        setPreferredSize(new Dimension(400, 1000)); // Establece el tamaño preferido
 
         // Establece un borde redondeado para el panel de visualización (la vista)
         if (view instanceof JComponent) {
-            ((JComponent) view).setBorder(new LineBorder(Color.white, 5, true)); // 5 es el ancho del borde
+            ((JComponent) view).setBorder(null); // 5 es el ancho del borde
         }
     }
 }

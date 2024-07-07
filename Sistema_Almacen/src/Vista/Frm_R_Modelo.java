@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Vista.Clases.ModernScrollBarUI;
+import Vista.Clases.ScrollPanelPersonalizado;
 import java.awt.Color;
 
 /**
@@ -21,7 +23,10 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
           
     public Frm_R_Modelo() {
         initComponents();
-         // color(x1,x2, x3);
+      ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
+   
+  
+    dttabla.setFillsViewportHeight(true);
     }
  /*public void color(int x, int b, int c) {
 
@@ -115,7 +120,7 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
         panel_r_1Layout.setHorizontalGroup(
             panel_r_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_r_1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(92, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
@@ -185,7 +190,7 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
                     .addComponent(rSMTextFull15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMTextFull14, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         panel_r_4Layout.setVerticalGroup(
             panel_r_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,7 +228,6 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
         ));
         dttabla.setColorBackgoundHead(new java.awt.Color(0, 153, 153));
         dttabla.setColorSelBackgound(new java.awt.Color(255, 102, 102));
-        jScrollPane1.setViewportView(dttabla);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -232,7 +236,7 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(190, 190, 190)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
+                .addGap(55, 406, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(panel_r_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -249,10 +253,10 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
                         .addGap(30, 30, 30)
                         .addComponent(panel_r_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(25, 25, 25))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(122, 122, 122))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +276,7 @@ public class Frm_R_Modelo extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(panel_r_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
