@@ -1,6 +1,7 @@
 
 package Vista.Clases;
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -11,6 +12,7 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.JPanel;
 
 public class JpanelRound extends JPanel{
+     private ScrollPanelPersonalizado scrollPanel;
     public int getRoundTopLeft() {
         return roundTopLeft;
     }
@@ -74,6 +76,18 @@ public class JpanelRound extends JPanel{
         g2.fill(area);
         g2.dispose();
         super.paintComponent(grphcs);
+    }
+ public ScrollPanelPersonalizado getScrollPanel() {
+        return scrollPanel;
+    }
+
+    public void setScrollPanel(ScrollPanelPersonalizado scrollPanel) {
+        this.scrollPanel = scrollPanel;
+        removeAll();
+        setLayout(new BorderLayout());
+        add(scrollPanel, BorderLayout.CENTER);
+        revalidate();
+        repaint();
     }
 
     private Shape createRoundTopLeft() {

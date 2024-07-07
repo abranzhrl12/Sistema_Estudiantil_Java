@@ -68,10 +68,12 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
         rSButtonRound3 = new rojerusan.RSButtonRound();
         rSButtonRound2 = new rojerusan.RSButtonRound();
         rSButtonRound1 = new rojerusan.RSButtonRound();
+        panelRound1 = new Vista.Clases.PanelRound();
         rSScrollPane1 = new necesario.RSScrollPane();
         dttabla = new rojerusan.RSTableMetro();
 
         setBackground(new java.awt.Color(235, 238, 245));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_r_7.setBackground(new java.awt.Color(255, 255, 255));
         panel_r_7.setForeground(new java.awt.Color(204, 204, 204));
@@ -132,6 +134,8 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(60, Short.MAX_VALUE))
         );
+
+        add(panel_r_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         panel_r_3.setBackground(new java.awt.Color(255, 255, 255));
         panel_r_3.setForeground(new java.awt.Color(255, 255, 255));
@@ -267,12 +271,15 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
+        add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
+
         rSButtonRound8.setBackground(new java.awt.Color(102, 102, 0));
         rSButtonRound8.setText("Registrar Empleado");
         rSButtonRound8.setColorHover(new java.awt.Color(235, 238, 245));
         rSButtonRound8.setColorText(new java.awt.Color(255, 255, 0));
         rSButtonRound8.setColorTextHover(new java.awt.Color(102, 102, 0));
         rSButtonRound8.setFont(new java.awt.Font("Montserrat Black", 1, 36)); // NOI18N
+        add(rSButtonRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 22, 410, 50));
 
         rSButtonRound3.setBackground(new java.awt.Color(153, 204, 0));
         rSButtonRound3.setText("Nuevo");
@@ -283,24 +290,30 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
                 rSButtonRound3ActionPerformed(evt);
             }
         });
+        add(rSButtonRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 903, 197, -1));
 
         rSButtonRound2.setBackground(new java.awt.Color(153, 204, 0));
         rSButtonRound2.setText("Actualizar");
         rSButtonRound2.setColorText(new java.awt.Color(0, 102, 102));
         rSButtonRound2.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        add(rSButtonRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(662, 903, 199, -1));
 
         rSButtonRound1.setBackground(new java.awt.Color(153, 204, 0));
         rSButtonRound1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 102), 3));
         rSButtonRound1.setText("Registrar");
         rSButtonRound1.setColorText(new java.awt.Color(0, 102, 102));
         rSButtonRound1.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        add(rSButtonRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 903, 197, -1));
+
+        panelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
 
         rSScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         rSScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        rSScrollPane1.setColorBackground(new java.awt.Color(255, 255, 255));
+        rSScrollPane1.setColorBackground(new java.awt.Color(204, 255, 0));
 
-        dttabla.setBackground(new java.awt.Color(204, 204, 204));
+        dttabla.setBackground(new java.awt.Color(255, 51, 51));
         dttabla.setForeground(new java.awt.Color(204, 204, 204));
         dttabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -328,70 +341,48 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
         dttabla.setAltoHead(40);
         dttabla.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         dttabla.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
-        dttabla.setColorBordeFilas(new java.awt.Color(153, 153, 153));
-        dttabla.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        dttabla.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        dttabla.setColorBordeFilas(new java.awt.Color(0, 204, 204));
+        dttabla.setColorBordeHead(new java.awt.Color(204, 204, 204));
+        dttabla.setColorFilasBackgound1(new java.awt.Color(0, 204, 204));
+        dttabla.setColorFilasBackgound2(new java.awt.Color(255, 0, 0));
         dttabla.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
         dttabla.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
         dttabla.setColorForegroundHead(new java.awt.Color(102, 102, 102));
-        dttabla.setColorSelBackgound(new java.awt.Color(102, 102, 102));
-        dttabla.setColorSelForeground(new java.awt.Color(102, 102, 102));
+        dttabla.setColorSelBackgound(new java.awt.Color(102, 102, 255));
+        dttabla.setColorSelForeground(new java.awt.Color(0, 204, 255));
         dttabla.setDoubleBuffered(true);
+        dttabla.setEditingColumn(0);
+        dttabla.setEditingRow(0);
         dttabla.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         dttabla.setGridColor(new java.awt.Color(153, 153, 153));
         dttabla.setGrosorBordeFilas(0);
+        dttabla.setGrosorBordeHead(0);
         dttabla.setRowHeight(35);
         dttabla.setRowMargin(2);
         dttabla.setSelectionForeground(new java.awt.Color(153, 153, 153));
         dttabla.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         dttabla.setShowGrid(false);
+        dttabla.setShowVerticalLines(true);
         rSScrollPane1.setViewportView(dttabla);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(panel_r_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(33, 33, 33)
-                .addComponent(panel_r_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(rSButtonRound8, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(rSButtonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(73, 73, 73)
-                                .addComponent(rSButtonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(93, 93, 93)
-                                .addComponent(rSButtonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
+        panelRound1.setLayout(panelRound1Layout);
+        panelRound1Layout.setHorizontalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(rSButtonRound8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel_r_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panel_r_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85)
-                .addComponent(rSScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(181, 181, 181)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+        panelRound1Layout.setVerticalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 840, 320));
     }// </editor-fold>//GEN-END:initComponents
 
     private void rSButtonIconI6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI6ActionPerformed
@@ -424,6 +415,7 @@ public class Frm_R_Empleado extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
+    private Vista.Clases.PanelRound panelRound1;
     private LIB.JPanelRound panel_r_3;
     private LIB.JPanelRound panel_r_7;
     private rojerusan.RSButtonIconI rSButtonIconI6;

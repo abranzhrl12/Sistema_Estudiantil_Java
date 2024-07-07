@@ -5,16 +5,7 @@
 package Vista;
 
 import FiveCodMover.FiveCodMoverJFrame;
-import Vista.Color_Noche;
-import Vista.Colores_DIA;
-import Vista.Frm_Distribucion;
-import Vista.Frm_R_Marca;
-import Vista.Frm_R_Modelo;
-import Vista.Frm_R_Pedido;
-import Vista.Frm_R_Proveedor;
-import Vista.Frm_R_Recepcion;
-import Vista.INICIO;
-import Vista.Login;
+
 import Vista.Clases.SimpleTitleBar;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -683,6 +674,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         btn_equipo.setText("Estudiantes");
         btn_equipo.setColorHover(new java.awt.Color(17, 27, 33));
         btn_equipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_equipo.setMargin(new java.awt.Insets(2, 0, 3, 0));
         btn_equipo.setName(""); // NOI18N
         btn_equipo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_equipo.addActionListener(new java.awt.event.ActionListener() {
@@ -869,7 +861,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                                     .addComponent(btn_salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panel_lateralLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btn_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panel_lateralLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

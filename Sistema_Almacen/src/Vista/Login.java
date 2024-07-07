@@ -20,6 +20,9 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         rSScaleLabel1 = new rsscalelabel.RSScaleLabel();
+        rSFotoSquare1 = new rojerusan.RSFotoSquare();
+        rSFotoCircle1 = new rojerusan.RSFotoCircle();
+        rSFotoCircle2 = new rojerusan.RSFotoCircle();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -131,7 +134,7 @@ public class Login extends javax.swing.JFrame {
 
         rSLabelImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesLogin/foto1.png"))); // NOI18N
-        jPanel1.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 390, 510));
+        jPanel1.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 410, 510));
 
         panelRoundshadow1.setBackground(new java.awt.Color(243, 241, 255));
         panelRoundshadow1.setRoundBottomLeft(25);
@@ -270,6 +273,7 @@ public class Login extends javax.swing.JFrame {
         if(a){
            log.validarCredenciales();  
         }
+        
     }//GEN-LAST:event_btnconectarActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
@@ -324,6 +328,9 @@ public void setResultado(String respuesta) {
     private Vista.Clases.PanelRoundshadow panelRoundshadow1;
     private Vista.Clases.PanelRoundshadow panelRoundshadow2;
     private Vista.Clases.PanelRoundshadow panelRoundshadow3;
+    private rojerusan.RSFotoCircle rSFotoCircle1;
+    private rojerusan.RSFotoCircle rSFotoCircle2;
+    private rojerusan.RSFotoSquare rSFotoSquare1;
     private rojerusan.RSLabelImage rSLabelImage1;
     private rojerusan.RSLabelImage rSLabelImage2;
     private rojerusan.RSLabelImage rSLabelImage4;
