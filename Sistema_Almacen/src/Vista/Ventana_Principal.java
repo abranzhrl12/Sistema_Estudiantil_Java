@@ -346,7 +346,6 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         fiveCodMoverJDialog1 = new FiveCodMover.FiveCodMoverJDialog();
         fiveCodMoverJFrame1 = new FiveCodMover.FiveCodMoverJFrame();
         jPanel5 = new javax.swing.JPanel();
-        rSLabelImage1 = new rojerusan.RSLabelImage();
         lblClose = new javax.swing.JLabel();
         lblMaximize = new javax.swing.JLabel();
         lblMinimize = new javax.swing.JLabel();
@@ -412,7 +411,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(21, 31, 43));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
         jPanel5.setForeground(new java.awt.Color(16, 0, 43));
         jPanel5.setPreferredSize(new java.awt.Dimension(60, 30));
         jPanel5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -440,28 +439,21 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
             }
         });
 
-        rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Recurso 12_1.png"))); // NOI18N
-        rSLabelImage1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rSLabelImage1MouseClicked(evt);
-            }
-        });
-
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home20/images/icons8_multiply_18px_1.png"))); // NOI18N
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosBarra/icons8_multiply_18px_1.png"))); // NOI18N
         lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblCloseMousePressed(evt);
             }
         });
 
-        lblMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home20/images/icons8_rectangle_stroked_18px.png"))); // NOI18N
+        lblMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosBarra/icons8_rectangle_stroked_18px.png"))); // NOI18N
         lblMaximize.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblMaximizeMousePressed(evt);
             }
         });
 
-        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home20/images/icons8_minus_18px_1.png"))); // NOI18N
+        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosBarra/icons8_minus_18px_1.png"))); // NOI18N
         lblMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblMinimizeMousePressed(evt);
@@ -473,9 +465,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(988, Short.MAX_VALUE)
                 .addComponent(lblMinimize)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblMaximize)
@@ -490,9 +480,8 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblMinimize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblMaximize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
-                .addGap(615, 615, 615))
+                    .addComponent(lblClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
         contenedor.setBackground(new java.awt.Color(235, 238, 245));
@@ -505,7 +494,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         panel_superior.setBackground(new java.awt.Color(255, 255, 255));
@@ -585,7 +574,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         );
         panel_superiorLayout.setVerticalGroup(
             panel_superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
             .addGroup(panel_superiorLayout.createSequentialGroup()
                 .addGroup(panel_superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_superiorLayout.createSequentialGroup()
@@ -691,10 +680,11 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
         btn_equipo.setBackground(new java.awt.Color(255, 0, 51));
         btn_equipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Recurso 10.png"))); // NOI18N
-        btn_equipo.setText("EQUIPOS");
+        btn_equipo.setText("Estudiantes");
         btn_equipo.setColorHover(new java.awt.Color(17, 27, 33));
         btn_equipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_equipo.setName(""); // NOI18N
+        btn_equipo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_equipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_equipoActionPerformed(evt);
@@ -823,10 +813,11 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         jLabel3.setText("V1.0");
 
         btn_salida1.setBackground(new java.awt.Color(255, 0, 51));
-        btn_salida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Recurso 17.png"))); // NOI18N
-        btn_salida1.setText("Salir");
+        btn_salida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logout.png"))); // NOI18N
         btn_salida1.setColorHover(new java.awt.Color(17, 27, 33));
         btn_salida1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_salida1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_salida1.setInheritsPopupMenu(true);
         btn_salida1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salida1ActionPerformed(evt);
@@ -851,51 +842,58 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         panel_lateralLayout.setHorizontalGroup(
             panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_lateralLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(label_logo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_lateralLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_panel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(11, 11, 11)
                 .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_salida1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_pedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_recepcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_lateralLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_panel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_lateralLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_salida1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_pedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_recepcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_ubicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panel_lateralLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panel_lateralLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_lateralLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel2))
+                            .addGroup(panel_lateralLayout.createSequentialGroup()
+                                .addComponent(label_logo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel_lateralLayout.setVerticalGroup(
             panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_lateralLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_lateralLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel3))
-                    .addComponent(label_logo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(112, 112, 112)
+                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_logo)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(69, 69, 69)
-                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(40, 40, 40)
+                .addGroup(panel_lateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(panel_lateralLayout.createSequentialGroup()
                         .addComponent(btn_panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
@@ -913,8 +911,8 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                         .addGap(10, 10, 10)
                         .addComponent(btn_panel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_lateralLayout.createSequentialGroup()
-                        .addComponent(btn_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
+                        .addComponent(btn_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(btn_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -949,7 +947,8 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(panel_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1212,10 +1211,6 @@ int to=3;
 
     }//GEN-LAST:event_formPropertyChange
 
-    private void rSLabelImage1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSLabelImage1MouseClicked
-
-    }//GEN-LAST:event_rSLabelImage1MouseClicked
-
     private void rSPanelCircleImage1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSPanelCircleImage1MousePressed
   
        
@@ -1327,7 +1322,6 @@ int to=3;
     private javax.swing.JPanel panel_superior;
     private rojerusan.RSProgressBarSinText progresbard;
     private rojerusan.RSButtonCircle rSButtonCircle1;
-    private rojerusan.RSLabelImage rSLabelImage1;
     private rojerusan.RSPanelCircleImage rSPanelCircleImage1;
     // End of variables declaration//GEN-END:variables
 }
