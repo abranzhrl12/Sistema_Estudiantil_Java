@@ -11,7 +11,6 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
-//       GlassPanePopup.install(this);
     }
 
  
@@ -271,15 +270,6 @@ public class Login extends javax.swing.JFrame {
         if(a){
            log.validarCredenciales();  
         }
-//         Message obj = new Message();
-//        obj.eventOK(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent ae) {
-//                System.out.println("Click OK");
-//                GlassPanePopup.closePopupLast();
-//            }
-//        });
-//        GlassPanePopup.showPopup(obj);
     }//GEN-LAST:event_btnconectarActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged

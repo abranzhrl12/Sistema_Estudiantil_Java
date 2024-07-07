@@ -19,6 +19,7 @@ public class prueba extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setBackground(new Color(0,0,0,0));
+    
     }
 
    
@@ -26,14 +27,23 @@ public class prueba extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fiveCodMoverJFrame1 = new FiveCodMover.FiveCodMoverJFrame();
         jpanelRound1 = new Vista.Clases.JpanelRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jpanelRound1.setBackground(new java.awt.Color(0, 204, 204));
+        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setRoundBottomLeft(25);
         jpanelRound1.setRoundTopLeft(25);
+        jpanelRound1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jpanelRound1MouseDragged(evt);
+            }
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpanelRound1MouseMoved(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
         jpanelRound1.setLayout(jpanelRound1Layout);
@@ -59,6 +69,14 @@ public class prueba extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jpanelRound1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpanelRound1MouseDragged
+      FiveCodMover.FiveCodMoverJFrame.MouseDraggedFrame(evt, this);
+    }//GEN-LAST:event_jpanelRound1MouseDragged
+
+    private void jpanelRound1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpanelRound1MouseMoved
+        FiveCodMover.FiveCodMoverJFrame.MousePressed(evt);
+    }//GEN-LAST:event_jpanelRound1MouseMoved
 
     /**
      * @param args the command line arguments
@@ -96,6 +114,7 @@ public class prueba extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private FiveCodMover.FiveCodMoverJFrame fiveCodMoverJFrame1;
     private Vista.Clases.JpanelRound jpanelRound1;
     // End of variables declaration//GEN-END:variables
 }

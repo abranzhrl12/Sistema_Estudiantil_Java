@@ -1,5 +1,6 @@
 package Vista.Clases;
 
+import com.xgilmar.util.ShadowRenderer;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -182,7 +183,6 @@ private void createShadowImage() {
 
     g2.dispose();
 }
-
     private Shape createRoundTopLeft() {
         int width = getWidth();
         int height = getHeight();
