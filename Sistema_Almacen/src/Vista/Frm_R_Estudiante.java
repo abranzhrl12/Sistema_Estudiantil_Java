@@ -44,7 +44,6 @@ panelRound1.setVisible(false);
         txtapePaterno = new componentes.TextFieldShadown();
         jLabel20 = new javax.swing.JLabel();
         panelRoundshadow1 = new Vista.Clases.PanelRoundshadow();
-        cbSexo = new combobox.Combobox();
         jLabel9 = new javax.swing.JLabel();
         txtapeMaterno = new componentes.TextFieldShadown();
         jPanel1 = new javax.swing.JPanel();
@@ -158,26 +157,15 @@ panelRound1.setVisible(false);
         panelRoundshadow1.setShadowOpacity(15);
         panelRoundshadow1.setShadowSize(3);
 
-        cbSexo.setBorder(null);
-        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Masculino", "Femenino" }));
-        cbSexo.setLabeText("");
-        cbSexo.setLightWeightPopupEnabled(false);
-        cbSexo.setLineColor(new java.awt.Color(255, 255, 255));
-
         javax.swing.GroupLayout panelRoundshadow1Layout = new javax.swing.GroupLayout(panelRoundshadow1);
         panelRoundshadow1.setLayout(panelRoundshadow1Layout);
         panelRoundshadow1Layout.setHorizontalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRoundshadow1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+            .addGap(0, 410, Short.MAX_VALUE)
         );
         panelRoundshadow1Layout.setVerticalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow1Layout.createSequentialGroup()
-                .addComponent(cbSexo, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         panel_r_3.add(panelRoundshadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 410, 40));
@@ -515,9 +503,9 @@ return txtnomEstudiante.getText().trim();
  public String getapeMaterno(){
  return txtapeMaterno.getText().trim();
  }
- public String getcbSexo(){
- return cbSexo.getSelectedItem().toString(); 
- }
+// public String getcbSexo(){
+// return cbSexo.getSelectedItem().toString(); 
+// }
 public JLabel getfechaNacimiento() {
     return lblfechaNacimiento;
 }
@@ -527,7 +515,6 @@ public JLabel getfechaNacimiento() {
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
-    private combobox.Combobox cbSexo;
     private com.raven.datechooser.DateChooser dateChooser1;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel10;
