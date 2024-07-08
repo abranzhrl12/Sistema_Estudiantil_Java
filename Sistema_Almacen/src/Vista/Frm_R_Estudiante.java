@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package Vista;
 
 import Vista.Clases.ScrollPanelPersonalizado;
@@ -22,14 +19,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 //import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.border.LineBorder;
-import javax.swing.table.JTableHeader;
 
 /**
  *
@@ -93,14 +86,14 @@ panelRound1.setVisible(false);
         txtcodigo = new componentes.TextFieldShadown();
         jLabel17 = new javax.swing.JLabel();
         txtdniEstudiante = new componentes.TextFieldShadown();
-        textFieldShadown4 = new componentes.TextFieldShadown();
+        txtnomEstudiante = new componentes.TextFieldShadown();
         jLabel19 = new javax.swing.JLabel();
-        textFieldShadown5 = new componentes.TextFieldShadown();
+        txtapePaterno = new componentes.TextFieldShadown();
         jLabel20 = new javax.swing.JLabel();
         panelRoundshadow1 = new Vista.Clases.PanelRoundshadow();
-        rSComboMetro1 = new rojerusan.RSComboMetro();
+        combobox1 = new combobox.Combobox();
         jLabel9 = new javax.swing.JLabel();
-        textFieldShadown7 = new componentes.TextFieldShadown();
+        txtapeMaterno = new componentes.TextFieldShadown();
         jPanel1 = new javax.swing.JPanel();
         panelRoundshadow2 = new Vista.Clases.PanelRoundshadow();
         lblfechaNacimiento = new javax.swing.JLabel();
@@ -117,6 +110,7 @@ panelRound1.setVisible(false);
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         lblfechaa = new javax.swing.JLabel();
+        rSComboMetro1 = new rojerusan.RSComboMetro();
 
         setBackground(new java.awt.Color(235, 238, 245));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -194,12 +188,12 @@ panelRound1.setVisible(false);
         jLabel17.setText("Nombres:");
         panel_r_3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
         panel_r_3.add(txtdniEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 410, -1));
-        panel_r_3.add(textFieldShadown4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 410, -1));
+        panel_r_3.add(txtnomEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 410, -1));
 
         jLabel19.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel19.setText("Apellido Paterno:");
         panel_r_3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
-        panel_r_3.add(textFieldShadown5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 410, -1));
+        panel_r_3.add(txtapePaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 410, -1));
 
         jLabel20.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel20.setText("Apellido Materno");
@@ -213,23 +207,25 @@ panelRound1.setVisible(false);
         panelRoundshadow1.setShadowOpacity(15);
         panelRoundshadow1.setShadowSize(3);
 
-        rSComboMetro1.setColorArrow(new java.awt.Color(102, 102, 102));
-        rSComboMetro1.setColorBorde(new java.awt.Color(255, 255, 255));
-        rSComboMetro1.setColorFondo(new java.awt.Color(255, 255, 255));
+        combobox1.setBorder(null);
+        combobox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Masculino", "Femenino" }));
+        combobox1.setLabeText("");
+        combobox1.setLightWeightPopupEnabled(false);
+        combobox1.setLineColor(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout panelRoundshadow1Layout = new javax.swing.GroupLayout(panelRoundshadow1);
         panelRoundshadow1.setLayout(panelRoundshadow1Layout);
         panelRoundshadow1Layout.setHorizontalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRoundshadow1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(combobox1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         panelRoundshadow1Layout.setVerticalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRoundshadow1Layout.createSequentialGroup()
-                .addComponent(rSComboMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow1Layout.createSequentialGroup()
+                .addComponent(combobox1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -238,7 +234,7 @@ panelRound1.setVisible(false);
         jLabel9.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel9.setText("Sexo");
         panel_r_3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
-        panel_r_3.add(textFieldShadown7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 410, -1));
+        panel_r_3.add(txtapeMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 410, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -392,7 +388,7 @@ panelRound1.setVisible(false);
                 .addGap(15, 15, 15)
                 .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblclose, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addComponent(lblclose, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
         );
         panelfechaLayout.setVerticalGroup(
@@ -401,10 +397,11 @@ panelRound1.setVisible(false);
                 .addContainerGap()
                 .addGroup(panelfechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelfechaLayout.createSequentialGroup()
+                        .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(panelfechaLayout.createSequentialGroup()
                         .addComponent(lblclose, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         button1.setText("Registrar");
@@ -474,6 +471,14 @@ panelRound1.setVisible(false);
         lblfechaa.setText("fechaaa");
         panel_r_3.add(lblfechaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
+        rSComboMetro1.setEditable(true);
+        rSComboMetro1.setForeground(new java.awt.Color(51, 51, 51));
+        rSComboMetro1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Masculino", "Femenino" }));
+        rSComboMetro1.setColorArrow(new java.awt.Color(102, 153, 255));
+        rSComboMetro1.setColorBorde(new java.awt.Color(255, 255, 255));
+        rSComboMetro1.setColorFondo(new java.awt.Color(255, 153, 51));
+        panel_r_3.add(rSComboMetro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 379, 34));
+
         add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 640));
     }// </editor-fold>//GEN-END:initComponents
   String fechaSeleccionada ="prueba";
@@ -486,9 +491,6 @@ panelRound1.setVisible(false);
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         String codigo = txtdniEstudiante.getText().trim();
-    int size = 800;
-    String fileType = "png";
-    
     String filePaths = "";
     JFileChooser rutas = new JFileChooser();
     rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -497,42 +499,7 @@ panelRound1.setVisible(false);
     }
     String nombre = txtcodigo.getText().trim();
 
-    QRCodeWriter qrcode = new QRCodeWriter();
-    try {
-        BitMatrix matrix = qrcode.encode(codigo, BarcodeFormat.QR_CODE, size, size);
-        File f = new File(filePaths + "/" + nombre + "." + fileType); // Añadir punto antes de la extensión
-        int matrixWidth = matrix.getWidth();
-        BufferedImage image = new BufferedImage(matrixWidth, matrixWidth, BufferedImage.TYPE_INT_RGB);
-
-        Graphics2D qd = (Graphics2D) image.getGraphics();
-        qd.setColor(Color.WHITE); // Fondo blanco
-        qd.fillRect(0, 0, matrixWidth, matrixWidth);
-        qd.setColor(Color.blue); // QR Code negro
-
-        // Dibujar el QR Code en la imagen
-        for (int y = 0; y < matrixWidth; y++) {
-            for (int x = 0; x < matrixWidth; x++) {
-                if (matrix.get(x, y)) {
-                    qd.fillRect(x, y, 1, 1);
-                }
-            }
-        }
-        qd.dispose(); // Liberar recursos del Graphics2D
-
-        // Guardar la imagen en un archivo
-        if (!ImageIO.write(image, fileType, f)) {
-            throw new IOException("No se pudo escribir la imagen en el archivo: " + f.getAbsolutePath());
-        }
-
-        // Crear ImageIcon con la imagen escalada y asignarla al JLabel
-        ImageIcon mIcono = new ImageIcon(image.getScaledInstance(lblqr.getWidth(), lblqr.getHeight(), Image.SCALE_SMOOTH));
-        lblqr.setIcon(mIcono);
-
-    } catch (WriterException ex) {
-        Logger.getLogger(Frm_R_Estudiante.class.getName()).log(Level.SEVERE, null, ex);
-    } catch (IOException ex) {
-        Logger.getLogger(Frm_R_Estudiante.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    
     }//GEN-LAST:event_button1ActionPerformed
 
     private void dateChooser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseClicked
@@ -587,9 +554,28 @@ panelRound1.setVisible(false);
           lblclose.setVisible(false);
     }//GEN-LAST:event_lblcloseMouseClicked
 
-
+ public String getCodigo() {
+    return txtcodigo.getText().trim();
+}
+ public String getDni(){
+return txtdniEstudiante.getText().trim();
+}
+ public String getNomEstudiante(){
+return txtnomEstudiante.getText().trim();
+}
+ 
+ public String getapePaterno(){
+ return txtapePaterno.getText().trim();
+ }
+ 
+ public String getapeMaterno(){
+ return txtapeMaterno.getText().trim();
+ }
+ 
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
+    private combobox.Combobox combobox1;
     private com.raven.datechooser.DateChooser dateChooser1;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel10;
@@ -616,10 +602,10 @@ panelRound1.setVisible(false);
     private necesario.RSEstiloTablaHeader rSEstiloTablaHeader1;
     private rojerusan.RSLabelImage rSLabelImage2;
     private necesario.RSScrollPane rSScrollPane1;
-    private componentes.TextFieldShadown textFieldShadown4;
-    private componentes.TextFieldShadown textFieldShadown5;
-    private componentes.TextFieldShadown textFieldShadown7;
+    private componentes.TextFieldShadown txtapeMaterno;
+    private componentes.TextFieldShadown txtapePaterno;
     private componentes.TextFieldShadown txtcodigo;
     private componentes.TextFieldShadown txtdniEstudiante;
+    private componentes.TextFieldShadown txtnomEstudiante;
     // End of variables declaration//GEN-END:variables
 }
