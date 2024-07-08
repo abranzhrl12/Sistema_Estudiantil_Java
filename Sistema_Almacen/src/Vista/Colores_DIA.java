@@ -10,7 +10,11 @@ import sun.jvm.hotspot.utilities.RBColor;
 /**
  *
  * @author Abraham
+ * 
+ * colores: iconos #454444
+ * 
  */
+
 public class Colores_DIA {
     
  public static final int DAY_BACKGROUND_R = 255;
