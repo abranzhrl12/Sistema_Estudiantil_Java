@@ -27,183 +27,25 @@ public class Frm_Distribucion extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_diss = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        rSMTextFull1 = new rojeru_san.RSMTextFull();
-        jLabel10 = new javax.swing.JLabel();
-        rSMTextFull2 = new rojeru_san.RSMTextFull();
-        jLabel9 = new javax.swing.JLabel();
-        rSButtonIconI1 = new rojerusan.RSButtonIconI();
-        rSButtonIconI2 = new rojerusan.RSButtonIconI();
-        rSButtonIconI3 = new rojerusan.RSButtonIconI();
-        jLabel11 = new javax.swing.JLabel();
-        rSMTextFull3 = new rojeru_san.RSMTextFull();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        dttabla = new rojerusan.RSTableMetro();
-        rSMTextFull4 = new rojeru_san.RSMTextFull();
-        rSButtonIconI4 = new rojerusan.RSButtonIconI();
-        rSMTextFull5 = new rojeru_san.RSMTextFull();
-        rSButtonIconI5 = new rojerusan.RSButtonIconI();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel_diss.setBackground(new java.awt.Color(255, 255, 255));
         panel_diss.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel1.setText("REGISTRAR   DISTRIBUCIÓN");
-        panel_diss.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 500, 41));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("CÓDIGO ");
-        panel_diss.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-
-        rSMTextFull1.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull1.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMTextFull1ActionPerformed(evt);
-            }
-        });
-        panel_diss.add(rSMTextFull1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 280, -1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("UBICACIÓN");
-        panel_diss.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
-
-        rSMTextFull2.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull2.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull2.setBotonColor(new java.awt.Color(204, 0, 102));
-        rSMTextFull2.setDisabledTextColor(new java.awt.Color(153, 153, 255));
-        rSMTextFull2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMTextFull2ActionPerformed(evt);
-            }
-        });
-        panel_diss.add(rSMTextFull2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 280, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setText("EQUIPO");
-        panel_diss.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
-
-        rSButtonIconI1.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI1.setText("NUEVO");
-        rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonIconI1ActionPerformed(evt);
-            }
-        });
-        panel_diss.add(rSButtonIconI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 70, -1));
-
-        rSButtonIconI2.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI2.setText("AGREGAR ");
-        panel_diss.add(rSButtonIconI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 150, -1));
-
-        rSButtonIconI3.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI3.setText("MODIFICAR ");
-        panel_diss.add(rSButtonIconI3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 170, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setText("FECHA");
-        panel_diss.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
-
-        rSMTextFull3.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull3.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMTextFull3ActionPerformed(evt);
-            }
-        });
-        panel_diss.add(rSMTextFull3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 280, -1));
-
-        dttabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "CODIGO", "FECHA", "PEDIDO", "PROVEEDOR"
-            }
-        ));
-        dttabla.setColorBackgoundHead(new java.awt.Color(0, 153, 153));
-        dttabla.setColorSelBackgound(new java.awt.Color(255, 102, 102));
-        jScrollPane1.setViewportView(dttabla);
-
-        panel_diss.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 670, 150));
-
-        rSMTextFull4.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull4.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        panel_diss.add(rSMTextFull4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 440, 30));
-
-        rSButtonIconI4.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonIconI4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
-        rSButtonIconI4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonIconI4ActionPerformed(evt);
-            }
-        });
-        panel_diss.add(rSButtonIconI4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 60, -1));
-
-        rSMTextFull5.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull5.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMTextFull5ActionPerformed(evt);
-            }
-        });
-        panel_diss.add(rSMTextFull5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 280, -1));
-
-        rSButtonIconI5.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI5.setText("NUEVO");
-        panel_diss.add(rSButtonIconI5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 120, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panel_diss, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(panel_diss, javax.swing.GroupLayout.DEFAULT_SIZE, 892, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panel_diss, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(panel_diss, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void rSMTextFull1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMTextFull1ActionPerformed
-
-    private void rSMTextFull2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMTextFull2ActionPerformed
-
-    private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
-    Consultar_Equipo con=new Consultar_Equipo(this, rootPaneCheckingEnabled);
-    con.show();
-    }//GEN-LAST:event_rSButtonIconI1ActionPerformed
-
-    private void rSMTextFull3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMTextFull3ActionPerformed
-
-    private void rSButtonIconI4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI4ActionPerformed
-        con_equipoo co_e=new con_equipoo();
-        co_e.show();
-    }//GEN-LAST:event_rSButtonIconI4ActionPerformed
-
-    private void rSMTextFull5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMTextFull5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,23 +84,6 @@ public class Frm_Distribucion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSTableMetro dttabla;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JPanel panel_diss;
-    private rojerusan.RSButtonIconI rSButtonIconI1;
-    private rojerusan.RSButtonIconI rSButtonIconI2;
-    private rojerusan.RSButtonIconI rSButtonIconI3;
-    private rojerusan.RSButtonIconI rSButtonIconI4;
-    private rojerusan.RSButtonIconI rSButtonIconI5;
-    private rojeru_san.RSMTextFull rSMTextFull1;
-    private rojeru_san.RSMTextFull rSMTextFull2;
-    private rojeru_san.RSMTextFull rSMTextFull3;
-    private rojeru_san.RSMTextFull rSMTextFull4;
-    private rojeru_san.RSMTextFull rSMTextFull5;
     // End of variables declaration//GEN-END:variables
 }

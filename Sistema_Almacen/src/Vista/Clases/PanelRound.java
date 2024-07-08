@@ -28,7 +28,7 @@ public class PanelRound extends JPanel {
     private BufferedImage shadowImage;
 
     private int cornerRadius = 25; // Radio de redondeo de los bordes
-    private Color borderColor = Color.BLACK; // Color del borde por defecto
+    private Color borderColor = new Color(0,0,0,10); // Color del borde por defecto
     private int borderWidth = 1; // Ancho del borde por defecto
     
     public int getRoundTopLeft() {

@@ -38,25 +38,25 @@ public class SimpleTitleBar extends javax.swing.JPanel {
 //    int screenWidth = dm.getWidth();
 //    int screenHeight = dm.getHeight();
 //
-//    // Agrega el tamaño de este monitor al tamaño máximo
+////     Agrega el tamaño de este monitor al tamaño máximo
 //    maxSize.width += screenWidth;
 //    if (screenHeight > maxSize.height) {
 //        maxSize.height = screenHeight; // El tamaño máximo es la altura del monitor más alto
 //    }
 //}
-//
-//// Establece el tamaño máximo para tu JFrame
+
+// Establece el tamaño máximo para tu JFrame
 //resize.setMaximumSize(maxSize);
 //// Crea una nueva instancia de ComponentResizer
 //ComponentResizer resize2 = new ComponentResizer();
 //resize2.setSnapSize(new Dimension(15, 15));
-//resize2.setMinimumSize(new Dimension(1040, 645));
+//resize2.setMinimumSize(new Dimension(1040, 945));
 //resize2.registerComponent(fram);
-//
+
 //      
 
   resize = new ComponentResizer();
-        resize.setSnapSize(new Dimension(1, 1));
+        resize.setSnapSize(new Dimension(15, 15));
         resize.setMinimumSize(new Dimension(1040, 645));
 
         // Obtener el tamaño del monitor principal
