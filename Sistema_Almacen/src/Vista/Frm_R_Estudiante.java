@@ -44,6 +44,7 @@ panelRound1.setVisible(false);
         txtapePaterno = new componentes.TextFieldShadown();
         jLabel20 = new javax.swing.JLabel();
         panelRoundshadow1 = new Vista.Clases.PanelRoundshadow();
+        rComboBox2 = new ComboxPerzonalizado.RComboBox();
         jLabel9 = new javax.swing.JLabel();
         txtapeMaterno = new componentes.TextFieldShadown();
         jPanel1 = new javax.swing.JPanel();
@@ -157,15 +158,25 @@ panelRound1.setVisible(false);
         panelRoundshadow1.setShadowOpacity(15);
         panelRoundshadow1.setShadowSize(3);
 
+        rComboBox2.setBackground(new java.awt.Color(255, 102, 0));
+        rComboBox2.setBorder(null);
+        rComboBox2.setForeground(new java.awt.Color(51, 51, 51));
+        rComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
+
         javax.swing.GroupLayout panelRoundshadow1Layout = new javax.swing.GroupLayout(panelRoundshadow1);
         panelRoundshadow1.setLayout(panelRoundshadow1Layout);
         panelRoundshadow1Layout.setHorizontalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelRoundshadow1Layout.setVerticalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(panelRoundshadow1Layout.createSequentialGroup()
+                .addComponent(rComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         panel_r_3.add(panelRoundshadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 410, 40));
@@ -536,6 +547,7 @@ public JLabel getfechaNacimiento() {
     private Vista.Clases.PanelRoundshadow panelRoundshadow3;
     private LIB.JPanelRound panel_r_3;
     private Vista.Clases.JpanelRound panelfecha;
+    private ComboxPerzonalizado.RComboBox rComboBox2;
     private necesario.RSEstiloTablaHeader rSEstiloTablaHeader1;
     private rojerusan.RSLabelImage rSLabelImage2;
     private necesario.RSScrollPane rSScrollPane1;

@@ -2,11 +2,11 @@
 package Vista;
 
 
-import Vista.Clases.ValidarC_Vacios;
+
 import FiveCodMover.FiveCodMoverJFrame;
 import javax.swing.UIManager;
 import Controlador.LoignControlador;
-import com.sun.org.apache.bcel.internal.classfile.Code;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Shape;
