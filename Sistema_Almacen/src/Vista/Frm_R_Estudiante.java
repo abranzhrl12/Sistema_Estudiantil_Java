@@ -1,9 +1,7 @@
 
 package Vista;
-
 import Controlador.MetodosUtilidades;
-import Vista.Clases.ScrollPanelPersonalizado;
-import Vista.Clases.ModernScrollBarUI;
+
 import java.awt.Dimension;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -20,9 +18,9 @@ public class Frm_R_Estudiante extends javax.swing.JPanel {
     public Frm_R_Estudiante() {   
         initComponents();
         qr.initTimer(dateChooser1);
-         ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
-   rSScrollPane1.setViewportView(customScrollPane);
-    rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
+//         ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
+//   rSScrollPane1.setViewportView(customScrollPane);
+//    rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
     dateChooser1.setVisible(false);
     lblclose.setPreferredSize(new Dimension(0, 0));
     lblclose.setVisible(false);
@@ -134,7 +132,7 @@ panelRound1.setVisible(false);
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
 
-        panel_r_3.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 20, 20));
+        panel_r_3.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
         panel_r_3.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 420, -1));
 
         jLabel17.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
@@ -425,7 +423,8 @@ panelRound1.setVisible(false);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblfechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblfechaNacimientoMouseClicked
-        qr.LogicaPanel(dateChooser1,500 );
+      
+        qr.LogicaPanel(dateChooser1,264,500 );
     
  lblclose.setPreferredSize(new Dimension(20, 20));
     lblclose.setVisible(true);
@@ -443,8 +442,6 @@ panelRound1.setVisible(false);
     if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
         filePaths = rutas.getSelectedFile().getAbsolutePath();
     }
-   
-    String nombre = txtcodigo.getText().trim();
    qr.generarQR(getCodigo(), filePaths);
     
     }//GEN-LAST:event_button1ActionPerformed

@@ -33,12 +33,12 @@ public class MetodosUtilidades {
    
     }
      //Metodo para ocultar y desocultar un panel
-     public void LogicaPanel(JPanel jo, int tamaño) {
+     public void LogicaPanel(JPanel jo,int ancho ,int alto) {
         if (jo.isVisible()) {
             jo.setVisible(false);
-            jo.setPreferredSize(new Dimension(jo.getWidth(), 0)); // Establece altura cero
+            jo.setPreferredSize(new Dimension(0, 0)); // Establece altura cero
         } else {
-            jo.setPreferredSize(new Dimension(264, tamaño)); // Establece altura deseada
+            jo.setPreferredSize(new Dimension(ancho, alto)); // Establece altura deseada
             jo.setVisible(true);
         }
      }
