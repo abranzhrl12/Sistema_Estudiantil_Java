@@ -1,63 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Vista;
 
-import Vista.Clases.ScrollPanelPersonalizado;
-import java.awt.Color;
+package Vista;
 import Vista.Clases.SimpleTitleBar;
+import java.awt.Color;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-/**
- *
- * @author Abraham
- */
 public class prueba extends javax.swing.JFrame {
-
-    int ancho=0;
-    int alto=0;
-    public prueba() {
-         
+    SimpleTitleBar o = new SimpleTitleBar();
+    int ancho;
+    int alto;
+    public prueba() {     
         initComponents();
-        this.setLocationRelativeTo(null);
+      
+//         o.init(this);
         setBackground(new Color(0,0,0,0));
-       simpleTitleBar1.init(this);
-      desplegable1.setVisible(false);
-     
-    }
-
-    public void LogicaPanel(JPanel jo,int tamaño){
-        if (jo.isVisible()) {
-            jo.setVisible(false);
-            jo.setPreferredSize(new Dimension(300, 0)); // Establece altura cero
-        } else {
-            jo.setVisible(true);
-            jo.setPreferredSize(new Dimension(300, tamaño)); // Establece altura deseada
-        }
-        // Revalidar el diseño para reflejar los cambios
-        jo.revalidate();
-        jo.repaint();
-    }
-    
-     JPanel glo;
-
-    public void InitContent(JPanel x) {
-        try {
-            x.show();
-        x.setSize(contenedorPrincipal.getSize());
-        x.setLocation(0, 0);
-        contenedorPrincipal.removeAll();
-        contenedorPrincipal.add(x, BorderLayout.CENTER);
-        contenedorPrincipal.revalidate();
-        contenedorPrincipal.repaint(); 
-        } catch (Exception e) {
-        }
        
-
+      desplegable1.setVisible(false);   
     }
+//    public void LogicaPanel(JPanel jo,int tamaño){
+//        if (jo.isVisible()) {
+//            jo.setVisible(false);
+//            jo.setPreferredSize(new Dimension(300, 0)); // Establece altura cero
+//        } else {
+//            jo.setVisible(true);
+//            jo.setPreferredSize(new Dimension(300, tamaño)); // Establece altura deseada
+//        }
+//        // Revalidar el diseño para reflejar los cambios
+//        jo.revalidate();
+//        jo.repaint();
+//    } 
+     JPanel glo;
+//    public void InitContent(JPanel x) {
+//        try {
+//            x.show();
+//        x.setSize(contenedorPrincipal.getSize());
+//        x.setLocation(0, 0);
+//        contenedorPrincipal.removeAll();
+//        contenedorPrincipal.add(x, BorderLayout.CENTER);
+//        contenedorPrincipal.revalidate();
+//        contenedorPrincipal.repaint(); 
+//        } catch (Exception e) {
+//        }
+//    }
 
 
     @SuppressWarnings("unchecked")
@@ -66,9 +50,6 @@ public class prueba extends javax.swing.JFrame {
 
         fiveCodMoverJFrame1 = new FiveCodMover.FiveCodMoverJFrame();
         panelRound1 = new Vista.Clases.PanelRound();
-        simpleTitleBar1 = new Vista.Clases.SimpleTitleBar();
-        jpanelRound11 = new Vista.Clases.JpanelRound();
-        contenedorPrincipal = new Vista.Clases.JpanelRound();
         jpanelRound1 = new Vista.Clases.JpanelRound();
         desplegable1 = new javax.swing.JPanel();
         jpanelRound4 = new Vista.Clases.JpanelRound();
@@ -94,70 +75,19 @@ public class prueba extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(600, 897));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 formMouseDragged(evt);
             }
         });
 
-        panelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound1.setBackground(new java.awt.Color(204, 102, 0));
         panelRound1.setBorderColor(new java.awt.Color(226, 226, 226));
         panelRound1.setCornerRadius(20);
 
-        simpleTitleBar1.setBackground(new java.awt.Color(255, 255, 255));
-        simpleTitleBar1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                simpleTitleBar1MouseDragged(evt);
-            }
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                simpleTitleBar1MouseMoved(evt);
-            }
-        });
-
-        javax.swing.GroupLayout simpleTitleBar1Layout = new javax.swing.GroupLayout(simpleTitleBar1);
-        simpleTitleBar1.setLayout(simpleTitleBar1Layout);
-        simpleTitleBar1Layout.setHorizontalGroup(
-            simpleTitleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1236, Short.MAX_VALUE)
-        );
-        simpleTitleBar1Layout.setVerticalGroup(
-            simpleTitleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 26, Short.MAX_VALUE)
-        );
-
-        jpanelRound11.setBackground(new java.awt.Color(248, 250, 249));
-        jpanelRound11.setRoundBottomRight(20);
-
-        contenedorPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-        contenedorPrincipal.setRoundBottomRight(20);
-
-        javax.swing.GroupLayout contenedorPrincipalLayout = new javax.swing.GroupLayout(contenedorPrincipal);
-        contenedorPrincipal.setLayout(contenedorPrincipalLayout);
-        contenedorPrincipalLayout.setHorizontalGroup(
-            contenedorPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        contenedorPrincipalLayout.setVerticalGroup(
-            contenedorPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jpanelRound11Layout = new javax.swing.GroupLayout(jpanelRound11);
-        jpanelRound11.setLayout(jpanelRound11Layout);
-        jpanelRound11Layout.setHorizontalGroup(
-            jpanelRound11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound11Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpanelRound11Layout.setVerticalGroup(
-            jpanelRound11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        jpanelRound1.setBackground(new java.awt.Color(204, 0, 51));
         jpanelRound1.setRoundBottomLeft(25);
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         desplegable1.setBackground(new java.awt.Color(51, 51, 0));
 
@@ -211,8 +141,6 @@ public class prueba extends javax.swing.JFrame {
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(desplegable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
-
         jpanelRound6.setBackground(new java.awt.Color(204, 102, 0));
         jpanelRound6.setRoundBottomLeft(15);
         jpanelRound6.setRoundBottomRight(15);
@@ -236,8 +164,6 @@ public class prueba extends javax.swing.JFrame {
             }
         });
         jpanelRound6.add(btn_equipo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 156, 32));
-
-        jpanelRound1.add(jpanelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 190, 40));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 51, 51));
         jpanelRound3.setRoundBottomLeft(15);
@@ -264,8 +190,6 @@ public class prueba extends javax.swing.JFrame {
             }
         });
         jpanelRound3.add(btn_equipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 180, 32));
-
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 50));
 
         jpanelRound7.setBackground(new java.awt.Color(0, 0, 255));
         jpanelRound7.setRoundBottomLeft(15);
@@ -305,8 +229,6 @@ public class prueba extends javax.swing.JFrame {
                 .addComponent(btn_equipo5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jpanelRound1.add(jpanelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 40));
-
         jpanelRound8.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound8.setRoundBottomLeft(15);
         jpanelRound8.setRoundBottomRight(15);
@@ -344,8 +266,6 @@ public class prueba extends javax.swing.JFrame {
                 .addGap(0, 8, Short.MAX_VALUE)
                 .addComponent(btn_equipo6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        jpanelRound1.add(jpanelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
 
         desplegable2.setBackground(new java.awt.Color(255, 51, 51));
 
@@ -405,8 +325,6 @@ public class prueba extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(desplegable2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, -1, -1));
-
         jpanelRound2.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound2.setDoubleBuffered(false);
         jpanelRound2.setRoundBottomLeft(15);
@@ -446,8 +364,6 @@ public class prueba extends javax.swing.JFrame {
                 .addGap(0, 13, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
-
         jpanelRound10.setBackground(new java.awt.Color(204, 102, 0));
         jpanelRound10.setRoundBottomLeft(15);
         jpanelRound10.setRoundBottomRight(15);
@@ -471,8 +387,6 @@ public class prueba extends javax.swing.JFrame {
             }
         });
         jpanelRound10.add(btn_equipo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 156, 32));
-
-        jpanelRound1.add(jpanelRound10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 190, 40));
 
         jpanelRound5.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound5.setRoundBottomLeft(15);
@@ -513,123 +427,150 @@ public class prueba extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
+        jpanelRound1.setLayout(jpanelRound1Layout);
+        jpanelRound1Layout.setHorizontalGroup(
+            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jpanelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jpanelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jpanelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(desplegable1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jpanelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jpanelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(desplegable2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jpanelRound10, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jpanelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jpanelRound1Layout.setVerticalGroup(
+            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jpanelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jpanelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jpanelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(desplegable1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jpanelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jpanelRound8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(desplegable2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jpanelRound10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jpanelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(simpleTitleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(199, 199, 199)
                 .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpanelRound11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(1, 1, 1))
+                .addContainerGap(725, Short.MAX_VALUE))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(simpleTitleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
-                    .addComponent(jpanelRound11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(2, 2, 2))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
+                .addContainerGap(112, Short.MAX_VALUE)
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 1181, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelRound1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void simpleTitleBar1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_simpleTitleBar1MouseDragged
-       FiveCodMover.FiveCodMoverJFrame.MouseDraggedFrame(evt, this);
-    }//GEN-LAST:event_simpleTitleBar1MouseDragged
-
-    private void simpleTitleBar1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_simpleTitleBar1MouseMoved
-       FiveCodMover.FiveCodMoverJFrame.MousePressed(evt);
-    }//GEN-LAST:event_simpleTitleBar1MouseMoved
 Frm_R_Estudiante p = new Frm_R_Estudiante();
 
-    public void btn2_equipo() {
-      
-     
-        p.show();
-        p.setSize(contenedorPrincipal.getSize());
-       // p.coloraaa(ree,gee,bluee);
-       // p.paneles(255, 255,255);
-        p.setLocation(0, 0);
-        contenedorPrincipal.removeAll();
-        
-        contenedorPrincipal.add(p, BorderLayout.CENTER);
-        contenedorPrincipal.revalidate();
-       contenedorPrincipal.repaint();
-       
-    glo = p;
-    }
-
-    private void btn_equipo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo1ActionPerformed
-        LogicaPanel(desplegable1,114);
-    }//GEN-LAST:event_btn_equipo1ActionPerformed
+//    public void btn2_equipo() {
+//      
+//     
+//        p.show();
+//        p.setSize(contenedorPrincipal.getSize());
+//     
+//        p.setLocation(0, 0);
+//        contenedorPrincipal.removeAll();
+//        
+//        contenedorPrincipal.add(p, BorderLayout.CENTER);
+//        contenedorPrincipal.revalidate();
+//       contenedorPrincipal.repaint();
+//       
+//    glo = p;
+//    }
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
-     ancho =   contenedorPrincipal.getHeight();
-        alto =   contenedorPrincipal.getWidth();
-        InitContent(glo);
+     ancho =   this.getHeight();
+        alto =   this.getWidth();
+//        InitContent(glo);
     }//GEN-LAST:event_formMouseDragged
 
     private void btn_equipo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_equipo3ActionPerformed
 
-    private void btn_equipo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo4ActionPerformed
-      btn2_equipo();
-      
-    }//GEN-LAST:event_btn_equipo4ActionPerformed
-
-    private void btn_equipo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo5ActionPerformed
+    private void btn_equipo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_equipo5ActionPerformed
-
-    private void btn_equipo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_equipo6ActionPerformed
-
-    private void btn_equipo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_equipo7ActionPerformed
+    }//GEN-LAST:event_btn_equipo9ActionPerformed
 
     private void btn_equipo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_equipo8ActionPerformed
 
-    private void btnconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconectarActionPerformed
-//        ValidarC_Vacios val=new ValidarC_Vacios();
-//        boolean a= val.camposTextoVacios(txtusuario,txtpass);
-//        if(a){
-//            log.validarCredenciales();
-//        }
-    }//GEN-LAST:event_btnconectarActionPerformed
-
-    private void btn_equipo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo9ActionPerformed
+    private void btn_equipo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_equipo9ActionPerformed
+    }//GEN-LAST:event_btn_equipo7ActionPerformed
+
+    private void btn_equipo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_equipo6ActionPerformed
+
+    private void btn_equipo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_equipo5ActionPerformed
+
+    private void btn_equipo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo1ActionPerformed
+        //        LogicaPanel(desplegable1,114);
+    }//GEN-LAST:event_btn_equipo1ActionPerformed
+
+    private void btn_equipo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipo4ActionPerformed
+//        btn2_equipo();
+    }//GEN-LAST:event_btn_equipo4ActionPerformed
+
+    private void btnconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconectarActionPerformed
+        //        ValidarC_Vacios val=new ValidarC_Vacios();
+        //        boolean a= val.camposTextoVacios(txtusuario,txtpass);
+        //        if(a){
+            //            log.validarCredenciales();
+            //        }
+    }//GEN-LAST:event_btnconectarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -640,13 +581,7 @@ Frm_R_Estudiante p = new Frm_R_Estudiante();
 } catch (Exception ex) {
     ex.printStackTrace();
 }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new prueba().setVisible(true);
@@ -664,13 +599,11 @@ Frm_R_Estudiante p = new Frm_R_Estudiante();
     private rojerusan.RSButtonIconI btn_equipo8;
     private rojerusan.RSButtonIconI btn_equipo9;
     private rojerusan.RSButtonRound btnconectar;
-    private Vista.Clases.JpanelRound contenedorPrincipal;
     private javax.swing.JPanel desplegable1;
     private javax.swing.JPanel desplegable2;
     private FiveCodMover.FiveCodMoverJFrame fiveCodMoverJFrame1;
     private Vista.Clases.JpanelRound jpanelRound1;
     private Vista.Clases.JpanelRound jpanelRound10;
-    private Vista.Clases.JpanelRound jpanelRound11;
     private Vista.Clases.JpanelRound jpanelRound2;
     private Vista.Clases.JpanelRound jpanelRound3;
     private Vista.Clases.JpanelRound jpanelRound4;
@@ -681,6 +614,5 @@ Frm_R_Estudiante p = new Frm_R_Estudiante();
     private Vista.Clases.JpanelRound jpanelRound9;
     private Vista.Clases.PanelRound panelRound1;
     private rojerusan.RSLabelImage rSLabelImage1;
-    private Vista.Clases.SimpleTitleBar simpleTitleBar1;
     // End of variables declaration//GEN-END:variables
 }

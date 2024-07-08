@@ -6,7 +6,6 @@ package Vista;
 import FiveCodMover.FiveCodMoverJFrame;
 import javax.swing.UIManager;
 import Controlador.LoignControlador;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Shape;
@@ -16,15 +15,15 @@ public class Login extends javax.swing.JFrame {
  LoignControlador log=new LoignControlador(this);
     public Login() {
         
-        setUndecorated(true);
+     
         initComponents();
         
         jPanel3.requestFocusInWindow();
         this.setLocationRelativeTo(null);
+       
         pack();
         Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30);
         setShape(roundShape);
-
         setVisible(true); 
          setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -435,7 +434,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
         // TODO add your handling code here:
-        cerrarVentana();
+      
     }//GEN-LAST:event_btnSalirMouseClicked
 
     private void txtpassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusGained
@@ -507,17 +506,17 @@ public class Login extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
         
-        iniciarVentanaPrincipal();
+//        iniciarVentanaPrincipal();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void btnIniciarSecionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSecionMouseClicked
         // TODO add your handling code here:
-        iniciarVentanaPrincipal();
+//        iniciarVentanaPrincipal();
     }//GEN-LAST:event_btnIniciarSecionMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        iniciarVentanaPrincipal();
+//        iniciarVentanaPrincipal();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     public static void main(String args[]) {
@@ -549,12 +548,12 @@ private void cerrarVentana(){
     dispose();
     System.exit(0);
 }
-private void iniciarVentanaPrincipal(){
-
-    //code Necesario Para abrir la nueva ventana si se valida el usuario existe
-    JOptionPane.showMessageDialog(rootPane, "Creo que inicio secion");
-    setResultado("Creo que no as ingresado nada o si");
-}
+//private void iniciarVentanaPrincipal(){
+//
+//    //code Necesario Para abrir la nueva ventana si se valida el usuario existe
+//    JOptionPane.showMessageDialog(rootPane, "Creo que inicio secion");
+//    setResultado("Creo que no as ingresado nada o si");
+//}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

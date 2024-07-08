@@ -158,7 +158,6 @@ panelRound1.setVisible(false);
         panelRoundshadow1.setShadowOpacity(15);
         panelRoundshadow1.setShadowSize(3);
 
-        rComboBox2.setBackground(new java.awt.Color(255, 102, 0));
         rComboBox2.setBorder(null);
         rComboBox2.setForeground(new java.awt.Color(51, 51, 51));
         rComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));

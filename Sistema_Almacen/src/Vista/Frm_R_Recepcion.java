@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
 /**
@@ -26,141 +23,25 @@ public class Frm_R_Recepcion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pre = new javax.swing.JPanel();
+        panel11 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        rSComboMetro2 = new rojerusan.RSComboMetro();
-        rSButtonIconI1 = new rojerusan.RSButtonIconI();
-        jLabel2 = new javax.swing.JLabel();
-        rSButtonIconI4 = new rojerusan.RSButtonIconI();
-        rSButtonIconI2 = new rojerusan.RSButtonIconI();
-        rSMTextFull2 = new rojeru_san.RSMTextFull();
-        rSMTextFull1 = new rojeru_san.RSMTextFull();
-        rSMTextFull3 = new rojeru_san.RSMTextFull();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        rSButtonIconI3 = new rojerusan.RSButtonIconI();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        dttabla = new rojerusan.RSTableMetro();
-        rSMTextFull4 = new rojeru_san.RSMTextFull();
-        rSButtonIconI5 = new rojerusan.RSButtonIconI();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        pre.setBackground(new java.awt.Color(255, 255, 255));
-        pre.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel11.setBackground(new java.awt.Color(255, 255, 255));
+        panel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("Fecha");
-        pre.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        panel11.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(51, 102, 255));
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("REGISTRAR   RECEPCIÓN");
-        pre.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 490, 41));
-
-        rSComboMetro2.setBackground(new java.awt.Color(0, 153, 153));
-        rSComboMetro2.setForeground(new java.awt.Color(0, 0, 0));
-        rSComboMetro2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "LG ", "THOSIBA", "LENOVO" }));
-        rSComboMetro2.setColorArrow(new java.awt.Color(0, 153, 153));
-        rSComboMetro2.setColorBorde(new java.awt.Color(0, 153, 153));
-        rSComboMetro2.setColorFondo(new java.awt.Color(255, 255, 255));
-        rSComboMetro2.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        rSComboMetro2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSComboMetro2ActionPerformed(evt);
-            }
-        });
-        pre.add(rSComboMetro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 260, 230, -1));
-
-        rSButtonIconI1.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI1.setText("NUEVO");
-        rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonIconI1ActionPerformed(evt);
-            }
-        });
-        pre.add(rSButtonIconI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 519, 120, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Código ");
-        pre.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-
-        rSButtonIconI4.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI4.setColorHover(new java.awt.Color(0, 153, 153));
-        rSButtonIconI4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonIconI4ActionPerformed(evt);
-            }
-        });
-        pre.add(rSButtonIconI4, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 192, 62, -1));
-
-        rSButtonIconI2.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI2.setText("AGREGAR ");
-        pre.add(rSButtonIconI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 519, 150, -1));
-
-        rSMTextFull2.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull2.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull2.setDisabledTextColor(new java.awt.Color(153, 153, 255));
-        pre.add(rSMTextFull2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 260, -1));
-
-        rSMTextFull1.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull1.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull1.setBotonColor(new java.awt.Color(0, 153, 153));
-        pre.add(rSMTextFull1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 95, 260, -1));
-
-        rSMTextFull3.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull3.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull3.setBotonColor(new java.awt.Color(0, 153, 153));
-        rSMTextFull3.setDisabledTextColor(new java.awt.Color(153, 153, 255));
-        pre.add(rSMTextFull3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 148, 260, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("Proveedor");
-        pre.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setText("Pedido");
-        pre.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 220, -1, -1));
-
-        rSButtonIconI3.setBackground(new java.awt.Color(0, 153, 153));
-        rSButtonIconI3.setText("MODIFICAR ");
-        pre.add(rSButtonIconI3, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 519, 170, -1));
-
-        dttabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "CÓDIGO", "FECHA", "PEDIDO", "PROVEEDOR"
-            }
-        ));
-        dttabla.setColorBackgoundHead(new java.awt.Color(0, 153, 153));
-        dttabla.setColorBordeFilas(new java.awt.Color(0, 153, 153));
-        dttabla.setColorSelBackgound(new java.awt.Color(255, 102, 102));
-        dttabla.setSelectionBackground(new java.awt.Color(0, 153, 153));
-        jScrollPane1.setViewportView(dttabla);
-
-        pre.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 700, 130));
-
-        rSMTextFull4.setForeground(new java.awt.Color(0, 153, 153));
-        rSMTextFull4.setBordeColorFocus(new java.awt.Color(0, 153, 153));
-        rSMTextFull4.setBotonColor(new java.awt.Color(0, 153, 153));
-        pre.add(rSMTextFull4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 440, 30));
-
-        rSButtonIconI5.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonIconI5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
-        rSButtonIconI5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonIconI5ActionPerformed(evt);
-            }
-        });
-        pre.add(rSButtonIconI5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 60, -1));
+        panel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 490, 41));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,34 +49,16 @@ public class Frm_R_Recepcion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(pre, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
+                .addComponent(panel11, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pre, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+            .addComponent(panel11, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void rSButtonIconI4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI4ActionPerformed
-    Consultar_pedidos pe=new Consultar_pedidos(this, rootPaneCheckingEnabled);
-    pe.show();
-    pe.setLocationRelativeTo(pe);
-    }//GEN-LAST:event_rSButtonIconI4ActionPerformed
-
-    private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonIconI1ActionPerformed
-
-    private void rSButtonIconI5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI5ActionPerformed
-       
-    }//GEN-LAST:event_rSButtonIconI5ActionPerformed
-
-    private void rSComboMetro2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSComboMetro2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSComboMetro2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,23 +97,8 @@ public class Frm_R_Recepcion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JPanel pre;
-    private rojerusan.RSButtonIconI rSButtonIconI1;
-    private rojerusan.RSButtonIconI rSButtonIconI2;
-    private rojerusan.RSButtonIconI rSButtonIconI3;
-    private rojerusan.RSButtonIconI rSButtonIconI4;
-    private rojerusan.RSButtonIconI rSButtonIconI5;
-    private rojerusan.RSComboMetro rSComboMetro2;
-    private rojeru_san.RSMTextFull rSMTextFull1;
-    private rojeru_san.RSMTextFull rSMTextFull2;
-    private rojeru_san.RSMTextFull rSMTextFull3;
-    private rojeru_san.RSMTextFull rSMTextFull4;
+    private javax.swing.JPanel panel11;
     // End of variables declaration//GEN-END:variables
 }

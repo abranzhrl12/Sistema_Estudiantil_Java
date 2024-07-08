@@ -3,7 +3,6 @@ package Vista.Clases;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Insets;
 import java.awt.Point;
@@ -18,10 +17,6 @@ import javax.swing.SwingUtilities;
 
 public class ComponentResizer extends MouseAdapter {
     
-
-
-
-
     private final static Dimension MINIMUM_SIZE = new Dimension(10, 10);
     private final static Dimension MAXIMUM_SIZE = new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE);
     private static Map<Integer, Integer> cursors = new HashMap<Integer, Integer>();
@@ -40,7 +35,7 @@ public class ComponentResizer extends MouseAdapter {
     private Insets dragInsets;
     private Dimension snapSize;
     private int direction;
-    protected static final int NORTH = 1;
+    protected static final int NORTH = 2;
     protected static final int WEST = 2;
     protected static final int SOUTH = 4;
     protected static final int EAST = 8;
@@ -53,11 +48,11 @@ public class ComponentResizer extends MouseAdapter {
     private Dimension maximumSize = MAXIMUM_SIZE;
 
     public ComponentResizer() {
-        this(new Insets(5, 5, 5, 5), new Dimension(1, 1));
+        this(new Insets(4, 4, 4, 4), new Dimension(1, 1));
     }
 
     public ComponentResizer(Component... components) {
-        this(new Insets(5, 5, 5, 5), new Dimension(1, 1), components);
+        this(new Insets(4, 4, 4, 4), new Dimension(1, 1), components);
     }
 
     public ComponentResizer(Insets dragInsets, Component... components) {
@@ -130,32 +125,38 @@ public class ComponentResizer extends MouseAdapter {
         }
     }
 
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        Component source = e.getComponent();
-        Point location = e.getPoint();
-        direction = 0;
-        if (location.x < dragInsets.left) {
-            direction += WEST;
-        }
-        if (location.x > source.getWidth() - dragInsets.right - 1) {
-            direction += EAST;
-        }
-        if (location.y < dragInsets.top) {
-            direction += NORTH;
-        }
-        if (location.y > source.getHeight() - dragInsets.bottom - 1) {
-            direction += SOUTH;
-        }
-        //  Mouse is no longer over a resizable border
-        if (direction == 0) {
-            source.setCursor(sourceCursor);
-        } else {
-            int cursorType = cursors.get(direction);
-            Cursor cursor = Cursor.getPredefinedCursor(cursorType);
-            source.setCursor(cursor);
-        }
+@Override
+public void mouseMoved(MouseEvent e) {
+    Component source = e.getComponent();
+    Point location = e.getPoint();
+    direction = 0;
+
+    // Disable cursor change for WEST and NORTH directions
+    // if (location.x < dragInsets.left) {
+    //     direction += WEST;
+    // }
+    // if (location.x > source.getWidth() - dragInsets.right - 1) {
+    //     direction += EAST;
+    // }
+    // if (location.y < dragInsets.top) {
+    //     direction += NORTH;
+    // }
+    if (location.y > source.getHeight() - dragInsets.bottom - 1) {
+        direction += SOUTH;
     }
+    if (location.x > source.getWidth() - dragInsets.right - 1) {
+        direction += EAST;
+    }
+
+    // Mouse is no longer over a resizable border
+    if (direction == 0) {
+        source.setCursor(sourceCursor);
+    } else {
+        int cursorType = cursors.get(direction);
+        Cursor cursor = Cursor.getPredefinedCursor(cursorType);
+        source.setCursor(cursor);
+    }
+}
 
     @Override
     public void mouseEntered(MouseEvent e) {
@@ -217,51 +218,50 @@ public class ComponentResizer extends MouseAdapter {
     }
 
     protected void changeBounds(Component source, int direction, Rectangle bounds, Point pressed, Point current) {
-        
-        
-        
-        
-        //  Start with original locaton and size
-        int x = bounds.x;
-        int y = bounds.y;
-        int width = bounds.width;
-        int height = bounds.height;
-        //  Resizing the West or North border affects the size and location
-        if (WEST == (direction & WEST)) {
-            int drag = getDragDistance(pressed.x, current.x, snapSize.width);
-            int maximum = Math.min(width + x, maximumSize.width);
-            drag = getDragBounded(drag, snapSize.width, width, minimumSize.width, maximum);
-            x -= drag;
-            width += drag;
-        }
+    // Start with original location and size
+    int x = bounds.x;
+    int y = bounds.y;
+    int width = bounds.width;
+    int height = bounds.height;
 
-        if (NORTH == (direction & NORTH)) {
-            int drag = getDragDistance(pressed.y, current.y, snapSize.height);
-            int maximum = Math.min(height + y, maximumSize.height);
-            drag = getDragBounded(drag, snapSize.height, height, minimumSize.height, maximum);
-            y -= drag;
-            height += drag;
-        }
-        //  Resizing the East or South border only affects the size
-        if (EAST == (direction & EAST)) {
-            int drag = getDragDistance(current.x, pressed.x, snapSize.width);
-            Dimension boundingSize = getBoundingSize(source);
-            int maximum = Math.min(boundingSize.width - x, maximumSize.width);
-            drag = getDragBounded(drag, snapSize.width, width, minimumSize.width, maximum);
-            width += drag;
-        }
+    // Disable resizing for WEST and NORTH directions
+    // Resizing the West or North border affects the size and location
+    // if (WEST == (direction & WEST)) {
+    //     int drag = getDragDistance(pressed.x, current.x, snapSize.width);
+    //     int maximum = Math.min(width + x, maximumSize.width);
+    //     drag = getDragBounded(drag, snapSize.width, width, minimumSize.width, maximum);
+    //     x -= drag;
+    //     width += drag;
+    // }
 
-        if (SOUTH == (direction & SOUTH)) {
-            int drag = getDragDistance(current.y, pressed.y, snapSize.height);
-            Dimension boundingSize = getBoundingSize(source);
-            int maximum = Math.min(boundingSize.height - y, maximumSize.height);
-            drag = getDragBounded(drag, snapSize.height, height, minimumSize.height, maximum);
-            height += drag;
-        }
+    // if (NORTH == (direction & NORTH)) {
+    //     int drag = getDragDistance(pressed.y, current.y, snapSize.height);
+    //     int maximum = Math.min(height + y, maximumSize.height);
+    //     drag = getDragBounded(drag, snapSize.height, height, minimumSize.height, maximum);
+    //     y -= drag;
+    //     height += drag;
+    // }
 
-        source.setBounds(x, y, width, height);
-        source.validate();
+    // Resizing the East or South border only affects the size
+    if (EAST == (direction & EAST)) {
+        int drag = getDragDistance(current.x, pressed.x, snapSize.width);
+        Dimension boundingSize = getBoundingSize(source);
+        int maximum = Math.min(boundingSize.width - x, maximumSize.width);
+        drag = getDragBounded(drag, snapSize.width, width, minimumSize.width, maximum);
+        width += drag;
     }
+
+    if (SOUTH == (direction & SOUTH)) {
+        int drag = getDragDistance(current.y, pressed.y, snapSize.height);
+        Dimension boundingSize = getBoundingSize(source);
+        int maximum = Math.min(boundingSize.height - y, maximumSize.height);
+        drag = getDragBounded(drag, snapSize.height, height, minimumSize.height, maximum);
+        height += drag;
+    }
+
+    source.setBounds(x, y, width, height);
+    source.validate();
+}
 
     private int getDragDistance(int larger, int smaller, int snapSize) {
         int halfway = snapSize / 2;
@@ -291,6 +291,6 @@ public class ComponentResizer extends MouseAdapter {
             return source.getParent().getSize();
         }
     }
-    
-    
+  
+   
 }

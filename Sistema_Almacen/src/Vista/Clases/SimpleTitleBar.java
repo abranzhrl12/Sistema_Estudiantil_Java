@@ -1,20 +1,17 @@
 package Vista.Clases;
 
-import Vista.Clases.ComponentResizer;
+
 import java.awt.Dimension;
 import java.awt.DisplayMode;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
-import java.awt.Toolkit;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+
 
 public class SimpleTitleBar extends javax.swing.JPanel {
-
-    private ComponentResizer resize;
+//
+   private ComponentResizer resize;
     private int x;
     private int y;
 
@@ -26,38 +23,56 @@ public class SimpleTitleBar extends javax.swing.JPanel {
     }
 
     public void init(JFrame fram) {
-        resize = new ComponentResizer();
-        resize.setSnapSize(new Dimension(15, 15));
+//        resize = new ComponentResizer();
+//        resize.setSnapSize(new Dimension(1, 1));
+//        resize.setMinimumSize(new Dimension(1040, 645));
+//        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//GraphicsDevice[] screens = ge.getScreenDevices();
+//
+//// Inicializa el tamaño máximo con 0,0
+//Dimension maxSize = new Dimension(0, 0);
+//
+//// Itera a través de todos los dispositivos gráficos para obtener sus tamaños
+//for (GraphicsDevice screen : screens) {
+//    DisplayMode dm = screen.getDisplayMode();
+//    int screenWidth = dm.getWidth();
+//    int screenHeight = dm.getHeight();
+//
+//    // Agrega el tamaño de este monitor al tamaño máximo
+//    maxSize.width += screenWidth;
+//    if (screenHeight > maxSize.height) {
+//        maxSize.height = screenHeight; // El tamaño máximo es la altura del monitor más alto
+//    }
+//}
+//
+//// Establece el tamaño máximo para tu JFrame
+//resize.setMaximumSize(maxSize);
+//// Crea una nueva instancia de ComponentResizer
+//ComponentResizer resize2 = new ComponentResizer();
+//resize2.setSnapSize(new Dimension(15, 15));
+//resize2.setMinimumSize(new Dimension(1040, 645));
+//resize2.registerComponent(fram);
+//
+//      
+
+  resize = new ComponentResizer();
+        resize.setSnapSize(new Dimension(1, 1));
         resize.setMinimumSize(new Dimension(1040, 645));
+
+        // Obtener el tamaño del monitor principal
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-GraphicsDevice[] screens = ge.getScreenDevices();
+        GraphicsDevice screen = ge.getDefaultScreenDevice();
+        DisplayMode dm = screen.getDisplayMode();
+        int screenWidth = dm.getWidth();
+        int screenHeight = dm.getHeight();
 
-// Inicializa el tamaño máximo con 0,0
-Dimension maxSize = new Dimension(0, 0);
-
-// Itera a través de todos los dispositivos gráficos para obtener sus tamaños
-for (GraphicsDevice screen : screens) {
-    DisplayMode dm = screen.getDisplayMode();
-    int screenWidth = dm.getWidth();
-    int screenHeight = dm.getHeight();
-
-    // Agrega el tamaño de este monitor al tamaño máximo
-    maxSize.width += screenWidth;
-    if (screenHeight > maxSize.height) {
-        maxSize.height = screenHeight; // El tamaño máximo es la altura del monitor más alto
+        Dimension maxSize = new Dimension(screenWidth, screenHeight);
+        resize.setMaximumSize(maxSize);
+        resize.registerComponent(fram);
     }
-}
-
-// Establece el tamaño máximo para tu JFrame
-resize.setMaximumSize(maxSize);
-// Crea una nueva instancia de ComponentResizer
-ComponentResizer resize2 = new ComponentResizer();
-resize2.setSnapSize(new Dimension(15, 15));
-resize2.setMinimumSize(new Dimension(1040, 645));
-resize2.registerComponent(fram);
-        //initMoving(fram);
-       // simpleButtonBar1.initEvent(fram);
-    }
+    
+    
+    
 
 
     @SuppressWarnings("unchecked")
@@ -89,7 +104,7 @@ resize2.registerComponent(fram);
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 307, Short.MAX_VALUE)
+            .addGap(0, 34, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

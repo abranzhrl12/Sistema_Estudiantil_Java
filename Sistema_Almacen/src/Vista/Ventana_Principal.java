@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
 import FiveCodMover.FiveCodMoverJFrame;
@@ -21,8 +18,6 @@ import java.util.Date;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 public class Ventana_Principal extends javax.swing.JFrame {
     
     
@@ -64,12 +59,12 @@ public class Ventana_Principal extends javax.swing.JFrame {
         //color panel_boton
         capturar_color_panel_buton();
         colores_botones();
-        Ventana_Principal();
+       
         label_logo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         updateProgressBar();
         
         progress();
-         ventanaLogin = new Login();
+       
         
     }
  private void mostrarVentanaLogin() {
@@ -481,7 +476,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 835, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -933,8 +928,8 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel_lateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panel_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(panel_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -944,7 +939,7 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(panel_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(panel_lateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -1096,16 +1091,16 @@ contenedor.removeAll();
 
     private void btn_recepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recepcionActionPerformed
 
-        contenedor.removeAll();
-        cambiar_color_panel_precionar_boton(evt);
-        Frm_R_Recepcion recep = new Frm_R_Recepcion();
-        recep.pre.show();
-        recep.pre.setSize(contenedor.getSize());
-        recep.setLocation(0, 0);
-        contenedor.add(recep.pre, BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        glo = recep.pre;
+//        contenedor.removeAll();
+//        cambiar_color_panel_precionar_boton(evt);
+//        Frm_R_Recepcion recep2=new Frm_R_Recepcion();
+//      
+//       recep.pre.setSize(contenedor.getSize());
+//        recep.setLocation(0, 0);
+//        contenedor.add(recep.pre, BorderLayout.CENTER);
+//        contenedor.revalidate();
+//        contenedor.repaint();
+//        glo = recep.pre;
 
     }//GEN-LAST:event_btn_recepcionActionPerformed
 
@@ -1232,7 +1227,7 @@ int to=3;
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void btn_salida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salida1ActionPerformed
-    mostrarVentanaLogin();
+  
     }//GEN-LAST:event_btn_salida1ActionPerformed
 
     /**
