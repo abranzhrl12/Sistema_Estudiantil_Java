@@ -9,24 +9,32 @@ import Controlador.LoignControlador;
 import com.sun.org.apache.bcel.internal.classfile.Code;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Shape;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
  LoignControlador log=new LoignControlador(this);
     public Login() {
+        
+        setUndecorated(true);
         initComponents();
         
-        jPanel3.requestFocusInWindow(); 
-        
-        
-        
-        
+        jPanel3.requestFocusInWindow();
         this.setLocationRelativeTo(null);
-        
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        pack();
+        Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30);
+        setShape(roundShape);
+
+        setVisible(true); 
+         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
- 
-
+    @Override
+    public void setShape(Shape shape) {
+        super.setShape(shape);
+    }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -61,7 +69,6 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel1MouseDragged(evt);
@@ -339,7 +346,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
