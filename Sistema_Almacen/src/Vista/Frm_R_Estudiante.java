@@ -1,56 +1,26 @@
 
 package Vista;
 
+import Controlador.MetodosUtilidades;
 import Vista.Clases.ScrollPanelPersonalizado;
 import Vista.Clases.ModernScrollBarUI;
-
-import com.raven.datechooser.SelectedDate;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-//import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 
-/**
- *
- * @author Abraham
- */
 public class Frm_R_Estudiante extends javax.swing.JPanel {
     int x1;
    int x2;
    int x3;
- 
+    String filePaths = "";
+  MetodosUtilidades qr = new MetodosUtilidades(this);
    private Timer timer;
-    public Frm_R_Estudiante() {
-   
-    
+    public Frm_R_Estudiante() {   
         initComponents();
-        timer = new Timer(300, (evt) -> {
-            SelectedDate selectedDate = dateChooser1.getSelectedDate();
-            if (selectedDate != null) {
-                int day = selectedDate.getDay();
-                int month = selectedDate.getMonth();
-                int year = selectedDate.getYear();
-                
-                String fechaSeleccionada = day + "-" + month + "-" + year;
-                
-                // Mostrar la fecha seleccionada en lblfechaa
-                lblfechaNacimiento.setText(fechaSeleccionada);
-            }
-        });
-         
+        qr.initTimer(dateChooser1);
          ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
-
    rSScrollPane1.setViewportView(customScrollPane);
     rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
     dateChooser1.setVisible(false);
@@ -58,18 +28,6 @@ public class Frm_R_Estudiante extends javax.swing.JPanel {
     lblclose.setVisible(false);
 panelRound1.setVisible(false);
     }
-
- public void LogicaPanel(JPanel jo, int tamaño) {
-        if (jo.isVisible()) {
-            jo.setVisible(false);
-            jo.setPreferredSize(new Dimension(jo.getWidth(), 0)); // Establece altura cero
-        } else {
-            jo.setPreferredSize(new Dimension(264, tamaño)); // Establece altura deseada
-            jo.setVisible(true);
-        }}
-    
-   
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -88,7 +46,7 @@ panelRound1.setVisible(false);
         txtapePaterno = new componentes.TextFieldShadown();
         jLabel20 = new javax.swing.JLabel();
         panelRoundshadow1 = new Vista.Clases.PanelRoundshadow();
-        combobox1 = new combobox.Combobox();
+        cbSexo = new combobox.Combobox();
         jLabel9 = new javax.swing.JLabel();
         txtapeMaterno = new componentes.TextFieldShadown();
         jPanel1 = new javax.swing.JPanel();
@@ -106,8 +64,6 @@ panelRound1.setVisible(false);
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        lblfechaa = new javax.swing.JLabel();
-        rSComboMetro1 = new rojerusan.RSComboMetro();
 
         setBackground(new java.awt.Color(235, 238, 245));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -204,11 +160,11 @@ panelRound1.setVisible(false);
         panelRoundshadow1.setShadowOpacity(15);
         panelRoundshadow1.setShadowSize(3);
 
-        combobox1.setBorder(null);
-        combobox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Masculino", "Femenino" }));
-        combobox1.setLabeText("");
-        combobox1.setLightWeightPopupEnabled(false);
-        combobox1.setLineColor(new java.awt.Color(255, 255, 255));
+        cbSexo.setBorder(null);
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Masculino", "Femenino" }));
+        cbSexo.setLabeText("");
+        cbSexo.setLightWeightPopupEnabled(false);
+        cbSexo.setLineColor(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout panelRoundshadow1Layout = new javax.swing.GroupLayout(panelRoundshadow1);
         panelRoundshadow1.setLayout(panelRoundshadow1Layout);
@@ -216,13 +172,13 @@ panelRound1.setVisible(false);
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRoundshadow1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(combobox1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         panelRoundshadow1Layout.setVerticalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow1Layout.createSequentialGroup()
-                .addComponent(combobox1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(cbSexo, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -385,8 +341,8 @@ panelRound1.setVisible(false);
                 .addGap(15, 15, 15)
                 .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblclose, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
+                .addComponent(lblclose, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         panelfechaLayout.setVerticalGroup(
             panelfechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -465,37 +421,31 @@ panelRound1.setVisible(false);
         jLabel18.setText("DNI:");
         panel_r_3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        lblfechaa.setText("fechaaa");
-        panel_r_3.add(lblfechaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
-
-        rSComboMetro1.setEditable(true);
-        rSComboMetro1.setForeground(new java.awt.Color(51, 51, 51));
-        rSComboMetro1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "Masculino", "Femenino" }));
-        rSComboMetro1.setColorArrow(new java.awt.Color(102, 153, 255));
-        rSComboMetro1.setColorBorde(new java.awt.Color(255, 255, 255));
-        rSComboMetro1.setColorFondo(new java.awt.Color(255, 153, 51));
-        panel_r_3.add(rSComboMetro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 379, 34));
-
         add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 640));
     }// </editor-fold>//GEN-END:initComponents
-  String fechaSeleccionada ="prueba";
+
     private void lblfechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblfechaNacimientoMouseClicked
-        LogicaPanel(dateChooser1,500 );
-      timer.start();
+        qr.LogicaPanel(dateChooser1,500 );
+    
  lblclose.setPreferredSize(new Dimension(20, 20));
     lblclose.setVisible(true);
     }//GEN-LAST:event_lblfechaNacimientoMouseClicked
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        String codigo = txtdniEstudiante.getText().trim();
-    String filePaths = "";
+     
+    try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+}
     JFileChooser rutas = new JFileChooser();
     rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
     if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
         filePaths = rutas.getSelectedFile().getAbsolutePath();
     }
+   
     String nombre = txtcodigo.getText().trim();
-
+   qr.generarQR(getCodigo(), filePaths);
     
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -568,11 +518,19 @@ return txtnomEstudiante.getText().trim();
  public String getapeMaterno(){
  return txtapeMaterno.getText().trim();
  }
- 
+ public String getcbSexo(){
+ return cbSexo.getSelectedItem().toString(); 
+ }
+public JLabel getfechaNacimiento() {
+    return lblfechaNacimiento;
+}
+ public JLabel getLblqr() {
+    return lblqr;
+}
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
-    private combobox.Combobox combobox1;
+    private combobox.Combobox cbSexo;
     private com.raven.datechooser.DateChooser dateChooser1;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel10;
@@ -587,7 +545,6 @@ return txtnomEstudiante.getText().trim();
     private Vista.Clases.JpanelRound jpanelRound1;
     private rojerusan.RSLabelImage lblclose;
     private javax.swing.JLabel lblfechaNacimiento;
-    private javax.swing.JLabel lblfechaa;
     private javax.swing.JLabel lblqr;
     private Vista.Clases.PanelRound panelRound1;
     private Vista.Clases.PanelRoundshadow panelRoundshadow1;
@@ -595,7 +552,6 @@ return txtnomEstudiante.getText().trim();
     private Vista.Clases.PanelRoundshadow panelRoundshadow3;
     private LIB.JPanelRound panel_r_3;
     private Vista.Clases.JpanelRound panelfecha;
-    private rojerusan.RSComboMetro rSComboMetro1;
     private necesario.RSEstiloTablaHeader rSEstiloTablaHeader1;
     private rojerusan.RSLabelImage rSLabelImage2;
     private necesario.RSScrollPane rSScrollPane1;
