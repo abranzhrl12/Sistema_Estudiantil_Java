@@ -58,10 +58,11 @@ panelRound1.setVisible(false);
         panelfecha = new Vista.Clases.JpanelRound();
         dateChooser1 = new com.raven.datechooser.DateChooser();
         lblclose = new rojerusan.RSLabelImage();
-        button1 = new componentes.Button();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        button2 = new componentes.Button();
+        button1 = new componentes.Button();
 
         setBackground(new java.awt.Color(235, 238, 245));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -232,7 +233,7 @@ panelRound1.setVisible(false);
         panelRoundshadow2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 0, -1, 37));
 
         jLabel8.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
-        jLabel8.setText("Fecha");
+        jLabel8.setText("Fecha ");
 
         panelRoundshadow3.setBackground(new java.awt.Color(255, 255, 255));
         panelRoundshadow3.setRoundBottomLeft(15);
@@ -353,13 +354,6 @@ panelRound1.setVisible(false);
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
-        button1.setText("Registrar");
-        button1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
-            }
-        });
-
         jLabel10.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel10.setText("Generar QR");
 
@@ -382,9 +376,6 @@ panelRound1.setVisible(false);
                                     .addComponent(jLabel10)
                                     .addComponent(panelfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(panelRoundshadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
@@ -402,12 +393,10 @@ panelRound1.setVisible(false);
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelRoundshadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_r_3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 370, 630));
+        panel_r_3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 370, 570));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
@@ -417,7 +406,31 @@ panelRound1.setVisible(false);
         jLabel18.setText("DNI:");
         panel_r_3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 640));
+        button2.setBackground(new java.awt.Color(255, 255, 51));
+        button2.setBorder(null);
+        button2.setForeground(new java.awt.Color(0, 0, 0));
+        button2.setText("Nuevo");
+        button2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
+        panel_r_3.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, 240, 50));
+
+        button1.setBackground(new java.awt.Color(255, 255, 51));
+        button1.setBorder(null);
+        button1.setForeground(new java.awt.Color(0, 0, 0));
+        button1.setText("Registrar");
+        button1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
+        panel_r_3.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 590, 240, 50));
+
+        add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblfechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblfechaNacimientoMouseClicked
@@ -427,22 +440,6 @@ panelRound1.setVisible(false);
  lblclose.setPreferredSize(new Dimension(20, 20));
     lblclose.setVisible(true);
     }//GEN-LAST:event_lblfechaNacimientoMouseClicked
-
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-     
-    try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-}
-    JFileChooser rutas = new JFileChooser();
-    rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-    if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-        filePaths = rutas.getSelectedFile().getAbsolutePath();
-    }
-   qr.generarQR(getCodigo(), filePaths);
-    
-    }//GEN-LAST:event_button1ActionPerformed
 
     private void dateChooser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseClicked
   
@@ -496,6 +493,36 @@ panelRound1.setVisible(false);
           lblclose.setVisible(false);
     }//GEN-LAST:event_lblcloseMouseClicked
 
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFileChooser rutas = new JFileChooser();
+        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            filePaths = rutas.getSelectedFile().getAbsolutePath();
+        }
+        qr.generarQR(getCodigo(), filePaths);
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFileChooser rutas = new JFileChooser();
+        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            filePaths = rutas.getSelectedFile().getAbsolutePath();
+        }
+        qr.generarQR(getCodigo(), filePaths);
+    }//GEN-LAST:event_button2ActionPerformed
+
  public String getCodigo() {
     return txtcodigo.getText().trim();
 }
@@ -525,6 +552,7 @@ public JLabel getfechaNacimiento() {
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
+    private componentes.Button button2;
     private com.raven.datechooser.DateChooser dateChooser1;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel10;
