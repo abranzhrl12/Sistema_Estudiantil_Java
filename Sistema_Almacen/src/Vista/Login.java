@@ -9,31 +9,58 @@ import Controlador.LoignControlador;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 public class Login extends javax.swing.JFrame {
+          Vista.Clases.SimpleTitleBar barra2=new Vista.Clases.SimpleTitleBar();
  LoignControlador log=new LoignControlador(this);
     public Login() {
         
-     
+
         initComponents();
+//        jPanel3.requestFocusInWindow();
+        this.setLocationRelativeTo(null);   
+          barra2.init(this);
+//        setVisible(true); 
         
-        jPanel3.requestFocusInWindow();
-        this.setLocationRelativeTo(null);
-       
-        pack();
-        Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30);
-        setShape(roundShape);
-        setVisible(true); 
-         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+//         setDefaultCloseOperation(EXIT_ON_CLOSE);
+//         
+//          addComponentListener(new ComponentAdapter() {
+//            @Override
+//            public void componentResized(ComponentEvent e) {
+//                super.componentResized(e);
+//                shape();
+//            }
+//
+//            @Override
+//            public void componentMoved(ComponentEvent e) {
+//                super.componentMoved(e);
+//                shape();
+//            }
+//        });
+//
+//        Timer timer = new Timer(100, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                repaint();
+//                shape();
+//            }
+//        });
+//        timer.start();
     }
 
-    @Override
-    public void setShape(Shape shape) {
-        super.setShape(shape);
-    }
-    
-    
+  public void shape(){
+     Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 25, 25);
+        setShape(roundShape); // Aplicar la forma redondeada a la ventana
+  validate(); // Validar el diseño
+        repaint(); // Repintar la ventana
+   }    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -65,7 +92,6 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -345,7 +371,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
