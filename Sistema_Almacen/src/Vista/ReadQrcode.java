@@ -11,23 +11,25 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
-import java.awt.Dimension;
+
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFactory{
     private WebcamPanel panel=null;
     private Webcam webcam=null;
-   
     private Executor executor=Executors.newSingleThreadExecutor(this);
     public ReadQrcode() {
         initComponents();
-        initWebcam();
+       new Controlador.ConfiguracionLectorQR().initWebcam(webcam, panel, panelCamara);
+       
+      
     }
 
     /**
@@ -40,8 +42,8 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jpanelRound1 = new Vista.Clases.JpanelRound();
-        jPanel2 = new javax.swing.JPanel();
+        lectorQRPanel = new Vista.Clases.JpanelRound();
+        panelCamara = new javax.swing.JPanel();
         result_field = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
@@ -49,40 +51,44 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lectorQRPanel.setBackground(new java.awt.Color(255, 255, 204));
+
+        panelCamara.setBackground(new java.awt.Color(255, 102, 102));
+        panelCamara.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("RESULT:");
 
-        javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
-        jpanelRound1.setLayout(jpanelRound1Layout);
-        jpanelRound1Layout.setHorizontalGroup(
-            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(result_field, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel1))
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
+        javax.swing.GroupLayout lectorQRPanelLayout = new javax.swing.GroupLayout(lectorQRPanel);
+        lectorQRPanel.setLayout(lectorQRPanelLayout);
+        lectorQRPanelLayout.setHorizontalGroup(
+            lectorQRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lectorQRPanelLayout.createSequentialGroup()
+                .addGroup(lectorQRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lectorQRPanelLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(panelCamara, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(lectorQRPanelLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(lectorQRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lectorQRPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(result_field, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1))))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
-        jpanelRound1Layout.setVerticalGroup(
-            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound1Layout.createSequentialGroup()
+        lectorQRPanelLayout.setVerticalGroup(
+            lectorQRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lectorQRPanelLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addComponent(panelCamara, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(result_field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(48, 48, 48))
         );
 
-        jPanel1.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 760, 600));
+        jPanel1.add(lectorQRPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 760, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,17 +117,7 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
         });
     }
 
-    private void initWebcam() {
-        Dimension size = WebcamResolution.VGA.getSize();
-        webcam = Webcam.getWebcams().get(0);
-        webcam.setViewSize(size);
-        panel = new WebcamPanel(webcam);
-        panel.setPreferredSize(size);
-        panel.setFPSDisplayed(true);
-        jPanel2.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 480));
-
-        Executors.newSingleThreadExecutor(this).submit(this);
-    }
+  
 
 
     
@@ -168,8 +164,8 @@ public Thread newThread(Runnable r){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private Vista.Clases.JpanelRound jpanelRound1;
+    public Vista.Clases.JpanelRound lectorQRPanel;
+    private javax.swing.JPanel panelCamara;
     private javax.swing.JTextField result_field;
     // End of variables declaration//GEN-END:variables
 }

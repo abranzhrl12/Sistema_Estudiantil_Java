@@ -1025,8 +1025,6 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
      
         p.show();
         p.setSize(contenedor.getSize());
-       // p.coloraaa(ree,gee,bluee);
-       // p.paneles(255, 255,255);
         p.setLocation(0, 0);
         contenedor.removeAll();
         

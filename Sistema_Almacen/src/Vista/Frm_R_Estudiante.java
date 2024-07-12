@@ -59,10 +59,10 @@ panelRound1.setVisible(false);
         dateChooser1 = new com.raven.datechooser.DateChooser();
         lblclose = new rojerusan.RSLabelImage();
         jLabel10 = new javax.swing.JLabel();
+        button1 = new componentes.Button();
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         button2 = new componentes.Button();
-        button1 = new componentes.Button();
 
         setBackground(new java.awt.Color(235, 238, 245));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -357,6 +357,17 @@ panelRound1.setVisible(false);
         jLabel10.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel10.setText("Generar QR");
 
+        button1.setBackground(new java.awt.Color(255, 255, 51));
+        button1.setBorder(null);
+        button1.setForeground(new java.awt.Color(0, 0, 0));
+        button1.setText("Generar QR");
+        button1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -377,7 +388,11 @@ panelRound1.setVisible(false);
                                     .addComponent(panelfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(panelRoundshadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelRoundshadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
@@ -393,10 +408,12 @@ panelRound1.setVisible(false);
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelRoundshadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_r_3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 370, 570));
+        panel_r_3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 370, 630));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
@@ -417,18 +434,6 @@ panelRound1.setVisible(false);
             }
         });
         panel_r_3.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, 240, 50));
-
-        button1.setBackground(new java.awt.Color(255, 255, 51));
-        button1.setBorder(null);
-        button1.setForeground(new java.awt.Color(0, 0, 0));
-        button1.setText("Registrar");
-        button1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        button1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
-            }
-        });
-        panel_r_3.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 590, 240, 50));
 
         add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 650));
     }// </editor-fold>//GEN-END:initComponents

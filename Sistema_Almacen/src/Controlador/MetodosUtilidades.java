@@ -21,16 +21,28 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import com.raven.datechooser.SelectedDate;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.SwingUtilities;
+import Vista.VentanaPrincipal;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 public class MetodosUtilidades {
-
-    
+  private JPanel glo;
+  private JFrame frame;
     private Frm_R_Estudiante vistaEstudiante;
   private Timer timer;
 
     public MetodosUtilidades(Frm_R_Estudiante vistaEstudiante) {
         this.vistaEstudiante = vistaEstudiante;
    
+    }
+    
+       public MetodosUtilidades(JFrame frame) {
+        this.frame = frame;
     }
      //Metodo para ocultar y desocultar un panel
      public void LogicaPanel(JPanel jo,int ancho ,int alto) {
@@ -43,6 +55,7 @@ public class MetodosUtilidades {
         }
      }
      
+     //timer para ventana estudiante 
  public void initTimer(DateChooser dateChooser) {
         timer = new Timer(300, (evt) -> {
             SelectedDate selectedDate = dateChooser.getSelectedDate();
@@ -61,6 +74,8 @@ public class MetodosUtilidades {
         });
         timer.start(); // Inicia el Timer
     }
+ 
+ //codigo generar qr ventana estudiante
    public void generarQR(String codigo, String directorio) {
         int size = 800;
         String fileType = "png";
@@ -96,8 +111,36 @@ public class MetodosUtilidades {
         }
     }
    
-  
-    
+  //metodo para traer paneles de jframes
+        public void actualizarPanel(JPanel contenedor, JPanel formulario) {
+        contenedor.removeAll();
+        formulario.show();
+        formulario.setSize(contenedor.getSize());
+        contenedor.add(formulario, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+        glo = formulario;
+    }
+        
+        
+        // Método para configurar el MouseListener en un JPanel y sus componentes hijos
+    public void configurarMouseListener(JPanel panel, Runnable onClick) {
+        MouseAdapter mouseListener = new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Lógica para manejar el clic
+                onClick.run();
+            }
+        };
+        // Agregar el MouseListener al panel
+        panel.addMouseListener(mouseListener);
+        // Agregar el MouseListener a todos los componentes hijos del panel
+        for (Component comp : panel.getComponents()) {
+            if (comp instanceof JComponent) {
+                ((JComponent) comp).addMouseListener(mouseListener);
+            }
+        }
+    }
 }
 
 
