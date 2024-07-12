@@ -47,7 +47,7 @@ public class Message extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(80, 80, 80));
-        jLabel1.setText("Your Message Title Dialog Custom");
+        jLabel1.setText("Registro de prueba");
 
         txt.setEditable(false);
         txt.setForeground(new java.awt.Color(133, 133, 133));
@@ -74,7 +74,7 @@ public class Message extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 261, Short.MAX_VALUE))
+                        .addGap(0, 366, Short.MAX_VALUE))
                     .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(cmdCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
