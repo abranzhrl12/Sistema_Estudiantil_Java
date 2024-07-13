@@ -64,7 +64,7 @@ public class MetodosUtilidades {
                 int month = selectedDate.getMonth();
                 int year = selectedDate.getYear();
 
-                String fechaSeleccionada = day + "-" + month + "-" + year;
+                String fechaSeleccionada = year + "-" + month + "-" + day;
 
                 // Actualizar el texto en lblfechaNacimiento en el EDT
                 SwingUtilities.invokeLater(() -> {

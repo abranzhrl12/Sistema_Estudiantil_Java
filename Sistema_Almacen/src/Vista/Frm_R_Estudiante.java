@@ -1,5 +1,6 @@
 
 package Vista;
+import Controlador.ControladorEstudiante;
 import Controlador.MetodosUtilidades;
 
 import java.awt.Dimension;
@@ -15,7 +16,8 @@ public class Frm_R_Estudiante extends javax.swing.JPanel {
     int x1;
    int x2;
    int x3;
-    String filePaths = "";
+   String filePaths = "C:\\rutasqr";
+   Controlador.ControladorEstudiante cEstudiante=new ControladorEstudiante(this);
   MetodosUtilidades qr = new MetodosUtilidades(this);
    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
    private Timer timer;
@@ -67,6 +69,15 @@ panelRound1.setVisible(false);
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         button2 = new componentes.Button();
+        jLabel21 = new javax.swing.JLabel();
+        panelRoundshadow4 = new Vista.Clases.PanelRoundshadow();
+        cbSemestres = new ComboxPerzonalizado.RComboBox();
+        jLabel13 = new javax.swing.JLabel();
+        panelRoundshadow6 = new Vista.Clases.PanelRoundshadow();
+        cbprograma = new ComboxPerzonalizado.RComboBox();
+        jLabel12 = new javax.swing.JLabel();
+        panelRoundshadow5 = new Vista.Clases.PanelRoundshadow();
+        cbturno = new ComboxPerzonalizado.RComboBox();
 
         setBackground(new java.awt.Color(235, 238, 245));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,18 +153,18 @@ panelRound1.setVisible(false);
 
         jLabel17.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel17.setText("Nombres:");
-        panel_r_3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
-        panel_r_3.add(txtdniEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 410, -1));
-        panel_r_3.add(txtnomEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 410, -1));
+        panel_r_3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        panel_r_3.add(txtdniEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 420, -1));
+        panel_r_3.add(txtnomEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 410, -1));
 
         jLabel19.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel19.setText("Apellido Paterno:");
-        panel_r_3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
-        panel_r_3.add(txtapePaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 410, -1));
+        panel_r_3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        panel_r_3.add(txtapePaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 410, -1));
 
         jLabel20.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
-        jLabel20.setText("Apellido Materno");
-        panel_r_3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+        jLabel20.setText("Semestre");
+        panel_r_3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
         panelRoundshadow1.setBackground(new java.awt.Color(255, 255, 255));
         panelRoundshadow1.setRoundBottomLeft(20);
@@ -183,12 +194,12 @@ panelRound1.setVisible(false);
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        panel_r_3.add(panelRoundshadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 410, 40));
+        panel_r_3.add(panelRoundshadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 410, 40));
 
         jLabel9.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
-        jLabel9.setText("Sexo");
-        panel_r_3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
-        panel_r_3.add(txtapeMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 410, -1));
+        jLabel9.setText("Programa Estudio");
+        panel_r_3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
+        panel_r_3.add(txtapeMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 410, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -208,7 +219,7 @@ panelRound1.setVisible(false);
                 lblfechaNacimientoMouseClicked(evt);
             }
         });
-        panelRoundshadow2.add(lblfechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 270, 40));
+        panelRoundshadow2.add(lblfechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 260, 40));
 
         jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setRoundBottomRight(20);
@@ -221,10 +232,7 @@ panelRound1.setVisible(false);
         jpanelRound1.setLayout(jpanelRound1Layout);
         jpanelRound1Layout.setHorizontalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
         jpanelRound1Layout.setVerticalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,28 +384,23 @@ panelRound1.setVisible(false);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8))
+                    .addComponent(panelRoundshadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelRoundshadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(panelfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabel10)
+                            .addComponent(panelfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(38, 38, 38)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panelRoundshadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(14, 14, 14))
+                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel8)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,7 +420,7 @@ panelRound1.setVisible(false);
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_r_3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 370, 630));
+        panel_r_3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 350, 630));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
@@ -425,7 +428,7 @@ panelRound1.setVisible(false);
 
         jLabel18.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel18.setText("DNI:");
-        panel_r_3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        panel_r_3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -437,9 +440,116 @@ panelRound1.setVisible(false);
                 button2ActionPerformed(evt);
             }
         });
-        panel_r_3.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, 240, 50));
+        panel_r_3.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 640, 240, 50));
 
-        add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 650));
+        jLabel21.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
+        jLabel21.setText("Apellido Materno");
+        panel_r_3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        panelRoundshadow4.setBackground(new java.awt.Color(255, 255, 255));
+        panelRoundshadow4.setRoundBottomLeft(20);
+        panelRoundshadow4.setRoundBottomRight(20);
+        panelRoundshadow4.setRoundTopLeft(20);
+        panelRoundshadow4.setRoundTopRight(20);
+        panelRoundshadow4.setShadowOpacity(15);
+        panelRoundshadow4.setShadowSize(3);
+
+        cbSemestres.setBorder(null);
+        cbSemestres.setForeground(new java.awt.Color(51, 51, 51));
+        cbSemestres.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "I", "II", "III", "IV", "V", "VI" }));
+
+        javax.swing.GroupLayout panelRoundshadow4Layout = new javax.swing.GroupLayout(panelRoundshadow4);
+        panelRoundshadow4.setLayout(panelRoundshadow4Layout);
+        panelRoundshadow4Layout.setHorizontalGroup(
+            panelRoundshadow4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbSemestres, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelRoundshadow4Layout.setVerticalGroup(
+            panelRoundshadow4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRoundshadow4Layout.createSequentialGroup()
+                .addComponent(cbSemestres, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+
+        panel_r_3.add(panelRoundshadow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
+        jLabel13.setText("Sexo");
+        panel_r_3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
+
+        panelRoundshadow6.setBackground(new java.awt.Color(255, 255, 255));
+        panelRoundshadow6.setRoundBottomLeft(20);
+        panelRoundshadow6.setRoundBottomRight(20);
+        panelRoundshadow6.setRoundTopLeft(20);
+        panelRoundshadow6.setRoundTopRight(20);
+        panelRoundshadow6.setShadowOpacity(15);
+        panelRoundshadow6.setShadowSize(3);
+
+        cbprograma.setBorder(null);
+        cbprograma.setForeground(new java.awt.Color(51, 51, 51));
+        cbprograma.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "P001", "P002", "P003", "P004", "P005", "P006", "P007", "P008" }));
+        cbprograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbprogramaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelRoundshadow6Layout = new javax.swing.GroupLayout(panelRoundshadow6);
+        panelRoundshadow6.setLayout(panelRoundshadow6Layout);
+        panelRoundshadow6Layout.setHorizontalGroup(
+            panelRoundshadow6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbprograma, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelRoundshadow6Layout.setVerticalGroup(
+            panelRoundshadow6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRoundshadow6Layout.createSequentialGroup()
+                .addComponent(cbprograma, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+
+        panel_r_3.add(panelRoundshadow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
+        jLabel12.setText("Turno");
+        panel_r_3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
+
+        panelRoundshadow5.setBackground(new java.awt.Color(255, 255, 255));
+        panelRoundshadow5.setRoundBottomLeft(20);
+        panelRoundshadow5.setRoundBottomRight(20);
+        panelRoundshadow5.setRoundTopLeft(20);
+        panelRoundshadow5.setRoundTopRight(20);
+        panelRoundshadow5.setShadowOpacity(15);
+        panelRoundshadow5.setShadowSize(3);
+
+        cbturno.setBorder(null);
+        cbturno.setForeground(new java.awt.Color(51, 51, 51));
+        cbturno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "T001", "T002", "T003", " " }));
+
+        javax.swing.GroupLayout panelRoundshadow5Layout = new javax.swing.GroupLayout(panelRoundshadow5);
+        panelRoundshadow5.setLayout(panelRoundshadow5Layout);
+        panelRoundshadow5Layout.setHorizontalGroup(
+            panelRoundshadow5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbturno, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelRoundshadow5Layout.setVerticalGroup(
+            panelRoundshadow5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRoundshadow5Layout.createSequentialGroup()
+                .addComponent(cbturno, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        panel_r_3.add(panelRoundshadow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
+
+        add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 730));
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblfechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblfechaNacimientoMouseClicked
@@ -509,12 +619,15 @@ panelRound1.setVisible(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        JFileChooser rutas = new JFileChooser();
-        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            filePaths = rutas.getSelectedFile().getAbsolutePath();
-        }
+//        JFileChooser rutas = new JFileChooser();
+//        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+//        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+//            filePaths = rutas.getSelectedFile().getAbsolutePath();
+//        }
+
+       
         qr.generarQR(getCodigo(), filePaths);
+     
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -524,13 +637,13 @@ panelRound1.setVisible(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        JFileChooser rutas = new JFileChooser();
-        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            filePaths = rutas.getSelectedFile().getAbsolutePath();
-        }
-        qr.generarQR(getCodigo(), filePaths);
+        String a=  cEstudiante.registrarEstudiante();
+        System.out.println(a);
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void cbprogramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbprogramaMouseClicked
+ 
+    }//GEN-LAST:event_cbprogramaMouseClicked
 
  public String getCodigo() {
     return txtcodigo.getText().trim();
@@ -556,9 +669,12 @@ public JLabel getfechaNacimiento() {
     return lblfechaNacimiento;
 }
  
-public Date getFecha_Nacimiento() {
+  public String getFecha_Nacimiento() {
+        // Asegúrate de que la fecha esté en el formato correcto
+        String fechaTexto = lblfechaNacimiento.getText();
         try {
-            return dateFormat.parse(lblfechaNacimiento.getText());
+            Date fecha = dateFormat.parse(fechaTexto);
+            return dateFormat.format(fecha);
         } catch (ParseException e) {
             e.printStackTrace();
             return null;
@@ -569,26 +685,42 @@ public Date getFecha_Nacimiento() {
     return lblqr;
 }
  
+ public String getRuta(){
+ return filePaths+ "\\" + getCodigo() + ".png";
+ }
  
- 
+public String getSemestre(){
+return cbSemestres.getSelectedItem().toString();
+}
  public String getSexo(){
  return cbsexo.getSelectedItem().toString();
  }
+ public String getPrograma(){
+ return cbprograma.getSelectedItem().toString().trim();
+ }
  
- 
+ public String getTurno(){
+ return cbturno.getSelectedItem().toString();
+ }
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
     private componentes.Button button2;
+    private ComboxPerzonalizado.RComboBox cbSemestres;
+    private ComboxPerzonalizado.RComboBox cbprograma;
     private ComboxPerzonalizado.RComboBox cbsexo;
+    private ComboxPerzonalizado.RComboBox cbturno;
     private com.raven.datechooser.DateChooser dateChooser1;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -600,6 +732,9 @@ public Date getFecha_Nacimiento() {
     private Vista.Clases.PanelRoundshadow panelRoundshadow1;
     private Vista.Clases.PanelRoundshadow panelRoundshadow2;
     private Vista.Clases.PanelRoundshadow panelRoundshadow3;
+    private Vista.Clases.PanelRoundshadow panelRoundshadow4;
+    private Vista.Clases.PanelRoundshadow panelRoundshadow5;
+    private Vista.Clases.PanelRoundshadow panelRoundshadow6;
     private LIB.JPanelRound panel_r_3;
     private Vista.Clases.JpanelRound panelfecha;
     private necesario.RSEstiloTablaHeader rSEstiloTablaHeader1;
