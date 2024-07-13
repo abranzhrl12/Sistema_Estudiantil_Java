@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 import java.sql.CallableStatement;
@@ -9,13 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Types;
 
-/**
- *
- * @author Abraham
- */
 public class ProcedimietosEstudiante {
-    
-    
     
         public static String registrarEstudiante(
             String codigo,
@@ -52,9 +43,7 @@ public class ProcedimietosEstudiante {
 
             cs.registerOutParameter(3, Types.VARCHAR); // Registro del parámetro de salida
             cs.execute();
-
             resultado = cs.getString(3);
-
 
         } finally {
             if (cs != null) {
