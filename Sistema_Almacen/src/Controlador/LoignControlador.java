@@ -3,6 +3,8 @@ package Controlador;
 
 import Modelo.ProcedimientosLogin;
 import Vista.Login;
+import Vista.VentanaPrimaria;
+import Vista.VentanaPrincipal;
 import Vista.Ventana_Principal;
 import Vista.prueba;
 import java.sql.SQLException;
@@ -25,7 +27,7 @@ public class LoignControlador {
             String resultado = procedimientosLogin.validarUsuario(usuario, contraseña);
             loginView.setResultado(resultado);
             if(resultado.equals("Login successful")){
-                cambiarVentanas(loginView, new prueba());
+                cambiarVentanas(loginView, new VentanaPrincipal());
             }
         } catch (SQLException e) {
             // Manejo de excepciones, por ejemplo, registrando o lanzando una excepción

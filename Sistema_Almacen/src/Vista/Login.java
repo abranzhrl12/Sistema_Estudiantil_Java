@@ -9,58 +9,35 @@ import Controlador.LoignControlador;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Shape;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
-import javax.swing.JOptionPane;
-import javax.swing.Timer;
-public class Login extends javax.swing.JFrame {
-          Vista.Clases.SimpleTitleBar barra2=new Vista.Clases.SimpleTitleBar();
- LoignControlador log=new LoignControlador(this);
-    public Login() {
-        
 
+
+public class Login extends javax.swing.JFrame {
+ LoignControlador log=new LoignControlador(this);
+ Controlador.MetodosUtilidades metodos=new Controlador.MetodosUtilidades(this);
+    public Login() {
         initComponents();
-//        jPanel3.requestFocusInWindow();
-        this.setLocationRelativeTo(null);   
-          barra2.init(this);
-//        setVisible(true); 
-        
-        
-//         setDefaultCloseOperation(EXIT_ON_CLOSE);
-//         
-//          addComponentListener(new ComponentAdapter() {
-//            @Override
-//            public void componentResized(ComponentEvent e) {
-//                super.componentResized(e);
-//                shape();
-//            }
-//
-//            @Override
-//            public void componentMoved(ComponentEvent e) {
-//                super.componentMoved(e);
-//                shape();
-//            }
-//        });
-//
-//        Timer timer = new Timer(100, new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                repaint();
-//                shape();
-//            }
-//        });
-//        timer.start();
+  jPanel3.requestFocusInWindow();
+        this.setLocationRelativeTo(null);
+       inicializarMouseListeners();
+        pack();
+        Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30);
+        setShape(roundShape);
+        setVisible(true); 
+         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-  public void shape(){
-     Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 25, 25);
-        setShape(roundShape); // Aplicar la forma redondeada a la ventana
-  validate(); // Validar el diseño
-        repaint(); // Repintar la ventana
-   }    
+     @Override
+    public void setShape(Shape shape) {
+        super.setShape(shape);
+    }
+     private void inicializarMouseListeners() {
+        metodos.configurarMouseListener(btnIniciarSecion, () -> { 
+            log.validarCredenciales();
+        });
+
+       
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -82,12 +59,12 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        txtusuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtpass = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         txtRespuesta = new javax.swing.JLabel();
+        txtusuario1 = new app.bolivia.swing.JCTextField();
+        txtpass = new rojerusan.RSPasswordTextPlaceHolder();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -197,6 +174,9 @@ public class Login extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
+            }
         });
 
         javax.swing.GroupLayout btnIniciarSecionLayout = new javax.swing.GroupLayout(btnIniciarSecion);
@@ -234,72 +214,28 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jSeparator2.setOpaque(true);
 
-        txtusuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtusuario.setForeground(new java.awt.Color(153, 153, 153));
-        txtusuario.setText("Ingrese su usuario");
-        txtusuario.setBorder(null);
-        txtusuario.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtusuarioFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtusuarioFocusLost(evt);
-            }
-        });
-        txtusuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtusuarioMousePressed(evt);
-            }
-        });
-        txtusuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtusuarioActionPerformed(evt);
-            }
-        });
-        txtusuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtusuarioKeyPressed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setText("Usuario");
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setText("Contraceña");
 
-        txtpass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtpass.setForeground(new java.awt.Color(153, 153, 153));
-        txtpass.setText("*******");
-        txtpass.setBorder(null);
-        txtpass.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtpassFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtpassFocusLost(evt);
-            }
-        });
-        txtpass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtpassMousePressed(evt);
-            }
-        });
-        txtpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpassActionPerformed(evt);
-            }
-        });
-        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtpassKeyPressed(evt);
-            }
-        });
-
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesLogin/Scan.png"))); // NOI18N
 
         txtRespuesta.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtRespuesta.setForeground(new java.awt.Color(255, 51, 51));
+
+        txtusuario1.setBorder(null);
+        txtusuario1.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        txtusuario1.setPlaceholder("ingrese su usuario");
+
+        txtpass.setBorder(null);
+        txtpass.setForeground(new java.awt.Color(51, 51, 51));
+        txtpass.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        txtpass.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        txtpass.setPhColor(new java.awt.Color(51, 51, 51));
+        txtpass.setPlaceholder("***********");
+        txtpass.setSelectionColor(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -316,47 +252,47 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtusuario))
+                                .addComponent(txtusuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jSeparator1)
-                            .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
+                                .addGap(16, 16, 16)
                                 .addComponent(btnIniciarSecion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6)
                             .addComponent(txtRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(49, 49, 49))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(52, 52, 52)
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(51, 51, 51)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtpass, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addComponent(btnIniciarSecion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGap(73, 73, 73))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -371,7 +307,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -402,7 +338,6 @@ public class Login extends javax.swing.JFrame {
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
       FiveCodMoverJFrame.MouseDraggedFrame(evt, this);
         int currentY = evt.getY();
-
         int frameX = this.getLocation().x;
         int frameY = this.getLocation().y;
         //top
@@ -416,7 +351,6 @@ public class Login extends javax.swing.JFrame {
 
     private void btnIniciarSecionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSecionMouseEntered
         // TODO add your handling code here:
-        
         btnIniciarSecion.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnIniciarSecion.setBackground(new Color(37, 116, 176));
         
@@ -424,7 +358,6 @@ public class Login extends javax.swing.JFrame {
 
     private void btnIniciarSecionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSecionMouseExited
         // TODO add your handling code here:
-        
          btnIniciarSecion.setCursor(Cursor.getDefaultCursor());
          btnIniciarSecion.setBackground(new Color(56,130,186));
          
@@ -444,15 +377,6 @@ public class Login extends javax.swing.JFrame {
         btnSalir.setBackground(new Color(2, 29, 48));
     }//GEN-LAST:event_btnSalirMouseExited
 
-    private void txtpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtpassActionPerformed
-
-    private void txtpassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMousePressed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_txtpassMousePressed
-
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
         cerrarVentana();
@@ -463,75 +387,14 @@ public class Login extends javax.swing.JFrame {
       
     }//GEN-LAST:event_btnSalirMouseClicked
 
-    private void txtpassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusGained
-        // TODO add your handling code here:
-                if (getContraseña().equals("*******")) {
-                    txtpass.setText("");
-                    txtpass.setForeground(Color.BLACK);
-                    txtpass.setEchoChar('*'); // Restaurar el ocultamiento de caracteres
-                }
-        
-    }//GEN-LAST:event_txtpassFocusGained
-
-    private void txtpassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyPressed
-        // TODO add your handling code here:
-        
-         
-    }//GEN-LAST:event_txtpassKeyPressed
-
-    private void txtusuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusuarioKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyChar() == '\n'){
-
-            txtpass.requestFocus();
-        }
-
-    }//GEN-LAST:event_txtusuarioKeyPressed
-
-    private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtusuarioActionPerformed
-
-    private void txtusuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusuarioMousePressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_txtusuarioMousePressed
-
-    private void txtusuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusuarioFocusGained
-        // TODO add your handling code here:
-        if (txtusuario.getText().equals("Ingrese su usuario")) {
-            txtusuario.setText("");
-            txtusuario.setForeground(Color.BLACK);
-        }
-
-    }//GEN-LAST:event_txtusuarioFocusGained
-
-    private void txtusuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusuarioFocusLost
-        if (txtusuario.getText().isEmpty()) {
-            txtusuario.setText("Ingrese su usuario");
-            txtusuario.setForeground(Color.GRAY);
-        }
-    }//GEN-LAST:event_txtusuarioFocusLost
-
-    private void txtpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusLost
-        // TODO add your handling code here:
-        if (txtpass.getPassword().length == 0) {
-            txtpass.setText("*******");
-            txtpass.setForeground(Color.GRAY);
-            txtpass.setEchoChar((char) 0); // Mostrar caracteres normales
-        }
-    }//GEN-LAST:event_txtpassFocusLost
-
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here: 
          jPanel3.requestFocus();
          
     }//GEN-LAST:event_jPanel3MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-        
+    
 //        iniciarVentanaPrincipal();
     }//GEN-LAST:event_jLabel2MouseClicked
 
@@ -541,9 +404,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIniciarSecionMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
+   
 //        iniciarVentanaPrincipal();
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+         jLabel3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLabel3MouseEntered
 
     public static void main(String args[]) {
  try {
@@ -561,10 +428,11 @@ public class Login extends javax.swing.JFrame {
     
     
 public String getUsuario(){
-return txtusuario.getText();
+return txtusuario1.getText();
 }
 public String getContraseña(){
-return String.valueOf(txtpass.getPassword());
+
+return txtpass.getText();
 }
 public void setResultado(String respuesta) {
     txtRespuesta.setText(respuesta);
@@ -604,7 +472,7 @@ private void cerrarVentana(){
     private rojerusan.RSLabelImage rSLabelImage1;
     private rsscalelabel.RSScaleLabel rSScaleLabel1;
     private javax.swing.JLabel txtRespuesta;
-    private javax.swing.JPasswordField txtpass;
-    private javax.swing.JTextField txtusuario;
+    private rojerusan.RSPasswordTextPlaceHolder txtpass;
+    private app.bolivia.swing.JCTextField txtusuario1;
     // End of variables declaration//GEN-END:variables
 }

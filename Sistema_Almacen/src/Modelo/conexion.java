@@ -12,11 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- * yaaa peeeeeeeeeeee
- *
- * @author STEFANY isdfhsdbhfikisdddddddddddddddddddddddouuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuud
- */
 public class conexion {
 
     //holaa
