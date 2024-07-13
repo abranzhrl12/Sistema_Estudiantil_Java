@@ -10,6 +10,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Arrays;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
+import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 /**
  *
@@ -20,6 +23,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     Vista.Clases.SimpleTitleBar barra2 = new Vista.Clases.SimpleTitleBar();
     Controlador.MetodosUtilidades metodos = new Controlador.MetodosUtilidades(this);
     int ancho = 244;
+    private Animator animator;
 
     public VentanaPrincipal() {
         initComponents();
@@ -39,13 +43,43 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
         
-        pRegistrarEstudiante.setVisible(false);
-        pRegistrarVeiculos.setVisible(false);
-        pReportes.setVisible(false);
-        pAdministrarInformacion.setVisible(false);
+       collapseAllPanels();
     }
+    public void animateVisibility(JPanel panel, boolean visible) {
+        if (animator != null && animator.isRunning()) {
+            return;
+        }
+
+        animator = new Animator(500); // Duración de la animación en milisegundos
+        animator.addTarget(new TimingTargetAdapter() {
+            @Override
+            public void timingEvent(float fraction) {
+                float opacity = visible ? fraction : 1.0f - fraction;
+                panel.setOpaque(true);
+                panel.setBackground(new Color(panel.getBackground().getRed(), panel.getBackground().getGreen(), panel.getBackground().getBlue(), (int)(opacity * 255)));
+                panel.repaint();
+            }
+
+            @Override
+            public void end() {
+                panel.setVisible(visible);
+            }
+
+            @Override
+            public void begin() {
+                if (visible) {
+                    panel.setVisible(true);
+                }
+            }
+        });
+        animator.start();
+    }
+    
+    
+    
 
     private void inicializarMouseListeners() {
+        
           metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {
             
             metodos.actualizarPanel(PanelPrincipal,new Frm_R_Estudiante().panel_r_3);
@@ -74,9 +108,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pRegistrarEstudiante = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        pReportes = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         pAdministrarInformacion = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -91,15 +122,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnRegistrarEstudiante1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         dsp_Veiculos = new javax.swing.JLabel();
-        pRegistrarVeiculos = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         btnRegistrarEstudiante10 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         dsp_Reportes = new javax.swing.JLabel();
         btnRegistrarEstudiante11 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         dsp_adm_informacion = new javax.swing.JLabel();
+        pReportes = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        pRegistrarVeiculos = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnSalir = new Vista.Clases.JpanelRound();
@@ -246,35 +280,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pReportes.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        jLabel23.setText("Reportes de Parqueo");
-
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        jLabel24.setText("Reportes de Ingresos");
-
-        javax.swing.GroupLayout pReportesLayout = new javax.swing.GroupLayout(pReportes);
-        pReportes.setLayout(pReportesLayout);
-        pReportesLayout.setHorizontalGroup(
-            pReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pReportesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        pReportesLayout.setVerticalGroup(
-            pReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pReportesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         pAdministrarInformacion.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
@@ -351,7 +356,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         btnRegistrarEstudiante1.setBackground(new java.awt.Color(255, 255, 255));
@@ -397,35 +402,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pRegistrarVeiculos.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        jLabel18.setText("Agregar Veículo");
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        jLabel21.setText("Registrar Tipo de Veiculo");
-
-        javax.swing.GroupLayout pRegistrarVeiculosLayout = new javax.swing.GroupLayout(pRegistrarVeiculos);
-        pRegistrarVeiculos.setLayout(pRegistrarVeiculosLayout);
-        pRegistrarVeiculosLayout.setHorizontalGroup(
-            pRegistrarVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pRegistrarVeiculosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(pRegistrarVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pRegistrarVeiculosLayout.setVerticalGroup(
-            pRegistrarVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pRegistrarVeiculosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         btnRegistrarEstudiante10.setBackground(new java.awt.Color(255, 255, 255));
         btnRegistrarEstudiante10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -457,7 +433,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(dsp_Reportes)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnRegistrarEstudiante10Layout.setVerticalGroup(
             btnRegistrarEstudiante10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,7 +476,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(dsp_adm_informacion)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnRegistrarEstudiante11Layout.setVerticalGroup(
             btnRegistrarEstudiante11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,6 +488,64 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        pReportes.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
+        jLabel23.setText("Reportes de Parqueo");
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
+        jLabel24.setText("Reportes de Ingresos");
+
+        javax.swing.GroupLayout pReportesLayout = new javax.swing.GroupLayout(pReportes);
+        pReportes.setLayout(pReportesLayout);
+        pReportesLayout.setHorizontalGroup(
+            pReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pReportesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pReportesLayout.setVerticalGroup(
+            pReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pReportesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pRegistrarVeiculos.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
+        jLabel18.setText("Agregar Veículo");
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
+        jLabel21.setText("Registrar Tipo de Veiculo");
+
+        javax.swing.GroupLayout pRegistrarVeiculosLayout = new javax.swing.GroupLayout(pRegistrarVeiculos);
+        pRegistrarVeiculos.setLayout(pRegistrarVeiculosLayout);
+        pRegistrarVeiculosLayout.setHorizontalGroup(
+            pRegistrarVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pRegistrarVeiculosLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(pRegistrarVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pRegistrarVeiculosLayout.setVerticalGroup(
+            pRegistrarVeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pRegistrarVeiculosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
         jpanelRound1.setLayout(jpanelRound1Layout);
         jpanelRound1Layout.setHorizontalGroup(
@@ -519,17 +553,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jpanelRound1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(pReportes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLectorQR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pRegistrarVeiculos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pRegistrarVeiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(pReportes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLectorQR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRegistrarEstudiante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jpanelRound1Layout.setVerticalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,19 +575,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnLectorQR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrarEstudiante1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pRegistrarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pReportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -644,9 +679,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(10, 10, 10))
         );
 
         jPanel1.add(contenedorLeftmenu);
@@ -654,7 +689,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         contendorRigt.setLayout(new javax.swing.BoxLayout(contendorRigt, javax.swing.BoxLayout.Y_AXIS));
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 255));
-        jPanel2.setMaximumSize(new java.awt.Dimension(32767, 100));
+        jPanel2.setMaximumSize(new java.awt.Dimension(32767, 60));
+        jPanel2.setMinimumSize(new java.awt.Dimension(0, 60));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
@@ -674,7 +710,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 57, Short.MAX_VALUE)
+            .addGap(0, 60, Short.MAX_VALUE)
         );
 
         contendorRigt.add(jPanel2);
@@ -689,7 +725,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1155, Short.MAX_VALUE)
+            .addGap(0, 1143, Short.MAX_VALUE)
         );
 
         contendorRigt.add(PanelPrincipal);
@@ -727,9 +763,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLectorQRMouseClicked
 
     private void dsp_estudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_estudiantesMouseClicked
-      
-        metodos.LogicaPanel(pRegistrarEstudiante, ancho, 80);
-      
+        boolean isVisible = pRegistrarEstudiante.isVisible();
+        if (!isVisible) {
+            collapseAllPanels();
+        }
+        pRegistrarEstudiante.setVisible(!isVisible);
+        
     }//GEN-LAST:event_dsp_estudiantesMouseClicked
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
@@ -753,7 +792,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void dsp_VeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_VeiculosMouseClicked
         // TODO add your handling code here:
-         metodos.LogicaPanel(pRegistrarVeiculos, ancho, 84);
+       
+
+        boolean isVisible = pRegistrarVeiculos.isVisible();
+        if (!isVisible) {
+            collapseAllPanels(); // Añade todos los paneles que deseas colapsar
+        }
+
+        animateVisibility(pRegistrarVeiculos, isVisible);
+
     }//GEN-LAST:event_dsp_VeiculosMouseClicked
 
     private void btnRegistrarEstudiante1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante1MouseClicked
@@ -766,7 +813,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void dsp_ReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_ReportesMouseClicked
         // TODO add your handling code here:
-        metodos.LogicaPanel(pReportes, ancho, 82);
+           boolean isVisible = pReportes.isVisible();
+        if (!isVisible) {
+            collapseAllPanels();
+        }
+        pReportes.setVisible(!isVisible);
+        
         
     }//GEN-LAST:event_dsp_ReportesMouseClicked
 
@@ -780,7 +832,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void dsp_adm_informacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_adm_informacionMouseClicked
         // TODO add your handling code here:
-        metodos.LogicaPanel(pAdministrarInformacion, ancho, 386);
+        boolean isVisible = pAdministrarInformacion.isVisible();
+        if (!isVisible) {
+            collapseAllPanels();
+        }
+        pAdministrarInformacion.setVisible(!isVisible);
+        
         
     }//GEN-LAST:event_dsp_adm_informacionMouseClicked
 
@@ -813,6 +870,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnSalir.setBackground(new Color(2, 29, 48));
     }//GEN-LAST:event_btnSalirMouseExited
 
+    private void collapseAllPanels() {
+        metodos.ocultarComponentes(pRegistrarEstudiante,pRegistrarVeiculos,pReportes,pAdministrarInformacion);
+    
+ 
+}
+    
+    
     /**
      * @param args the command line arguments
      */
