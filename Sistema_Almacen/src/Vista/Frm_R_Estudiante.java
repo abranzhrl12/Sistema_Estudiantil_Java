@@ -3,6 +3,9 @@ package Vista;
 import Controlador.MetodosUtilidades;
 
 import java.awt.Dimension;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.Timer;
@@ -14,19 +17,20 @@ public class Frm_R_Estudiante extends javax.swing.JPanel {
    int x3;
     String filePaths = "";
   MetodosUtilidades qr = new MetodosUtilidades(this);
+   private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
    private Timer timer;
     public Frm_R_Estudiante() {   
         initComponents();
         qr.initTimer(dateChooser1);
-//         ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
-//   rSScrollPane1.setViewportView(customScrollPane);
-//    rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
+
     dateChooser1.setVisible(false);
     lblclose.setPreferredSize(new Dimension(0, 0));
     lblclose.setVisible(false);
 panelRound1.setVisible(false);
     }
-
+//         ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
+//   rSScrollPane1.setViewportView(customScrollPane);
+//    rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -44,7 +48,7 @@ panelRound1.setVisible(false);
         txtapePaterno = new componentes.TextFieldShadown();
         jLabel20 = new javax.swing.JLabel();
         panelRoundshadow1 = new Vista.Clases.PanelRoundshadow();
-        rComboBox2 = new ComboxPerzonalizado.RComboBox();
+        cbsexo = new ComboxPerzonalizado.RComboBox();
         jLabel9 = new javax.swing.JLabel();
         txtapeMaterno = new componentes.TextFieldShadown();
         jPanel1 = new javax.swing.JPanel();
@@ -159,9 +163,9 @@ panelRound1.setVisible(false);
         panelRoundshadow1.setShadowOpacity(15);
         panelRoundshadow1.setShadowSize(3);
 
-        rComboBox2.setBorder(null);
-        rComboBox2.setForeground(new java.awt.Color(51, 51, 51));
-        rComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
+        cbsexo.setBorder(null);
+        cbsexo.setForeground(new java.awt.Color(51, 51, 51));
+        cbsexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
 
         javax.swing.GroupLayout panelRoundshadow1Layout = new javax.swing.GroupLayout(panelRoundshadow1);
         panelRoundshadow1.setLayout(panelRoundshadow1Layout);
@@ -169,13 +173,13 @@ panelRound1.setVisible(false);
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRoundshadow1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addComponent(cbsexo, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelRoundshadow1Layout.setVerticalGroup(
             panelRoundshadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRoundshadow1Layout.createSequentialGroup()
-                .addComponent(rComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbsexo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
@@ -551,13 +555,32 @@ return txtnomEstudiante.getText().trim();
 public JLabel getfechaNacimiento() {
     return lblfechaNacimiento;
 }
+ 
+public Date getFecha_Nacimiento() {
+        try {
+            return dateFormat.parse(lblfechaNacimiento.getText());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
  public JLabel getLblqr() {
     return lblqr;
 }
  
+ 
+ 
+ public String getSexo(){
+ return cbsexo.getSelectedItem().toString();
+ }
+ 
+ 
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
     private componentes.Button button2;
+    private ComboxPerzonalizado.RComboBox cbsexo;
     private com.raven.datechooser.DateChooser dateChooser1;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel10;
@@ -579,7 +602,6 @@ public JLabel getfechaNacimiento() {
     private Vista.Clases.PanelRoundshadow panelRoundshadow3;
     private LIB.JPanelRound panel_r_3;
     private Vista.Clases.JpanelRound panelfecha;
-    private ComboxPerzonalizado.RComboBox rComboBox2;
     private necesario.RSEstiloTablaHeader rSEstiloTablaHeader1;
     private rojerusan.RSLabelImage rSLabelImage2;
     private necesario.RSScrollPane rSScrollPane1;

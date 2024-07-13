@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 
 package Modelo;
@@ -17,7 +13,7 @@ public class conexion {
     //holaa
     //-abraham---sistema_salazar
     //-clave--123456
-    private static String bd = "sistema_salazar";
+    private static String bd = "bdsistemaingresos";
     private static String url = "jdbc:mysql://localhost:3306/" + bd;
     private static String usuario = "root";
     private static String clave = "123456";

@@ -7,44 +7,40 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 public class ProcedimietosEstudiante {
-    
-        public static String registrarEstudiante(
-            String codigo,
-            String DNI,
-            String nombre,
-            String apellidoPaterno,
-            String apellidoMaterno,
-            String Sexo,
-            String fechaNacimiento,
-            String Qr,
-            String semestre,
-            String fechaMatricula,
-            String carrera,
-            String turno) throws SQLException {
+   public static String registrarEstudiante(
+        String cod_Estudiante,
+        String DNI,
+        String Nombre,
+        String Ape_Paterno,
+        String Ape_Materno,
+        String Sexo,
+        String Fecha_Nacimiento,
+        String RutaImgQR,
+        String Semestre,
+        String Fecha_Matricula,
+        String cod_Programa
+    ) throws SQLException {
 
         CallableStatement cs = null;
         Connection con = null;
         String resultado = "";
-
         try {
-            con = conexion.conectar();
-            cs = con.prepareCall("{call RegistrarEstudiante(?,?,?,?,?,?,?,?,?,?,?)}");
-            cs.setString(1, codigo);
+            con = conexion.conectar(); // Asegúrate de que este método conecta a tu base de datos
+            cs = con.prepareCall("{call RegistrarEstudiante(?,?,?,?,?,?,?,?,?,?,?,?)}");
+            cs.setString(1, cod_Estudiante);
             cs.setString(2, DNI);
-            cs.setString(3, nombre);
-            cs.setString(4, apellidoPaterno);
-            cs.setString(5, apellidoMaterno);
+            cs.setString(3, Nombre);
+            cs.setString(4, Ape_Paterno);
+            cs.setString(5, Ape_Materno);
             cs.setString(6, Sexo);
-            cs.setString(7, fechaNacimiento);
-            cs.setString(8, Qr);
-            cs.setString(9, semestre);
-            cs.setString(11, carrera);
-            cs.setString(12, turno);
-
-            cs.registerOutParameter(3, Types.VARCHAR); // Registro del parámetro de salida
+            cs.setString(7, Fecha_Nacimiento);
+            cs.setString(8, RutaImgQR);
+            cs.setString(9, Semestre);
+            cs.setString(10, Fecha_Matricula);
+            cs.setString(11, cod_Programa);
+            cs.registerOutParameter(12, Types.VARCHAR); // Registro del parámetro de salida
             cs.execute();
-            resultado = cs.getString(3);
-
+            resultado = cs.getString(12);
         } finally {
             if (cs != null) {
                 cs.close();
@@ -55,4 +51,5 @@ public class ProcedimietosEstudiante {
         }
         return resultado;
     }
+     
 }
