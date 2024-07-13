@@ -2,6 +2,7 @@
 package Controlador;
 
 import Vista.Frm_R_Estudiante;
+import Vista.VentanaPrincipal;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
@@ -25,7 +26,7 @@ import com.raven.datechooser.SelectedDate;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingUtilities;
-import Vista.VentanaPrincipal;
+
 import java.awt.Component;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
