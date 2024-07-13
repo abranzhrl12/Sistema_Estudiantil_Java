@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
+import java.util.Arrays;
+import javax.swing.JComponent;
 
 
 public class Login extends javax.swing.JFrame {
@@ -34,7 +36,7 @@ public class Login extends javax.swing.JFrame {
      private void inicializarMouseListeners() {
         metodos.configurarMouseListener(btnIniciarSecion, () -> { 
             log.validarCredenciales();
-        });
+        }, Arrays.asList(new JComponent[]{ }));
 
        
     }

@@ -1,43 +1,49 @@
 
 package Vista;
+
 import Controlador.ControladorEstudiante;
 import Controlador.MetodosUtilidades;
-
+import Vista.Clases.GlassPanePopup;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 
-public class Frm_R_Estudiante extends javax.swing.JPanel {
-    int x1;
-   int x2;
-   int x3;
-   String filePaths = "C:\\rutasqr";
-   Controlador.ControladorEstudiante cEstudiante=new ControladorEstudiante(this);
-  MetodosUtilidades qr = new MetodosUtilidades(this);
+
+/**
+ *
+ * @author Abraham
+ */
+public class Frm_R_Estudiante extends javax.swing.JFrame{
+    String filePaths = "C:\\rutasqr";
+    ControladorEstudiante cEstudiante=new ControladorEstudiante(this);
+    
+MetodosUtilidades qr = new MetodosUtilidades(this);
    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-   private Timer timer;
-    public Frm_R_Estudiante() {   
+    private Timer timer;
+    
+ 
+    public Frm_R_Estudiante() {
+ 
         initComponents();
         qr.initTimer(dateChooser1);
+        qr.ocultarComponentes(dateChooser1,lblclose,panelRound1);
 
-    dateChooser1.setVisible(false);
     lblclose.setPreferredSize(new Dimension(0, 0));
-    lblclose.setVisible(false);
-panelRound1.setVisible(false);
+  
+
+
     }
-//         ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
-//   rSScrollPane1.setViewportView(customScrollPane);
-//    rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSEstiloTablaHeader1 = new necesario.RSEstiloTablaHeader();
         panel_r_3 = new LIB.JPanelRound();
         panelRound1 = new Vista.Clases.PanelRound();
         rSScrollPane1 = new necesario.RSScrollPane();
@@ -79,8 +85,7 @@ panelRound1.setVisible(false);
         panelRoundshadow5 = new Vista.Clases.PanelRoundshadow();
         cbturno = new ComboxPerzonalizado.RComboBox();
 
-        setBackground(new java.awt.Color(235, 238, 245));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel_r_3.setBackground(new java.awt.Color(255, 255, 255));
         panel_r_3.setForeground(new java.awt.Color(255, 255, 255));
@@ -549,68 +554,87 @@ panelRound1.setVisible(false);
 
         panel_r_3.add(panelRoundshadow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
 
-        add(panel_r_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 880, 730));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 912, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(panel_r_3, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                    .addGap(16, 16, 16)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 749, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(9, 9, 9)
+                    .addComponent(panel_r_3, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                    .addGap(10, 10, 10)))
+        );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblfechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblfechaNacimientoMouseClicked
-      
+
         qr.LogicaPanel(dateChooser1,264,500 );
-    
- lblclose.setPreferredSize(new Dimension(20, 20));
-    lblclose.setVisible(true);
+
+        lblclose.setPreferredSize(new Dimension(20, 20));
+        lblclose.setVisible(true);
     }//GEN-LAST:event_lblfechaNacimientoMouseClicked
 
-    private void dateChooser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseClicked
-  
-    }//GEN-LAST:event_dateChooser1MouseClicked
-
-    private void dateChooser1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dateChooser1FocusGained
-     
-    }//GEN-LAST:event_dateChooser1FocusGained
-
-    private void dateChooser1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseMoved
-     
-    }//GEN-LAST:event_dateChooser1MouseMoved
-
-    private void dateChooser1MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_dateChooser1MouseWheelMoved
-      
-    }//GEN-LAST:event_dateChooser1MouseWheelMoved
-
-    private void panelfechaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfechaMouseMoved
-   
-    }//GEN-LAST:event_panelfechaMouseMoved
-
     private void dateChooser1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_dateChooser1ComponentAdded
-    
+
     }//GEN-LAST:event_dateChooser1ComponentAdded
 
-    private void dateChooser1AncestorMoved(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_dateChooser1AncestorMoved
-    
-    }//GEN-LAST:event_dateChooser1AncestorMoved
+    private void dateChooser1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseMoved
+
+    }//GEN-LAST:event_dateChooser1MouseMoved
+
+    private void dateChooser1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dateChooser1FocusGained
+
+    }//GEN-LAST:event_dateChooser1FocusGained
 
     private void dateChooser1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dateChooser1FocusLost
-      
-  
+
     }//GEN-LAST:event_dateChooser1FocusLost
 
+    private void dateChooser1MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_dateChooser1MouseWheelMoved
+
+    }//GEN-LAST:event_dateChooser1MouseWheelMoved
+
+    private void dateChooser1AncestorMoved(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_dateChooser1AncestorMoved
+
+    }//GEN-LAST:event_dateChooser1AncestorMoved
+
+    private void dateChooser1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseClicked
+
+    }//GEN-LAST:event_dateChooser1MouseClicked
+
     private void dateChooser1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateChooser1MouseExited
-     
-    
+
     }//GEN-LAST:event_dateChooser1MouseExited
-
-    private void panelfechaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfechaMouseExited
-   
-    }//GEN-LAST:event_panelfechaMouseExited
-
-    private void panelfechaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfechaMouseEntered
-      
-    }//GEN-LAST:event_panelfechaMouseEntered
 
     private void lblcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcloseMouseClicked
         dateChooser1.setVisible(false);
-          lblclose.setPreferredSize(new Dimension(0, 0));
-          lblclose.setVisible(false);
+        lblclose.setPreferredSize(new Dimension(0, 0));
+        lblclose.setVisible(false);
     }//GEN-LAST:event_lblcloseMouseClicked
+
+    private void panelfechaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfechaMouseMoved
+
+    }//GEN-LAST:event_panelfechaMouseMoved
+
+    private void panelfechaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfechaMouseEntered
+
+    }//GEN-LAST:event_panelfechaMouseEntered
+
+    private void panelfechaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfechaMouseExited
+
+    }//GEN-LAST:event_panelfechaMouseExited
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
 
@@ -619,15 +643,14 @@ panelRound1.setVisible(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        JFileChooser rutas = new JFileChooser();
-//        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-//        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-//            filePaths = rutas.getSelectedFile().getAbsolutePath();
-//        }
+        //        JFileChooser rutas = new JFileChooser();
+        //        rutas.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        //        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            //            filePaths = rutas.getSelectedFile().getAbsolutePath();
+            //        }
 
-       
         qr.generarQR(getCodigo(), filePaths);
-     
+
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -637,13 +660,28 @@ panelRound1.setVisible(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String a=  cEstudiante.registrarEstudiante();
-        System.out.println(a);
+            Message obj = new Message();
+        obj.eventOK(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.out.println("Click OK");
+                GlassPanePopup.closePopupLast();
+            }
+        });
+        GlassPanePopup.showPopup(obj);
+//        String a=  cEstudiante.registrarEstudiante();
+//        System.out.println(a);
+//        if(a.equals("Estudiante registrado correctamente.")){
+      
+//        }
+        
     }//GEN-LAST:event_button2ActionPerformed
 
     private void cbprogramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbprogramaMouseClicked
- 
+
     }//GEN-LAST:event_cbprogramaMouseClicked
+
+   
 
  public String getCodigo() {
     return txtcodigo.getText().trim();
@@ -702,7 +740,38 @@ return cbSemestres.getSelectedItem().toString();
  public String getTurno(){
  return cbturno.getSelectedItem().toString();
  }
- 
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Frm_R_Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Frm_R_Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Frm_R_Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Frm_R_Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frm_R_Estudiante().setVisible(true);
+            }
+        });
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
     private componentes.Button button2;
@@ -735,9 +804,8 @@ return cbSemestres.getSelectedItem().toString();
     private Vista.Clases.PanelRoundshadow panelRoundshadow4;
     private Vista.Clases.PanelRoundshadow panelRoundshadow5;
     private Vista.Clases.PanelRoundshadow panelRoundshadow6;
-    private LIB.JPanelRound panel_r_3;
+    public LIB.JPanelRound panel_r_3;
     private Vista.Clases.JpanelRound panelfecha;
-    private necesario.RSEstiloTablaHeader rSEstiloTablaHeader1;
     private rojerusan.RSLabelImage rSLabelImage2;
     private necesario.RSScrollPane rSScrollPane1;
     private componentes.TextFieldShadown txtapeMaterno;

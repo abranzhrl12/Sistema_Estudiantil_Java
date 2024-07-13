@@ -2,10 +2,8 @@
 
 package Controlador;
 
-import Modelo.ProcedimientosLogin;
 import Modelo.ProcedimietosEstudiante;
 import Vista.Frm_R_Estudiante;
-import Vista.Login;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -17,6 +15,7 @@ public class ControladorEstudiante {
         this.procedimietnosestudiantes = new ProcedimietosEstudiante();
         this.estudiante = estudiante;
          }
+
   public String registrarEstudiante() {
         try {
             String fechaNacimiento = estudiante.getFecha_Nacimiento();

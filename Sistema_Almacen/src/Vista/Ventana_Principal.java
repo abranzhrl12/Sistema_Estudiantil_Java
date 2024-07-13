@@ -1018,28 +1018,28 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     }//GEN-LAST:event_jPanel5MouseMoved
     
     
-    Frm_R_Estudiante p = new Frm_R_Estudiante();
+//    Frm_R_Estudiante2 p = new Frm_R_Estudiante2();
 
-    public void btn_equipo() {
-      
-     
-        p.show();
-        p.setSize(contenedor.getSize());
-        p.setLocation(0, 0);
-        contenedor.removeAll();
-        
-        contenedor.add(p, BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-        dashboard.setText("Equipos");
-    glo = p;
-    }
+//    public void btn_equipo() {
+//      
+//     
+//        p.show();
+//        p.setSize(contenedor.getSize());
+//        p.setLocation(0, 0);
+//        contenedor.removeAll();
+//        
+//        contenedor.add(p, BorderLayout.CENTER);
+//        contenedor.revalidate();
+//        contenedor.repaint();
+//        dashboard.setText("Equipos");
+//    glo = p;
+//    }
 
     private void btn_equipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equipoActionPerformed
 
         cambiar_color_panel_precionar_boton(evt);
-   
-        btn_equipo();
+//   
+//        btn_equipo();
 
     }//GEN-LAST:event_btn_equipoActionPerformed
 
@@ -1209,7 +1209,7 @@ int to=3;
 //            p.paneles_segundarios(18, 27, 33);
      
             panel_superior.setBackground(new Color(0,30,54));
-            InitContent(p);
+//            InitContent(p);
             to++;
         }else{
 //            p.coloraaa(235, 238, 245);
