@@ -10,29 +10,32 @@ import javax.swing.table.DefaultTableModel;
 
 public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
 
-    Controlador.ControladorPrograma programa=new ControladorPrograma(this);
-     private DefaultTableModel tableModel;
+    Controlador.ControladorPrograma programa = new ControladorPrograma(this);
+    private DefaultTableModel tableModel;
+
     public Frm_R_Prog_Estudio() {
         initComponents();
-               ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
-   rSScrollPane1.setViewportView(customScrollPane);
-    rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
-    tableModel = new DefaultTableModel(new String[]{"Código", "Nombre"}, 0);
+        ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
+        rSScrollPane1.setViewportView(customScrollPane);
+        rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
+        tableModel = new DefaultTableModel(new String[]{"Código", "Nombre"}, 0);
         dttabla.setModel(tableModel);
         cargarProgramas();
     }
-  private void cargarProgramas() {
+
+    private void cargarProgramas() {
         List<ProgramaEstudio> programas = programa.obtenerTodosLosProgramas();
         tableModel.setRowCount(0); // Limpiar la tabla
         for (ProgramaEstudio prog : programas) {
             tableModel.addRow(new Object[]{prog.getCod_Programa(), prog.getNombre()});
         }
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Vista.Clases.JpanelRound();
+        panelProgramaEstudio = new Vista.Clases.JpanelRound();
         txtNombrePrograma = new componentes.TextFieldShadown();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -49,19 +52,19 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 0), 0));
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpanelRound1.add(txtNombrePrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 420, -1));
+        panelProgramaEstudio.setBackground(new java.awt.Color(255, 255, 255));
+        panelProgramaEstudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 0), 0));
+        panelProgramaEstudio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelProgramaEstudio.add(txtNombrePrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        panelProgramaEstudio.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Programa de Estudio:");
-        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-        jpanelRound1.add(txtcodigoPrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 420, -1));
+        panelProgramaEstudio.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        panelProgramaEstudio.add(txtcodigoPrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 420, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -73,7 +76,7 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 240, 50));
+        panelProgramaEstudio.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 240, 50));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -85,7 +88,7 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 240, 50));
+        panelProgramaEstudio.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 240, 50));
 
         panelRound2.setBackground(new java.awt.Color(255, 255, 255));
         panelRound2.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -155,7 +158,7 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
         });
         panelRound2.add(lblclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 48, 30));
 
-        jpanelRound1.add(panelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
+        panelProgramaEstudio.add(panelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
 
         lblclose1.setBackground(new java.awt.Color(255, 153, 0));
         lblclose1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
@@ -164,7 +167,7 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
                 lblclose1MouseClicked(evt);
             }
         });
-        jpanelRound1.add(lblclose1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 48, 30));
+        panelProgramaEstudio.add(lblclose1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 48, 30));
 
         rSScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,7 +207,7 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
         dttabla.setShowGrid(false);
         rSScrollPane1.setViewportView(dttabla);
 
-        jpanelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 710, 220));
+        panelProgramaEstudio.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 710, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,14 +215,14 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelProgramaEstudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelProgramaEstudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -290,9 +293,9 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
     private rojerusan.RSTableMetro dttabla1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private Vista.Clases.JpanelRound jpanelRound1;
     private rojerusan.RSLabelImage lblclose;
     private rojerusan.RSLabelImage lblclose1;
+    public Vista.Clases.JpanelRound panelProgramaEstudio;
     private Vista.Clases.PanelRound panelRound2;
     private necesario.RSScrollPane rSScrollPane1;
     private necesario.RSScrollPane rSScrollPane2;

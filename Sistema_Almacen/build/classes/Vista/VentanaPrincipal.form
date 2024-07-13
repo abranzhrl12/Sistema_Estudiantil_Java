@@ -273,8 +273,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="dsp_estudiantes">
                       <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/icons8-back-32.png"/>
+                          <Image iconType="3" name="/iconsHome/down-16.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -349,7 +350,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel26" alignment="1" min="-2" pref="210" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel32" pref="210" max="32767" attributes="0"/>
+                                      <Component id="lblProgramaEstudio" pref="210" max="32767" attributes="0"/>
                                       <Component id="jLabel27" alignment="1" max="32767" attributes="0"/>
                                       <Component id="jLabel29" alignment="1" max="32767" attributes="0"/>
                                   </Group>
@@ -376,7 +377,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel29" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel32" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="lblProgramaEstudio" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel31" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -435,13 +436,16 @@
                         <Property name="text" type="java.lang.String" value="Empleados"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel32">
+                    <Component class="javax.swing.JLabel" name="lblProgramaEstudio">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/iconsHome/arrow-descent-24.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Programas de Estudio"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblProgramaEstudioMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel33">
                       <Properties>
@@ -494,7 +498,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" pref="188" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="dsp_Veiculos" min="-2" max="-2" attributes="0"/>
+                              <Component id="dsp_Veiculos" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -526,8 +530,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="dsp_Veiculos">
                       <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/icons8-back-32.png"/>
+                          <Image iconType="3" name="/iconsHome/down-16.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -553,8 +558,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel20" min="-2" pref="188" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="dsp_Reportes" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="dsp_Reportes" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -585,8 +590,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="dsp_Reportes">
                       <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/icons8-back-32.png"/>
+                          <Image iconType="3" name="/iconsHome/down-16.png"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -612,8 +618,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel44" min="-2" pref="188" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="dsp_adm_informacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="dsp_adm_informacion" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -623,7 +629,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="dsp_adm_informacion" max="32767" attributes="0"/>
-                                  <Component id="jLabel44" max="32767" attributes="0"/>
+                                  <Component id="jLabel44" pref="32" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -644,8 +650,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="dsp_adm_informacion">
                       <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Imagenes/icons8-back-32.png"/>
+                          <Image iconType="3" name="/iconsHome/down-16.png"/>
                         </Property>
                       </Properties>
                       <Events>

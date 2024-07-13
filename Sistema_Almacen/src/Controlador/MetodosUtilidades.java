@@ -37,38 +37,82 @@ import javax.swing.JComponent;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.TimingTargetAdapter;
+
 public class MetodosUtilidades {
-  private JPanel glo;
-  private JFrame frame;
+
+    private JPanel glo;
+    private JFrame frame;
     private Frm_R_Estudiante vistaEstudiante;
-  private Timer timer;
- private VentanaPrincipal ventanaPrincipal;
+    private Timer timer;
+    private VentanaPrincipal ventanaPrincipal;
+    private Animator animator;
+
     public MetodosUtilidades(Frm_R_Estudiante vistaEstudiante) {
         this.vistaEstudiante = vistaEstudiante;
-   
+
     }
-    
-       public MetodosUtilidades(JFrame frame) {
+
+    public MetodosUtilidades(JFrame frame) {
         this.frame = frame;
     }
-        public MetodosUtilidades(VentanaPrincipal ventanaPrincipal) {
+
+    public MetodosUtilidades(VentanaPrincipal ventanaPrincipal) {
         this.ventanaPrincipal = ventanaPrincipal;
     }
-     
 
-     //Metodo para ocultar y desocultar un panel
-     public void LogicaPanel(JPanel jo,int ancho ,int alto) {
-        if (jo.isVisible()) {
-            jo.setVisible(false);
-            jo.setPreferredSize(new Dimension(0, 0)); // Establece altura cero
-        } else {
-            jo.setPreferredSize(new Dimension(ancho, alto)); // Establece altura deseada
-            jo.setVisible(true);
+    //Metodo para ocultar y desocultar un panel
+    public void LogicaPanel(JPanel jo, int ancho, int alto) {
+        if (animator != null && animator.isRunning()) {
+            return;
         }
-     }
-     
-     //timer para ventana estudiante 
- public void initTimer(DateChooser dateChooser) {
+
+        boolean expanding = !jo.isVisible();
+        int startHeight = jo.getHeight();
+        int endHeight = expanding ? alto : 0;
+
+        // Determinar la duración de la animación en función de la altura del panel
+        int duration;
+        if (alto <= 100) {
+            duration = 300;
+        } else if (alto <= 300) {
+            duration = 500;
+        } else if (alto <= 500) {
+            duration = 600;
+        } else {
+            duration = 1000; // Default duration for heights greater than 500
+        }
+
+        animator = new Animator(duration); // Duración de la animación en milisegundos
+        animator.addTarget(new TimingTargetAdapter() {
+            @Override
+            public void timingEvent(float fraction) {
+                int newHeight = startHeight + (int) ((endHeight - startHeight) * fraction);
+                jo.setPreferredSize(new Dimension(ancho, newHeight));
+                jo.revalidate();
+                jo.repaint();
+            }
+
+            @Override
+            public void end() {
+                if (!expanding) {
+                    jo.setVisible(false);
+                }
+            }
+
+            @Override
+            public void begin() {
+                if (expanding) {
+                    jo.setVisible(true);
+                }
+            }
+        });
+        animator.start();
+    }
+
+    //timer para ventana estudiante 
+    public void initTimer(DateChooser dateChooser) {
         timer = new Timer(300, (evt) -> {
             SelectedDate selectedDate = dateChooser.getSelectedDate();
             if (selectedDate != null) {
@@ -80,15 +124,15 @@ public class MetodosUtilidades {
 
                 // Actualizar el texto en lblfechaNacimiento en el EDT
                 SwingUtilities.invokeLater(() -> {
-                  vistaEstudiante.getfechaNacimiento().setText(fechaSeleccionada);
+                    vistaEstudiante.getfechaNacimiento().setText(fechaSeleccionada);
                 });
             }
         });
         timer.start(); // Inicia el Timer
     }
- 
- //codigo generar qr ventana estudiante
-   public void generarQR(String codigo, String directorio) {
+
+    //codigo generar qr ventana estudiante
+    public void generarQR(String codigo, String directorio) {
         int size = 800;
         String fileType = "png";
 
@@ -114,17 +158,17 @@ public class MetodosUtilidades {
 
             ImageIO.write(image, fileType, f);
             System.out.println("Código QR generado exitosamente en: " + f.getAbsolutePath());
-           
-  ImageIcon mIcono = new ImageIcon(image.getScaledInstance(vistaEstudiante.getLblqr().getWidth(), vistaEstudiante.getLblqr().getHeight(), Image.SCALE_SMOOTH));
+
+            ImageIcon mIcono = new ImageIcon(image.getScaledInstance(vistaEstudiante.getLblqr().getWidth(), vistaEstudiante.getLblqr().getHeight(), Image.SCALE_SMOOTH));
 
             vistaEstudiante.getLblqr().setIcon(mIcono);
         } catch (WriterException | IOException ex) {
             Logger.getLogger(MetodosUtilidades.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-   
-  //metodo para traer paneles de jframes
-   public void actualizarPanel(JPanel contenedor, JPanel formulario) {
+
+    //metodo para traer paneles de jframes
+    public void actualizarPanel(JPanel contenedor, JPanel formulario) {
         contenedor.removeAll();
         contenedor.setLayout(new BorderLayout()); // Asegúrate de usar BorderLayout
         contenedor.add(formulario, BorderLayout.CENTER);
@@ -141,7 +185,8 @@ public class MetodosUtilidades {
             }
         });
     }
-       public void actualizarInternalFrame(JDesktopPane desktopPane, JInternalFrame internalFrame) {
+
+    public void actualizarInternalFrame(JDesktopPane desktopPane, JInternalFrame internalFrame) {
         desktopPane.add(internalFrame);
         internalFrame.setVisible(true);
         try {
@@ -150,8 +195,8 @@ public class MetodosUtilidades {
             e.printStackTrace();
         }
     }
-        
-        // Método para configurar el MouseListener en un JPanel y sus componentes hijos
+
+    // Método para configurar el MouseListener en un JPanel y sus componentes hijos
 //    public void configurarMouseListener(JPanel panel, Runnable onClick) {
 //        MouseAdapter mouseListener = new MouseAdapter() {
 //            @Override
@@ -169,7 +214,7 @@ public class MetodosUtilidades {
 //            }
 //        }
 //    }
-        public void configurarMouseListener(JPanel panel, Runnable onClick, List<JComponent> ignoreComponents) {
+    public void configurarMouseListener(JPanel panel, Runnable onClick, List<JComponent> ignoreComponents) {
         MouseAdapter mouseListener = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -188,13 +233,10 @@ public class MetodosUtilidades {
             }
         }
     }
-        
-  public  void ocultarComponentes(JComponent... componentes) {
+
+    public void ocultarComponentes(JComponent... componentes) {
         for (JComponent componente : componentes) {
             componente.setVisible(false);
         }
     }
 }
-
-
- 
