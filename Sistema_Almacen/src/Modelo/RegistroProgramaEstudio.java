@@ -9,35 +9,24 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
-
 public class RegistroProgramaEstudio {
     
-       public static String registrarPrograma(
-        String cod_Programa,
-        String Nombre
-    ) throws SQLException {
-        
-        CallableStatement cs = null;
-        Connection con = null;
-        String resultado = "";
-        try {
-            con = conexion.conectar(); // Asegúrate de que este método conecta a tu base de datos
-            cs = con.prepareCall("{call RegistrarPrograma(?,?,?)}");
-            cs.setString(1, cod_Programa);
-            cs.setString(2, Nombre);
-            cs.registerOutParameter(3, Types.VARCHAR); // Registro del parámetro de salida
-            cs.execute();
-            resultado = cs.getString(3);
-        } finally {
-            if (cs != null) {
-                cs.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-        return resultado;
-    } 
+  public static String registrarPrograma(String cod_Programa, String Nombre) {
+    String resultado = "";
+    String sql = "{call RegistrarPrograma(?,?,?)}";
+    try (Connection con = conexion.conectar();
+         CallableStatement cs = con.prepareCall(sql)) {
+        cs.setString(1, cod_Programa);
+        cs.setString(2, Nombre);
+        cs.registerOutParameter(3, Types.VARCHAR);
+        cs.execute();
+        resultado = cs.getString(3);
+    } catch (SQLException e) {
+        e.printStackTrace();  // Considera una mejor gestión del error.
+    }
+    return resultado;
+}
+
        
        // Método para traer todos los programas
     public static List<ProgramaEstudio> obtenerTodosLosProgramas() throws SQLException {

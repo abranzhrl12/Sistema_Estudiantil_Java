@@ -1,8 +1,6 @@
 
 package Vista;
 
-
-
 import FiveCodMover.FiveCodMoverJFrame;
 import javax.swing.UIManager;
 import Controlador.LoignControlador;
@@ -12,8 +10,6 @@ import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
 import java.util.Arrays;
 import javax.swing.JComponent;
-
-
 public class Login extends javax.swing.JFrame {
  LoignControlador log=new LoignControlador(this);
  Controlador.MetodosUtilidades metodos=new Controlador.MetodosUtilidades(this);
@@ -22,11 +18,12 @@ public class Login extends javax.swing.JFrame {
   jPanel3.requestFocusInWindow();
         this.setLocationRelativeTo(null);
        inicializarMouseListeners();
-        pack();
+        setRoundedCorners();
+         setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+     private void setRoundedCorners() {
         Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30);
         setShape(roundShape);
-        setVisible(true); 
-         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
      @Override
@@ -44,11 +41,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSScaleLabel1 = new rsscalelabel.RSScaleLabel();
-        rSFotoSquare1 = new rojerusan.RSFotoSquare();
-        rSFotoCircle1 = new rojerusan.RSFotoCircle();
-        rSFotoCircle2 = new rojerusan.RSFotoCircle();
-        jPanel1 = new javax.swing.JPanel();
+        panelimg = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         rSLabelImage1 = new rojerusan.RSLabelImage();
         btnSalir = new Vista.Clases.JpanelRound();
@@ -72,23 +65,21 @@ public class Login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        panelimg.setBackground(new java.awt.Color(255, 255, 255));
+        panelimg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel1MouseDragged(evt);
+                n(evt);
             }
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jPanel1MouseMoved(evt);
+                none(evt);
             }
         });
 
         jPanel2.setBackground(new java.awt.Color(68, 122, 186));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rSLabelImage1.setBackground(new java.awt.Color(255, 255, 102));
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesLogin/foto2.png"))); // NOI18N
         rSLabelImage1.setOpaque(true);
-        jPanel2.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 430, 430));
 
         btnSalir.setBackground(new java.awt.Color(2, 29, 48));
         btnSalir.setRoundBottomRight(30);
@@ -124,7 +115,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(btnSalirLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         btnSalirLayout.setVerticalGroup(
             btnSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +125,24 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 130, -1));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(440, 440, 440)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -244,7 +252,7 @@ public class Login extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
+                .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -254,10 +262,10 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtusuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(txtusuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))
                             .addComponent(jSeparator1)
                             .addComponent(jLabel7)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+                            .addComponent(jSeparator2)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -297,17 +305,18 @@ public class Login extends javax.swing.JFrame {
                 .addGap(73, 73, 73))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelimgLayout = new javax.swing.GroupLayout(panelimg);
+        panelimg.setLayout(panelimgLayout);
+        panelimgLayout.setHorizontalGroup(
+            panelimgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelimgLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelimgLayout.setVerticalGroup(
+            panelimgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -316,13 +325,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelimg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelimg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -333,23 +340,22 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_panelRound1MouseMoved
 
     private void panelRound1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound1MouseDragged
-      
 
     }//GEN-LAST:event_panelRound1MouseDragged
 
-    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+    private void n(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n
       FiveCodMoverJFrame.MouseDraggedFrame(evt, this);
         int currentY = evt.getY();
         int frameX = this.getLocation().x;
         int frameY = this.getLocation().y;
         //top
         int distanceY = this.getY();
-    }//GEN-LAST:event_jPanel1MouseDragged
+    }//GEN-LAST:event_n
 
-    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
+    private void none(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_none
         FiveCodMoverJFrame.MousePressed(evt);
         int initialY = evt.getY();
-    }//GEN-LAST:event_jPanel1MouseMoved
+    }//GEN-LAST:event_none
 
     private void btnIniciarSecionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSecionMouseEntered
         // TODO add your handling code here:
@@ -444,13 +450,6 @@ private void cerrarVentana(){
     dispose();
     System.exit(0);
 }
-//private void iniciarVentanaPrincipal(){
-//
-//    //code Necesario Para abrir la nueva ventana si se valida el usuario existe
-//    JOptionPane.showMessageDialog(rootPane, "Creo que inicio secion");
-//    setResultado("Creo que no as ingresado nada o si");
-//}
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Vista.Clases.JpanelRound btnIniciarSecion;
@@ -463,16 +462,12 @@ private void cerrarVentana(){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private rojerusan.RSFotoCircle rSFotoCircle1;
-    private rojerusan.RSFotoCircle rSFotoCircle2;
-    private rojerusan.RSFotoSquare rSFotoSquare1;
+    private javax.swing.JPanel panelimg;
     private rojerusan.RSLabelImage rSLabelImage1;
-    private rsscalelabel.RSScaleLabel rSScaleLabel1;
     private javax.swing.JLabel txtRespuesta;
     private rojerusan.RSPasswordTextPlaceHolder txtpass;
     private app.bolivia.swing.JCTextField txtusuario1;

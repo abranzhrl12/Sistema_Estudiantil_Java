@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Controlador/ControladorTurno.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Controlador/ControladorEstudiante.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Controlador/MetodosUtilidades.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Modelo/Turno.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Modelo/RegistroProgramaEstudio.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Prog_Estudio.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Turno.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/VentanaPrincipal.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Modelo/ProcimientosRegistrarTurno.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Modelo/ProgramaEstudio.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Estudiante.java</file>
-            <file>file:/C:/Users/Abraham/Documents/Sistema/Sistema_Estudiantil_Java/Sistema_Almacen/src/Controlador/ControladorPrograma.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

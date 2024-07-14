@@ -1,6 +1,5 @@
 
 package Vista;
-
 import FiveCodMover.FiveCodMoverJFrame;
 import Vista.Frm_R_Estudiante;
 import Vista.ReadQrcode;
@@ -10,46 +9,28 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Arrays;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import org.jdesktop.animation.timing.Animator;
-import org.jdesktop.animation.timing.TimingTargetAdapter;
-
-/**
- *
- * @author Abraham
- */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
     Vista.Clases.SimpleTitleBar barra2 = new Vista.Clases.SimpleTitleBar();
     Controlador.MetodosUtilidades metodos = new Controlador.MetodosUtilidades(this);
     int ancho = 244;
     private Animator animator;
-
     public VentanaPrincipal() {
         initComponents();
         this.setBackground(new Color(0, 0, 0, 0));
         this.setLocationRelativeTo(null);
-        inicializarMouseListeners();
-        
+        inicializarMouseListeners(); 
         //Configurar dimenciones 
         int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
         int minHeight = (int) (0.9 * screenHeight);
         int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
         int minWidth = (int) (0.8 * screenWidth);
-        
         setSize(new Dimension(minWidth,minHeight));
-        
-        
-        barra2.init(this);
-        
+        barra2.init(this);   
         collapseAllPanels();
     }
-
-
-    private void inicializarMouseListeners() {
-        
-          metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {
-            
+    private void inicializarMouseListeners() {      
+          metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {         
             metodos.actualizarPanel(PanelPrincipal,new Frm_R_Estudiante().panel_r_3);
         }, Arrays.asList(new JComponent[]{ dsp_estudiantes}));
 
@@ -58,7 +39,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             metodos.actualizarPanel(PanelPrincipal, readQR.lectorQRPanel);
         }, Arrays.asList(new JComponent[]{ /* Agregar aquí los componentes a ignorar */ }));
     }
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -531,15 +511,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(pRegistrarVeiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(pReportes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLectorQR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pReportes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLectorQR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegistrarEstudiante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -702,7 +681,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1143, Short.MAX_VALUE)
+            .addGap(0, 1114, Short.MAX_VALUE)
         );
 
         contendorRigt.add(PanelPrincipal);
@@ -717,7 +696,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1174, Short.MAX_VALUE)
         );
 
         pack();
@@ -740,28 +719,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLectorQRMouseClicked
 
     private void dsp_estudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_estudiantesMouseClicked
-        metodos.LogicaPanel(pRegistrarEstudiante, ancho, 80);
-
-        
+        metodos.LogicaPanel(pRegistrarEstudiante, ancho, 80);    
         boolean isVisible = pRegistrarEstudiante.isVisible();
         if (!isVisible) {
             collapseAllPanels();
         }
          if (isVisible) {
-             dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-            
+             dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));   
         } else{
              dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }
-        
-        pRegistrarEstudiante.setVisible(!isVisible);
-        
+        pRegistrarEstudiante.setVisible(!isVisible);  
     }//GEN-LAST:event_dsp_estudiantesMouseClicked
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
     FiveCodMoverJFrame.MouseDraggedFrame(evt, this);
         int currentY = evt.getY();
-
         int frameX = this.getLocation().x;
         int frameY = this.getLocation().y;
         //top
@@ -784,15 +757,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (!isVisible) {
             collapseAllPanels(); // Añade todos los paneles que deseas colapsar
         }
-        
         if (isVisible) {
-             dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-            
+             dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));     
         } else{
              dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }
         pRegistrarVeiculos.setVisible(!isVisible);
-
     }//GEN-LAST:event_dsp_VeiculosMouseClicked
 
     private void btnRegistrarEstudiante1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante1MouseClicked
@@ -806,21 +776,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void dsp_ReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_ReportesMouseClicked
         // TODO add your handling code here:
         metodos.LogicaPanel(pReportes, ancho, 82);
-           boolean isVisible = pReportes.isVisible();
-           
+           boolean isVisible = pReportes.isVisible();     
         if (!isVisible) {
-            collapseAllPanels();
-            
+            collapseAllPanels();        
         }
          if (isVisible) {
-             dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-            
+             dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));     
         } else{
              dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }
-        pReportes.setVisible(!isVisible);
-        
-        
+        pReportes.setVisible(!isVisible);   
     }//GEN-LAST:event_dsp_ReportesMouseClicked
 
     private void btnRegistrarEstudiante10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante10MouseClicked
@@ -838,17 +803,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (!isVisible) {
             collapseAllPanels();
         }
-        
          if (isVisible) {
              dsp_adm_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
             
         } else{
              dsp_adm_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
-        }
-        
-        pAdministrarInformacion.setVisible(!isVisible);
-        
-        
+        }     
+        pAdministrarInformacion.setVisible(!isVisible);   
     }//GEN-LAST:event_dsp_adm_informacionMouseClicked
 
     private void btnRegistrarEstudiante11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante11MouseClicked
@@ -856,13 +817,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarEstudiante11MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-       
-        
+        // TODO add your handling code here:    
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_btnSalirMouseClicked
 
@@ -870,21 +828,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnSalir.setBackground(new Color(4, 83, 138));
-
     }//GEN-LAST:event_btnSalirMouseEntered
 
     private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
         // TODO add your handling code here:
-
         btnSalir.setCursor(Cursor.getDefaultCursor());
         btnSalir.setBackground(new Color(2, 29, 48));
     }//GEN-LAST:event_btnSalirMouseExited
 
     private void lblProgramaEstudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProgramaEstudioMouseClicked
-        // TODO add your handling code here:
-        
-        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Prog_Estudio().panelProgramaEstudio);
-        
+        // TODO add your handling code here:   
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Prog_Estudio().panelProgramaEstudio);      
     }//GEN-LAST:event_lblProgramaEstudioMouseClicked
 
     private void collapseAllPanels() {
@@ -893,40 +847,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
         dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
         dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-    
- 
 }
-    
-    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaPrincipal().setVisible(true);

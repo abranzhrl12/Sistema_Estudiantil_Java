@@ -5,7 +5,6 @@
 package Vista;
 
 import java.awt.Color;
-import sun.jvm.hotspot.utilities.RBColor;
 
 /**
  *

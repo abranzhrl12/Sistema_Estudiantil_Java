@@ -42,11 +42,6 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
         txtcodigoPrograma = new componentes.TextFieldShadown();
         button2 = new componentes.Button();
         button1 = new componentes.Button();
-        panelRound2 = new Vista.Clases.PanelRound();
-        rSScrollPane2 = new necesario.RSScrollPane();
-        dttabla1 = new rojerusan.RSTableMetro();
-        lblclose = new rojerusan.RSLabelImage();
-        lblclose1 = new rojerusan.RSLabelImage();
         rSScrollPane1 = new necesario.RSScrollPane();
         dttabla = new rojerusan.RSTableMetro();
 
@@ -54,17 +49,12 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
 
         panelProgramaEstudio.setBackground(new java.awt.Color(255, 255, 255));
         panelProgramaEstudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 0), 0));
-        panelProgramaEstudio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelProgramaEstudio.add(txtNombrePrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        panelProgramaEstudio.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Programa de Estudio:");
-        panelProgramaEstudio.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-        panelProgramaEstudio.add(txtcodigoPrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 420, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -76,7 +66,6 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        panelProgramaEstudio.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 240, 50));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -88,86 +77,6 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        panelProgramaEstudio.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 240, 50));
-
-        panelRound2.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound2.setBorderColor(new java.awt.Color(204, 204, 204));
-        panelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
-        rSScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        rSScrollPane2.setColorBackground(new java.awt.Color(255, 255, 255));
-
-        dttabla1.setBackground(new java.awt.Color(204, 204, 204));
-        dttabla1.setForeground(new java.awt.Color(255, 255, 255));
-        dttabla1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"12321", "fdsfsd", "54", "fsdf", "fdsf"},
-                {"121", "fdsfsd", "453", "fdsf", null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "CODIGO", "NOMBRE", "CANTIDAD ", "MARCA", "MODELO"
-            }
-        ));
-        dttabla1.setAltoHead(40);
-        dttabla1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        dttabla1.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
-        dttabla1.setColorBordeFilas(new java.awt.Color(0, 0, 204));
-        dttabla1.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        dttabla1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        dttabla1.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
-        dttabla1.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
-        dttabla1.setColorForegroundHead(new java.awt.Color(102, 102, 102));
-        dttabla1.setColorSelBackgound(new java.awt.Color(102, 102, 102));
-        dttabla1.setColorSelForeground(new java.awt.Color(102, 102, 102));
-        dttabla1.setDoubleBuffered(true);
-        dttabla1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        dttabla1.setGridColor(new java.awt.Color(255, 255, 255));
-        dttabla1.setGrosorBordeFilas(0);
-        dttabla1.setRowHeight(39);
-        dttabla1.setRowMargin(2);
-        dttabla1.setRowSelectionAllowed(false);
-        dttabla1.setSelectionForeground(new java.awt.Color(153, 153, 153));
-        dttabla1.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        dttabla1.setShowGrid(false);
-        rSScrollPane2.setViewportView(dttabla1);
-
-        panelRound2.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
-
-        lblclose.setBackground(new java.awt.Color(255, 153, 0));
-        lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
-        lblclose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblcloseMouseClicked(evt);
-            }
-        });
-        panelRound2.add(lblclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 48, 30));
-
-        panelProgramaEstudio.add(panelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
-
-        lblclose1.setBackground(new java.awt.Color(255, 153, 0));
-        lblclose1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
-        lblclose1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblclose1MouseClicked(evt);
-            }
-        });
-        panelProgramaEstudio.add(lblclose1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 48, 30));
 
         rSScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,7 +116,49 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
         dttabla.setShowGrid(false);
         rSScrollPane1.setViewportView(dttabla);
 
-        panelProgramaEstudio.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 710, 220));
+        javax.swing.GroupLayout panelProgramaEstudioLayout = new javax.swing.GroupLayout(panelProgramaEstudio);
+        panelProgramaEstudio.setLayout(panelProgramaEstudioLayout);
+        panelProgramaEstudioLayout.setHorizontalGroup(
+            panelProgramaEstudioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel11))
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtcodigoPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel12))
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtNombrePrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(rSScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelProgramaEstudioLayout.setVerticalGroup(
+            panelProgramaEstudioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProgramaEstudioLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel11)
+                .addGap(11, 11, 11)
+                .addComponent(txtcodigoPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel12)
+                .addGap(11, 11, 11)
+                .addComponent(txtNombrePrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(rSScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addGroup(panelProgramaEstudioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,21 +182,12 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
 
-      
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
       String a=  programa.registrarPrograma();
         System.out.println(a);
     }//GEN-LAST:event_button1ActionPerformed
-
-    private void lblcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcloseMouseClicked
-
-    }//GEN-LAST:event_lblcloseMouseClicked
-
-    private void lblclose1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclose1MouseClicked
-       
-    }//GEN-LAST:event_lblclose1MouseClicked
 
     public String getCodigoPrograma(){
     return txtcodigoPrograma.getText().trim();
@@ -290,15 +232,10 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
     private componentes.Button button1;
     private componentes.Button button2;
     private rojerusan.RSTableMetro dttabla;
-    private rojerusan.RSTableMetro dttabla1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private rojerusan.RSLabelImage lblclose;
-    private rojerusan.RSLabelImage lblclose1;
     public Vista.Clases.JpanelRound panelProgramaEstudio;
-    private Vista.Clases.PanelRound panelRound2;
     private necesario.RSScrollPane rSScrollPane1;
-    private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtNombrePrograma;
     private componentes.TextFieldShadown txtcodigoPrograma;
     // End of variables declaration//GEN-END:variables

@@ -2,12 +2,6 @@ package ComboxPerzonalizado;
 
 import java.awt.image.BufferedImage;
 
-/**
- * A fast Gaussian Blur implementation (linear time).
- *
- * @see <a href="http://blog.ivank.net/fastest-gaussian-blur.html">Fastest
- * Gaussian Blur (in linear time)</a>
- */
 public class FastGaussianBlur {
 
     public static void blur(BufferedImage image, final double radius) {

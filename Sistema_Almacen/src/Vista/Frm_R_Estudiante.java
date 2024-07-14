@@ -3,10 +3,7 @@ package Vista;
 
 import Controlador.ControladorEstudiante;
 import Controlador.MetodosUtilidades;
-import Vista.Clases.GlassPanePopup;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,20 +23,13 @@ public class Frm_R_Estudiante extends javax.swing.JFrame{
 MetodosUtilidades qr = new MetodosUtilidades(this);
    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private Timer timer;
-    
- 
     public Frm_R_Estudiante() {
- 
         initComponents();
         qr.initTimer(dateChooser1);
         qr.ocultarComponentes(dateChooser1,lblclose,panelRound1);
 
     lblclose.setPreferredSize(new Dimension(0, 0));
-  
-
-
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -63,7 +53,6 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
         panelRoundshadow2 = new Vista.Clases.PanelRoundshadow();
         lblfechaNacimiento = new javax.swing.JLabel();
         jpanelRound1 = new Vista.Clases.JpanelRound();
-        rSLabelImage2 = new rojerusan.RSLabelImage();
         jLabel8 = new javax.swing.JLabel();
         panelRoundshadow3 = new Vista.Clases.PanelRoundshadow();
         lblqr = new javax.swing.JLabel();
@@ -230,21 +219,15 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
         jpanelRound1.setRoundBottomRight(20);
         jpanelRound1.setRoundTopRight(20);
 
-        rSLabelImage2.setBackground(new java.awt.Color(255, 153, 0));
-        rSLabelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
-
         javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
         jpanelRound1.setLayout(jpanelRound1Layout);
         jpanelRound1Layout.setHorizontalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSLabelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
         jpanelRound1Layout.setVerticalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+            .addGap(0, 37, Short.MAX_VALUE)
         );
 
         panelRoundshadow2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 0, -1, 37));
@@ -340,7 +323,7 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
         });
 
         lblclose.setBackground(new java.awt.Color(255, 153, 0));
-        lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
+        lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-calendar-27.png"))); // NOI18N
         lblclose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblcloseMouseClicked(evt);
@@ -579,9 +562,7 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblfechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblfechaNacimientoMouseClicked
-
         qr.LogicaPanel(dateChooser1,264,500 );
-
         lblclose.setPreferredSize(new Dimension(20, 20));
         lblclose.setVisible(true);
     }//GEN-LAST:event_lblfechaNacimientoMouseClicked
@@ -648,7 +629,6 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
         //        if (rutas.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             //            filePaths = rutas.getSelectedFile().getAbsolutePath();
             //        }
-
         qr.generarQR(getCodigo(), filePaths);
 
     }//GEN-LAST:event_button1ActionPerformed
@@ -659,22 +639,9 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
-        }
-            Message obj = new Message();
-        obj.eventOK(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                System.out.println("Click OK");
-                GlassPanePopup.closePopupLast();
-            }
-        });
-        GlassPanePopup.showPopup(obj);
-//        String a=  cEstudiante.registrarEstudiante();
-//        System.out.println(a);
-//        if(a.equals("Estudiante registrado correctamente.")){
-      
-//        }
-        
+        }       
+        String a=  cEstudiante.registrarEstudiante();
+        System.out.println(a);        
     }//GEN-LAST:event_button2ActionPerformed
 
     private void cbprogramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbprogramaMouseClicked
@@ -806,7 +773,6 @@ return cbSemestres.getSelectedItem().toString();
     private Vista.Clases.PanelRoundshadow panelRoundshadow6;
     public LIB.JPanelRound panel_r_3;
     private Vista.Clases.JpanelRound panelfecha;
-    private rojerusan.RSLabelImage rSLabelImage2;
     private necesario.RSScrollPane rSScrollPane1;
     private componentes.TextFieldShadown txtapeMaterno;
     private componentes.TextFieldShadown txtapePaterno;

@@ -10,6 +10,44 @@
 <project name="Sistema_Almacen" default="default" basedir=".">
     <description>Builds, tests, and runs the project Sistema_Almacen.</description>
     <import file="nbproject/build-impl.xml"/>
+
+    <!-- Set compiler options -->
+    <target name="-pre-compile" depends="init">
+        <property name="javac.compilerargs" value="--release 8 -Xlint:-options"/>
+    </target>
+
+    <!-- Define a custom javac macro -->
+    <target name="-init-macrodef-javac-custom">
+        <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
+            <attribute name="debug" default="on"/>
+            <attribute name="deprecation" default="off"/>
+            <attribute name="source" default="8"/>
+            <attribute name="target" default="8"/>
+            <element name="classpath" optional="true"/>
+            <element name="bootclasspath" optional="true"/>
+            <element name="srcdir" optional="true"/>
+            <element name="resources" optional="true"/>
+            <element name="resources-mapping" optional="true"/>
+            <sequential>
+                <javac destdir="@{destdir}" 
+                       debug="@{debug}" 
+                       deprecation="@{deprecation}" 
+                       compilerargs="${javac.compilerargs}">
+                    <src refid="src.dir"/>
+                    <classpath>
+                        <path refid="javac.classpath"/>
+                        <path refid="project.classpath"/>
+                    </classpath>
+                    <bootclasspath>
+                        <path refid="javac.bootclasspath"/>
+                    </bootclasspath>
+                    <resources refid="resources.dir"/>
+                    <resources-mapping refid="resources.mapping"/>
+                </javac>
+            </sequential>
+        </macrodef>
+    </target>
+
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -25,7 +63,7 @@
       -pre-compile-test:         called before javac compilation of JUnit tests
       -post-compile-test:        called after javac compilation of JUnit tests
       -pre-compile-test-single:  called before javac compilation of single JUnit test
-      -post-compile-test-single: called after javac compilation of single JUunit test
+      -post-compile-test-single: called after javac compilation of single JUnit test
       -pre-jar:                  called before JAR building
       -post-jar:                 called after JAR building
       -post-clean:               called after cleaning build products

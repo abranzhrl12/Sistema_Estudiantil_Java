@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-
 import com.raven.datechooser.DateChooser;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -24,9 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 import com.raven.datechooser.SelectedDate;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 import javax.swing.SwingUtilities;
-
 import java.awt.Component;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -239,4 +236,66 @@ public class MetodosUtilidades {
             componente.setVisible(false);
         }
     }
+    
+//    
+//           this.setLocationRelativeTo(null);
+//        this.setBackground(new Color(0,0,0,0));
+//     barra2.init(this);
+////      
+// addComponentListener(new ComponentAdapter() {
+//            @Override
+//            public void componentResized(ComponentEvent e) {
+//                super.componentResized(e);
+//                shape(); // Aplicar forma redondeada después del redimensionamiento
+//            }
+//        });
+//  Timer timer = new Timer(100, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                repaint();
+//                shape(); // Aplicar la forma redondeada después de cada repintado
+//            }
+//        });
+//        timer.start();
+
+//         Escuchar cambios de tamaño en la ventana
+//        addComponentListener(new ComponentAdapter() {
+//            @Override
+//            public void componentResized(ComponentEvent e) {
+//                super.componentResized(e);
+//                shape(); // Aplicar forma redondeada después del redimensionamiento
+//            }
+//        });
+//
+//         Timer para repintar la ventana
+//        Timer timer = new Timer(100, e -> {
+//            repaint();
+//            shape(); // Aplicar la forma redondeada después de cada repintado
+//        });
+//        timer.start();
+//
+//         Manejar eventos de cambio de foco de ventana para actualizar la forma redondeada
+//        addWindowFocusListener(new WindowAdapter() {
+//            @Override
+//            public void windowGainedFocus(WindowEvent e) {
+//                super.windowGainedFocus(e);
+//                shape(); // Actualizar forma redondeada al ganar foco
+//            }
+//
+//            @Override
+//            public void windowLostFocus(WindowEvent e) {
+//                super.windowLostFocus(e);
+//                shape(); // Actualizar forma redondeada al perder foco
+//            }
+//        });
+
+//    }
+//    
+//   public void shape(){
+//     Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 25, 25);
+//        setShape(roundShape); // Aplicar la forma redondeada a la ventana
+//  validate(); // Validar el diseño
+//        repaint(); // Repintar la ventana
+//   } 
+
 }
