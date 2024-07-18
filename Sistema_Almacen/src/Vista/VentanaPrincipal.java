@@ -91,14 +91,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PanelPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
-        contenedorLeftmenu.setBackground(new java.awt.Color(153, 255, 153));
+        contenedorLeftmenu.setBackground(new java.awt.Color(255, 255, 255));
 
-        jpanelRound1.setBackground(new java.awt.Color(204, 255, 255));
+        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setRoundBottomLeft(15);
         jpanelRound1.setRoundTopLeft(15);
 
@@ -644,7 +645,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         contendorRigt.setLayout(new javax.swing.BoxLayout(contendorRigt, javax.swing.BoxLayout.Y_AXIS));
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setMaximumSize(new java.awt.Dimension(32767, 60));
         jPanel2.setMinimumSize(new java.awt.Dimension(0, 60));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -671,7 +672,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         contendorRigt.add(jPanel2);
 
-        PanelPrincipal.setBackground(new java.awt.Color(204, 102, 0));
+        PanelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
@@ -696,7 +697,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1174, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -838,7 +839,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void lblProgramaEstudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProgramaEstudioMouseClicked
         // TODO add your handling code here:   
-        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Prog_Estudio().panelProgramaEstudio);      
+        metodos.actualizarPanel(PanelPrincipal,new Frm_R_Prog_Estudio().PanelProgramas);      
     }//GEN-LAST:event_lblProgramaEstudioMouseClicked
 
     private void collapseAllPanels() {

@@ -32,7 +32,6 @@ public class Frm_R_Turno extends javax.swing.JFrame {
         rSScrollPane1 = new necesario.RSScrollPane();
         dttabla = new rojerusan.RSTableMetro();
         jLabel8 = new javax.swing.JLabel();
-        lblclose = new rojerusan.RSLabelImage();
         txtHoraInicialTurno = new componentes.TextFieldShadown();
         jLabel13 = new javax.swing.JLabel();
         txtNombreTurno = new componentes.TextFieldShadown();
@@ -43,7 +42,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
 
         jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpanelRound1.add(txtHoraFinalTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 420, -1));
+        jpanelRound1.add(txtHoraFinalTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 470, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
@@ -118,16 +117,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel8.setText("Hora_Final: ");
         jpanelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-
-        lblclose.setBackground(new java.awt.Color(255, 153, 0));
-        lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
-        lblclose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblcloseMouseClicked(evt);
-            }
-        });
-        jpanelRound1.add(lblclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 48, 30));
-        jpanelRound1.add(txtHoraInicialTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 420, -1));
+        jpanelRound1.add(txtHoraInicialTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 430, -1));
 
         jLabel13.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel13.setText("Turno:");
@@ -177,10 +167,6 @@ public class Frm_R_Turno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lblcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcloseMouseClicked
-
-    }//GEN-LAST:event_lblcloseMouseClicked
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
 
@@ -245,7 +231,6 @@ return txtHoraFinalTurno.getText().trim();
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel8;
     private Vista.Clases.JpanelRound jpanelRound1;
-    private rojerusan.RSLabelImage lblclose;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
     private componentes.TextFieldShadown txtCodigoTurno;
