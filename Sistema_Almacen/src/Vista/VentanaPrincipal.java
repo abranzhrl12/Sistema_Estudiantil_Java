@@ -1,6 +1,8 @@
 
 package Vista;
 import FiveCodMover.FiveCodMoverJFrame;
+import Vista.Clases.MenuScrollBar;
+import Vista.Clases.ModernScrollBarUI;
 import Vista.Frm_R_Estudiante;
 import Vista.ReadQrcode;
 import java.awt.Color;
@@ -9,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Arrays;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import org.jdesktop.animation.timing.Animator;
 public class VentanaPrincipal extends javax.swing.JFrame {
     Vista.Clases.SimpleTitleBar barra2 = new Vista.Clases.SimpleTitleBar();
@@ -17,22 +20,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private Animator animator;
     public VentanaPrincipal() {
         initComponents();
-        this.setBackground(new Color(0, 0, 0, 0));
+        
+        jScrollPane1.getVerticalScrollBar().setUI(new MenuScrollBar());
+        jScrollPane1.setBackground(new Color(0,0,0,0));
+       
         this.setLocationRelativeTo(null);
         inicializarMouseListeners(); 
         //Configurar dimenciones 
-        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-        int minHeight = (int) (0.9 * screenHeight);
-        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-        int minWidth = (int) (0.8 * screenWidth);
-        setSize(new Dimension(minWidth,minHeight));
+//        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+//        int minHeight = (int) (0.9 * screenHeight);
+//        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+//        int minWidth = (int) (0.8 * screenWidth);
+//        setSize(new Dimension(minWidth,minHeight));
+
         barra2.init(this);   
         collapseAllPanels();
     }
-    private void inicializarMouseListeners() {      
-          metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {         
-            metodos.actualizarPanel(PanelPrincipal,new Frm_R_Estudiante().panel_r_3);
-        }, Arrays.asList(new JComponent[]{ dsp_estudiantes}));
+    private void inicializarMouseListeners() {  
+        
+        metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {
+            metodos.actualizarPanel(PanelPrincipal, new Frm_R_Estudiante().panel_r_3);
+        }, Arrays.asList(new JComponent[]{lblEstudianteIC}));
+
+        metodos.configurarMouseListener(btnLectorQR, () -> {
+            
+        }, Arrays.asList(new JComponent[]{lblLector}));
+
 
         metodos.configurarMouseListener(btnLectorQR, () -> {
             ReadQrcode readQR = new ReadQrcode();
@@ -45,14 +58,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         contenedorLeftmenu = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnSalir = new Vista.Clases.JpanelRound();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jpanelRound1 = new Vista.Clases.JpanelRound();
         btnInicio = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
+        lblInicio = new javax.swing.JLabel();
         btnLectorQR = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        lblLector = new javax.swing.JLabel();
         btnRegistrarEstudiante = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        dsp_estudiantes = new javax.swing.JLabel();
+        lblEstudiantes = new javax.swing.JLabel();
+        lblEstudianteIC = new javax.swing.JLabel();
         pRegistrarEstudiante = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -67,25 +85,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        btnRegistrarEstudiante1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        dsp_Veiculos = new javax.swing.JLabel();
-        btnRegistrarEstudiante10 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        dsp_Reportes = new javax.swing.JLabel();
-        btnRegistrarEstudiante11 = new javax.swing.JPanel();
-        jLabel44 = new javax.swing.JLabel();
-        dsp_adm_informacion = new javax.swing.JLabel();
+        btnRegistrarVeiculo = new javax.swing.JPanel();
+        lblVeiculo = new javax.swing.JLabel();
+        lblVeiculoIC = new javax.swing.JLabel();
+        btnRegistrarReportes = new javax.swing.JPanel();
+        lblReportes = new javax.swing.JLabel();
+        lblReportesIC = new javax.swing.JLabel();
+        btnAdministrarInformacion = new javax.swing.JPanel();
+        lblAdministracion = new javax.swing.JLabel();
+        lblAdministracionIC = new javax.swing.JLabel();
         pReportes = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         pRegistrarVeiculos = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnSalir = new Vista.Clases.JpanelRound();
-        jLabel2 = new javax.swing.JLabel();
         contendorRigt = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         PanelPrincipal = new javax.swing.JPanel();
@@ -95,23 +109,103 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
         contenedorLeftmenu.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesLogin/Scan.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(31, 31, 31))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
+        );
+
+        btnSalir.setBackground(new java.awt.Color(2, 29, 48));
+        btnSalir.setRoundBottomRight(30);
+        btnSalir.setRoundTopRight(30);
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSalirMouseExited(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/white-logout-32.png"))); // NOI18N
+        jLabel2.setText("Cerrar secion");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnSalirLayout = new javax.swing.GroupLayout(btnSalir);
+        btnSalir.setLayout(btnSalirLayout);
+        btnSalirLayout.setHorizontalGroup(
+            btnSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSalirLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
+        );
+        btnSalirLayout.setVerticalGroup(
+            btnSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSalirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap())
+        );
+
+        jScrollPane1.setBackground(new java.awt.Color(51, 255, 51));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setAutoscrolls(true);
+
         jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setRoundBottomLeft(15);
-        jpanelRound1.setRoundTopLeft(15);
 
         btnInicio.setBackground(new java.awt.Color(255, 255, 255));
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnInicioMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInicioMouseExited(evt);
+            }
         });
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/home-32_1.png"))); // NOI18N
-        jLabel13.setText("Inicio");
+        lblInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/home-32_1.png"))); // NOI18N
+        lblInicio.setText("Inicio");
 
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
@@ -119,14 +213,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnInicioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnInicioLayout.setVerticalGroup(
             btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnInicioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
+                .addContainerGap()
+                .addComponent(lblInicio)
                 .addContainerGap())
         );
 
@@ -135,10 +229,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLectorQRMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLectorQRMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLectorQRMouseExited(evt);
+            }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/icons8-scan-32.png"))); // NOI18N
-        jLabel5.setText("Lector QR");
+        lblLector.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/icons8-scan-32.png"))); // NOI18N
+        lblLector.setText("Lector QR");
+        lblLector.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout btnLectorQRLayout = new javax.swing.GroupLayout(btnLectorQR);
         btnLectorQR.setLayout(btnLectorQRLayout);
@@ -146,14 +247,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             btnLectorQRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnLectorQRLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblLector, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnLectorQRLayout.setVerticalGroup(
             btnLectorQRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnLectorQRLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addComponent(lblLector)
                 .addContainerGap())
         );
 
@@ -162,21 +263,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRegistrarEstudianteMouseClicked(evt);
             }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/user-32.png"))); // NOI18N
-        jLabel4.setText("Estudiantes");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRegistrarEstudianteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRegistrarEstudianteMouseExited(evt);
             }
         });
 
-        dsp_estudiantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
-        dsp_estudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/user-32.png"))); // NOI18N
+        lblEstudiantes.setText("Estudiantes");
+        lblEstudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dsp_estudiantesMouseClicked(evt);
+                lblEstudiantesMouseClicked(evt);
+            }
+        });
+
+        lblEstudianteIC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEstudianteIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
+        lblEstudianteIC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEstudianteICMouseClicked(evt);
             }
         });
 
@@ -186,9 +293,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             btnRegistrarEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRegistrarEstudianteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dsp_estudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblEstudianteIC, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         btnRegistrarEstudianteLayout.setVerticalGroup(
@@ -196,8 +303,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(btnRegistrarEstudianteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(btnRegistrarEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dsp_estudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblEstudianteIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEstudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -314,135 +421,153 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnRegistrarEstudiante1.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegistrarEstudiante1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRegistrarVeiculo.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistrarVeiculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegistrarEstudiante1MouseClicked(evt);
+                btnRegistrarVeiculoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRegistrarVeiculoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRegistrarVeiculoMouseExited(evt);
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/auto-32.png"))); // NOI18N
-        jLabel6.setText("Veiculos");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/auto-32.png"))); // NOI18N
+        lblVeiculo.setText("Veiculos");
+        lblVeiculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                lblVeiculoMouseClicked(evt);
             }
         });
 
-        dsp_Veiculos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
-        dsp_Veiculos.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblVeiculoIC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVeiculoIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
+        lblVeiculoIC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dsp_VeiculosMouseClicked(evt);
+                lblVeiculoICMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout btnRegistrarEstudiante1Layout = new javax.swing.GroupLayout(btnRegistrarEstudiante1);
-        btnRegistrarEstudiante1.setLayout(btnRegistrarEstudiante1Layout);
-        btnRegistrarEstudiante1Layout.setHorizontalGroup(
-            btnRegistrarEstudiante1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRegistrarEstudiante1Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnRegistrarVeiculoLayout = new javax.swing.GroupLayout(btnRegistrarVeiculo);
+        btnRegistrarVeiculo.setLayout(btnRegistrarVeiculoLayout);
+        btnRegistrarVeiculoLayout.setHorizontalGroup(
+            btnRegistrarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRegistrarVeiculoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dsp_Veiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblVeiculoIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        btnRegistrarEstudiante1Layout.setVerticalGroup(
-            btnRegistrarEstudiante1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRegistrarEstudiante1Layout.createSequentialGroup()
+        btnRegistrarVeiculoLayout.setVerticalGroup(
+            btnRegistrarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRegistrarVeiculoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(btnRegistrarEstudiante1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dsp_Veiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnRegistrarVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblVeiculoIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblVeiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        btnRegistrarEstudiante10.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegistrarEstudiante10.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRegistrarReportes.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistrarReportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegistrarEstudiante10MouseClicked(evt);
+                btnRegistrarReportesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRegistrarReportesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRegistrarReportesMouseExited(evt);
             }
         });
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/auto-32.png"))); // NOI18N
-        jLabel20.setText(" Reportes");
-        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/reportes-32.png"))); // NOI18N
+        lblReportes.setText(" Reportes");
+        lblReportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel20MouseClicked(evt);
+                lblReportesMouseClicked(evt);
             }
         });
 
-        dsp_Reportes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
-        dsp_Reportes.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblReportesIC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblReportesIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
+        lblReportesIC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dsp_ReportesMouseClicked(evt);
+                lblReportesICMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout btnRegistrarEstudiante10Layout = new javax.swing.GroupLayout(btnRegistrarEstudiante10);
-        btnRegistrarEstudiante10.setLayout(btnRegistrarEstudiante10Layout);
-        btnRegistrarEstudiante10Layout.setHorizontalGroup(
-            btnRegistrarEstudiante10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRegistrarEstudiante10Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnRegistrarReportesLayout = new javax.swing.GroupLayout(btnRegistrarReportes);
+        btnRegistrarReportes.setLayout(btnRegistrarReportesLayout);
+        btnRegistrarReportesLayout.setHorizontalGroup(
+            btnRegistrarReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRegistrarReportesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dsp_Reportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblReportesIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        btnRegistrarEstudiante10Layout.setVerticalGroup(
-            btnRegistrarEstudiante10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRegistrarEstudiante10Layout.createSequentialGroup()
+        btnRegistrarReportesLayout.setVerticalGroup(
+            btnRegistrarReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRegistrarReportesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(btnRegistrarEstudiante10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dsp_Reportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnRegistrarReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblReportesIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        btnRegistrarEstudiante11.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegistrarEstudiante11.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAdministrarInformacion.setBackground(new java.awt.Color(255, 255, 255));
+        btnAdministrarInformacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegistrarEstudiante11MouseClicked(evt);
+                btnAdministrarInformacionMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAdministrarInformacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAdministrarInformacionMouseExited(evt);
             }
         });
 
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/data-protection-24.png"))); // NOI18N
-        jLabel44.setText("Administrar Informacion");
-        jLabel44.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblAdministracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/data-protection-24.png"))); // NOI18N
+        lblAdministracion.setText("Administrar Informacion");
+        lblAdministracion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel44MouseClicked(evt);
+                lblAdministracionMouseClicked(evt);
             }
         });
 
-        dsp_adm_informacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dsp_adm_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
-        dsp_adm_informacion.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblAdministracionIC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAdministracionIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png"))); // NOI18N
+        lblAdministracionIC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dsp_adm_informacionMouseClicked(evt);
+                lblAdministracionICMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout btnRegistrarEstudiante11Layout = new javax.swing.GroupLayout(btnRegistrarEstudiante11);
-        btnRegistrarEstudiante11.setLayout(btnRegistrarEstudiante11Layout);
-        btnRegistrarEstudiante11Layout.setHorizontalGroup(
-            btnRegistrarEstudiante11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRegistrarEstudiante11Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnAdministrarInformacionLayout = new javax.swing.GroupLayout(btnAdministrarInformacion);
+        btnAdministrarInformacion.setLayout(btnAdministrarInformacionLayout);
+        btnAdministrarInformacionLayout.setHorizontalGroup(
+            btnAdministrarInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAdministrarInformacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAdministracion, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dsp_adm_informacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblAdministracionIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        btnRegistrarEstudiante11Layout.setVerticalGroup(
-            btnRegistrarEstudiante11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRegistrarEstudiante11Layout.createSequentialGroup()
+        btnAdministrarInformacionLayout.setVerticalGroup(
+            btnAdministrarInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAdministrarInformacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(btnRegistrarEstudiante11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dsp_adm_informacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                .addGroup(btnAdministrarInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblAdministracionIC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblAdministracion, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -516,17 +641,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLectorQR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarReportes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAdministrarInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrarEstudiante1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRegistrarVeiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpanelRound1Layout.setVerticalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLectorQR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -535,117 +660,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pRegistrarEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrarEstudiante1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pRegistrarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrarEstudiante10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarReportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pReportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrarEstudiante11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAdministrarInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pAdministrarInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesLogin/Scan.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, Short.MAX_VALUE)
-                .addGap(31, 31, 31))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
-        );
-
-        btnSalir.setBackground(new java.awt.Color(2, 29, 48));
-        btnSalir.setRoundBottomRight(30);
-        btnSalir.setRoundTopRight(30);
-        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSalirMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSalirMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSalirMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/white-logout-32.png"))); // NOI18N
-        jLabel2.setText("Cerrar secion");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnSalirLayout = new javax.swing.GroupLayout(btnSalir);
-        btnSalir.setLayout(btnSalirLayout);
-        btnSalirLayout.setHorizontalGroup(
-            btnSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnSalirLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-        );
-        btnSalirLayout.setVerticalGroup(
-            btnSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnSalirLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jScrollPane1.setViewportView(jpanelRound1);
 
         javax.swing.GroupLayout contenedorLeftmenuLayout = new javax.swing.GroupLayout(contenedorLeftmenu);
         contenedorLeftmenu.setLayout(contenedorLeftmenuLayout);
         contenedorLeftmenuLayout.setHorizontalGroup(
             contenedorLeftmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLeftmenuLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(contenedorLeftmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenedorLeftmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(65, 65, 65))
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(contenedorLeftmenuLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
         contenedorLeftmenuLayout.setVerticalGroup(
             contenedorLeftmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorLeftmenuLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addGap(30, 30, 30))
         );
 
-        jPanel1.add(contenedorLeftmenu);
+        contendorRigt.setBackground(new java.awt.Color(204, 255, 153));
 
-        contendorRigt.setLayout(new javax.swing.BoxLayout(contendorRigt, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setMaximumSize(new java.awt.Dimension(32767, 60));
         jPanel2.setMinimumSize(new java.awt.Dimension(0, 60));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -663,31 +719,60 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1237, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        contendorRigt.add(jPanel2);
-
-        PanelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        PanelPrincipal.setBackground(new java.awt.Color(153, 204, 255));
+        PanelPrincipal.setAutoscrolls(true);
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
         PanelPrincipalLayout.setHorizontalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 822, Short.MAX_VALUE)
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1114, Short.MAX_VALUE)
+            .addGap(0, 626, Short.MAX_VALUE)
         );
 
-        contendorRigt.add(PanelPrincipal);
+        javax.swing.GroupLayout contendorRigtLayout = new javax.swing.GroupLayout(contendorRigt);
+        contendorRigt.setLayout(contendorRigtLayout);
+        contendorRigtLayout.setHorizontalGroup(
+            contendorRigtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contendorRigtLayout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
+        );
+        contendorRigtLayout.setVerticalGroup(
+            contendorRigtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendorRigtLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
 
-        jPanel1.add(contendorRigt);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(contenedorLeftmenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(contendorRigt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(contenedorLeftmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contendorRigt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -707,9 +792,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      
     }//GEN-LAST:event_btnInicioMouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lblEstudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEstudiantesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lblEstudiantesMouseClicked
 
     private void btnRegistrarEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudianteMouseClicked
 
@@ -719,19 +804,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      
     }//GEN-LAST:event_btnLectorQRMouseClicked
 
-    private void dsp_estudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_estudiantesMouseClicked
+    private void lblEstudianteICMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEstudianteICMouseClicked
         metodos.LogicaPanel(pRegistrarEstudiante, ancho, 80);    
         boolean isVisible = pRegistrarEstudiante.isVisible();
         if (!isVisible) {
             collapseAllPanels();
         }
          if (isVisible) {
-             dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));   
+             lblEstudianteIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));   
         } else{
-             dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
+             lblEstudianteIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }
         pRegistrarEstudiante.setVisible(!isVisible);  
-    }//GEN-LAST:event_dsp_estudiantesMouseClicked
+    }//GEN-LAST:event_lblEstudianteICMouseClicked
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
     FiveCodMoverJFrame.MouseDraggedFrame(evt, this);
@@ -747,11 +832,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
        int initialY = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void lblVeiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVeiculoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_lblVeiculoMouseClicked
 
-    private void dsp_VeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_VeiculosMouseClicked
+    private void lblVeiculoICMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVeiculoICMouseClicked
         // TODO add your handling code here:
         metodos.LogicaPanel(pRegistrarVeiculos, ancho, 84);
         boolean isVisible = pRegistrarVeiculos.isVisible();
@@ -759,22 +844,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             collapseAllPanels(); // Añade todos los paneles que deseas colapsar
         }
         if (isVisible) {
-             dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));     
+             lblVeiculoIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));     
         } else{
-             dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
+             lblVeiculoIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }
         pRegistrarVeiculos.setVisible(!isVisible);
-    }//GEN-LAST:event_dsp_VeiculosMouseClicked
+    }//GEN-LAST:event_lblVeiculoICMouseClicked
 
-    private void btnRegistrarEstudiante1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante1MouseClicked
+    private void btnRegistrarVeiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarVeiculoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarEstudiante1MouseClicked
+    }//GEN-LAST:event_btnRegistrarVeiculoMouseClicked
 
-    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+    private void lblReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblReportesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel20MouseClicked
+    }//GEN-LAST:event_lblReportesMouseClicked
 
-    private void dsp_ReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_ReportesMouseClicked
+    private void lblReportesICMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblReportesICMouseClicked
         // TODO add your handling code here:
         metodos.LogicaPanel(pReportes, ancho, 82);
            boolean isVisible = pReportes.isVisible();     
@@ -782,22 +867,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             collapseAllPanels();        
         }
          if (isVisible) {
-             dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));     
+             lblReportesIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));     
         } else{
-             dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
+             lblReportesIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }
         pReportes.setVisible(!isVisible);   
-    }//GEN-LAST:event_dsp_ReportesMouseClicked
+    }//GEN-LAST:event_lblReportesICMouseClicked
 
-    private void btnRegistrarEstudiante10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante10MouseClicked
+    private void btnRegistrarReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarReportesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarEstudiante10MouseClicked
+    }//GEN-LAST:event_btnRegistrarReportesMouseClicked
 
-    private void jLabel44MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel44MouseClicked
+    private void lblAdministracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdministracionMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel44MouseClicked
+    }//GEN-LAST:event_lblAdministracionMouseClicked
 
-    private void dsp_adm_informacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsp_adm_informacionMouseClicked
+    private void lblAdministracionICMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdministracionICMouseClicked
         // TODO add your handling code here:
         metodos.LogicaPanel(pAdministrarInformacion, ancho, 386);
         boolean isVisible = pAdministrarInformacion.isVisible();
@@ -805,17 +890,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             collapseAllPanels();
         }
          if (isVisible) {
-             dsp_adm_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
+             lblAdministracionIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
             
         } else{
-             dsp_adm_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
+             lblAdministracionIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/upp-16.png")));
         }     
         pAdministrarInformacion.setVisible(!isVisible);   
-    }//GEN-LAST:event_dsp_adm_informacionMouseClicked
+    }//GEN-LAST:event_lblAdministracionICMouseClicked
 
-    private void btnRegistrarEstudiante11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudiante11MouseClicked
+    private void btnAdministrarInformacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrarInformacionMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarEstudiante11MouseClicked
+    }//GEN-LAST:event_btnAdministrarInformacionMouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:    
@@ -827,14 +912,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
         // TODO add your handling code here:
-        btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnSalir.setBackground(new Color(4, 83, 138));
+       hoverBtnSalir();
     }//GEN-LAST:event_btnSalirMouseEntered
 
     private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
         // TODO add your handling code here:
-        btnSalir.setCursor(Cursor.getDefaultCursor());
-        btnSalir.setBackground(new Color(2, 29, 48));
+       noHoverBtnSalir();
     }//GEN-LAST:event_btnSalirMouseExited
 
     private void lblProgramaEstudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProgramaEstudioMouseClicked
@@ -842,12 +925,107 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         metodos.actualizarPanel(PanelPrincipal,new Frm_R_Prog_Estudio().PanelProgramas);      
     }//GEN-LAST:event_lblProgramaEstudioMouseClicked
 
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        // TODO add your handling code here:
+        hoverBtnSalir();
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        // TODO add your handling code here:
+        noHoverBtnSalir();
+    }//GEN-LAST:event_jLabel2MouseExited
+
+    private void btnInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseEntered
+        // TODO add your handling code here:
+        hoverBtnMenu(btnInicio);
+    }//GEN-LAST:event_btnInicioMouseEntered
+
+    private void btnInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseExited
+        // TODO add your handling code here:
+        noHoverBtnmenu(btnInicio);
+    }//GEN-LAST:event_btnInicioMouseExited
+
+    private void btnLectorQRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLectorQRMouseEntered
+        // TODO add your handling code here:
+        hoverBtnMenu(btnLectorQR);
+    }//GEN-LAST:event_btnLectorQRMouseEntered
+
+    private void btnLectorQRMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLectorQRMouseExited
+        // TODO add your handling code here:
+        
+        noHoverBtnmenu(btnLectorQR);
+    }//GEN-LAST:event_btnLectorQRMouseExited
+
+    private void btnRegistrarEstudianteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudianteMouseEntered
+        // TODO add your handling code here:
+        hoverBtnMenu(btnRegistrarEstudiante);
+    }//GEN-LAST:event_btnRegistrarEstudianteMouseEntered
+
+    private void btnRegistrarEstudianteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudianteMouseExited
+        // TODO add your handling code here:
+        noHoverBtnmenu(btnRegistrarEstudiante);
+    }//GEN-LAST:event_btnRegistrarEstudianteMouseExited
+
+    private void btnRegistrarVeiculoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarVeiculoMouseEntered
+        // TODO add your handling code here:
+        hoverBtnMenu(btnRegistrarVeiculo);
+    }//GEN-LAST:event_btnRegistrarVeiculoMouseEntered
+
+    private void btnAdministrarInformacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrarInformacionMouseEntered
+        // TODO add your handling code here:
+        hoverBtnMenu(btnAdministrarInformacion);
+    }//GEN-LAST:event_btnAdministrarInformacionMouseEntered
+
+    private void btnAdministrarInformacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrarInformacionMouseExited
+        // TODO add your handling code here:
+        noHoverBtnmenu(btnAdministrarInformacion);
+    }//GEN-LAST:event_btnAdministrarInformacionMouseExited
+
+    private void btnRegistrarVeiculoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarVeiculoMouseExited
+        // TODO add your handling code here:
+        noHoverBtnmenu(btnRegistrarVeiculo);
+    }//GEN-LAST:event_btnRegistrarVeiculoMouseExited
+
+    private void btnRegistrarReportesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarReportesMouseEntered
+        // TODO add your handling code here:
+        
+        hoverBtnMenu(btnRegistrarReportes);
+    }//GEN-LAST:event_btnRegistrarReportesMouseEntered
+
+    private void btnRegistrarReportesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarReportesMouseExited
+        // TODO add your handling code here:
+        
+        noHoverBtnmenu(btnRegistrarReportes);
+    }//GEN-LAST:event_btnRegistrarReportesMouseExited
+
+    private void hoverBtnSalir(){
+        btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnSalir.setBackground(new Color(45, 83, 138));
+    }
+    
+    private void noHoverBtnSalir(){
+        btnSalir.setCursor(Cursor.getDefaultCursor());
+        btnSalir.setBackground(new Color(2, 29, 48));
+    
+    }
+    
+    private void hoverBtnMenu(JPanel panel){
+        panel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        panel.setBackground(new Color(153,204,255));
+    }
+    
+    private void noHoverBtnmenu(JPanel panel){
+        panel.setCursor(Cursor.getDefaultCursor());
+        panel.setBackground(new Color(255,255,255));
+    
+    }
+    
     private void collapseAllPanels() {
         metodos.ocultarComponentes(pRegistrarEstudiante,pRegistrarVeiculos,pReportes,pAdministrarInformacion);
-        dsp_adm_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-        dsp_Reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-        dsp_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
-        dsp_estudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
+        lblAdministracionIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
+        lblReportesIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
+        lblVeiculoIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
+        lblEstudianteIC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/down-16.png")));
 }
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -859,26 +1037,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel btnAdministrarInformacion;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnLectorQR;
     private javax.swing.JPanel btnRegistrarEstudiante;
-    private javax.swing.JPanel btnRegistrarEstudiante1;
-    private javax.swing.JPanel btnRegistrarEstudiante10;
-    private javax.swing.JPanel btnRegistrarEstudiante11;
+    private javax.swing.JPanel btnRegistrarReportes;
+    private javax.swing.JPanel btnRegistrarVeiculo;
     private Vista.Clases.JpanelRound btnSalir;
     private javax.swing.JPanel contendorRigt;
     private javax.swing.JPanel contenedorLeftmenu;
-    private javax.swing.JLabel dsp_Reportes;
-    private javax.swing.JLabel dsp_Veiculos;
-    private javax.swing.JLabel dsp_adm_informacion;
-    private javax.swing.JLabel dsp_estudiantes;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -891,15 +1063,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private Vista.Clases.JpanelRound jpanelRound1;
+    private javax.swing.JLabel lblAdministracion;
+    private javax.swing.JLabel lblAdministracionIC;
+    private javax.swing.JLabel lblEstudianteIC;
+    private javax.swing.JLabel lblEstudiantes;
+    private javax.swing.JLabel lblInicio;
+    private javax.swing.JLabel lblLector;
     private javax.swing.JLabel lblProgramaEstudio;
+    private javax.swing.JLabel lblReportes;
+    private javax.swing.JLabel lblReportesIC;
+    private javax.swing.JLabel lblVeiculo;
+    private javax.swing.JLabel lblVeiculoIC;
     private javax.swing.JPanel pAdministrarInformacion;
     private javax.swing.JPanel pRegistrarEstudiante;
     private javax.swing.JPanel pRegistrarVeiculos;
