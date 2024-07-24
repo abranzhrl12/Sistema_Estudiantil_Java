@@ -40,7 +40,6 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         rComboBox2 = new ComboxPerzonalizado.RComboBox();
         button2 = new componentes.Button();
         button1 = new componentes.Button();
-        lblclose = new rojerusan.RSLabelImage();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,30 +155,17 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         });
         jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 240, 50));
 
-        lblclose.setBackground(new java.awt.Color(255, 153, 0));
-        lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
-        lblclose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblcloseMouseClicked(evt);
-            }
-        });
-        jpanelRound1.add(lblclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 48, 30));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -193,10 +179,6 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_button1ActionPerformed
-
-    private void lblcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcloseMouseClicked
-      
-    }//GEN-LAST:event_lblcloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -242,7 +224,6 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private Vista.Clases.JpanelRound jpanelRound1;
-    private rojerusan.RSLabelImage lblclose;
     private Vista.Clases.PanelRound panelRound1;
     private ComboxPerzonalizado.RComboBox rComboBox2;
     private necesario.RSScrollPane rSScrollPane1;
