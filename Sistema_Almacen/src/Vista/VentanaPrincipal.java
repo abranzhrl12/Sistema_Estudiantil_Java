@@ -29,6 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          close.setBackground(new Color(0,0,0,0));
           minimize.setBackground(new Color(255,255,255));
            maximize.setBackground(new Color(255,255,255));
+           
         //Configurar dimenciones 
 //        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
 //        int minHeight = (int) (0.9 * screenHeight);
