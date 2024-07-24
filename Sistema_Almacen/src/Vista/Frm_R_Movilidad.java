@@ -38,8 +38,19 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         rComboBox2 = new ComboxPerzonalizado.RComboBox();
-        button2 = new componentes.Button();
         button1 = new componentes.Button();
+        jLabel2 = new javax.swing.JLabel();
+        button3 = new componentes.Button();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        button4 = new componentes.Button();
+        button5 = new componentes.Button();
+        button6 = new componentes.Button();
+        jLabel1 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        txtcodigo3 = new componentes.TextFieldShadown();
+        rSScrollPane2 = new necesario.RSScrollPane();
+        dttabla1 = new rojerusan.RSTableMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,42 +117,30 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
 
         jpanelRound1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
-        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 420, -1));
+        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-        jpanelRound1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 420, -1));
+        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jpanelRound1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 420, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Placa:");
-        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-        jpanelRound1.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 420, -1));
+        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jpanelRound1.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, -1));
 
         jLabel13.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel13.setText("Color:");
-        jpanelRound1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jpanelRound1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel14.setText("Tipo:");
-        jpanelRound1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        jpanelRound1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
 
         rComboBox2.setBorder(null);
         rComboBox2.setForeground(new java.awt.Color(51, 51, 51));
         rComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Moto", "Mototaxi", "Auto", "Camioneta", "Cuatrimoto", "Minivan" }));
-        jpanelRound1.add(rComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 400, 40));
-
-        button2.setBackground(new java.awt.Color(255, 255, 51));
-        button2.setBorder(null);
-        button2.setForeground(new java.awt.Color(0, 0, 0));
-        button2.setText("Nuevo");
-        button2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
-            }
-        });
-        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 240, 50));
+        jpanelRound1.add(rComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 400, 40));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -153,32 +152,162 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 240, 50));
+        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 190, 50));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("Registro de Movilidad");
+        jpanelRound1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        button3.setBackground(new java.awt.Color(255, 255, 51));
+        button3.setBorder(null);
+        button3.setForeground(new java.awt.Color(0, 0, 0));
+        button3.setText("Nuevo");
+        button3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
+        jpanelRound1.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 180, 50));
+
+        jCheckBox1.setText("Abilitar Mantenimiento");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jpanelRound1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, -1));
+
+        button4.setBackground(new java.awt.Color(255, 255, 51));
+        button4.setBorder(null);
+        button4.setForeground(new java.awt.Color(0, 0, 0));
+        button4.setText("Guardar");
+        button4.setEnabled(false);
+        button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, 100, 50));
+
+        button5.setBackground(new java.awt.Color(255, 255, 51));
+        button5.setBorder(null);
+        button5.setForeground(new java.awt.Color(0, 0, 0));
+        button5.setText("Modificar");
+        button5.setEnabled(false);
+        button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 100, 50));
+
+        button6.setBackground(new java.awt.Color(255, 255, 51));
+        button6.setBorder(null);
+        button6.setForeground(new java.awt.Color(0, 0, 0));
+        button6.setText("Eliminar");
+        button6.setEnabled(false);
+        button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 100, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
+        jLabel1.setText("Buscar Movilidad");
+        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
+
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("Placa");
+        jpanelRound1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, -1, -1));
+
+        jRadioButton3.setText("Código");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        jpanelRound1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, -1, -1));
+        jpanelRound1.add(txtcodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 420, -1));
+
+        rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
+        rSScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        rSScrollPane2.setColorBackground(new java.awt.Color(255, 255, 255));
+
+        dttabla1.setBackground(new java.awt.Color(204, 204, 204));
+        dttabla1.setForeground(new java.awt.Color(255, 255, 255));
+        dttabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"0242", " 1251", "fdsfsd", "eded"},
+                {"1365", "1425", "fdsfsd", "ascs"},
+                {null, null, "", null},
+                {null, null, "", null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "CÓDIGO", "PLACA", "COLOR", "TIPO"
+            }
+        ));
+        dttabla1.setAltoHead(40);
+        dttabla1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        dttabla1.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorBordeFilas(new java.awt.Color(0, 0, 204));
+        dttabla1.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
+        dttabla1.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
+        dttabla1.setColorForegroundHead(new java.awt.Color(102, 102, 102));
+        dttabla1.setColorSelBackgound(new java.awt.Color(102, 102, 102));
+        dttabla1.setColorSelForeground(new java.awt.Color(102, 102, 102));
+        dttabla1.setDoubleBuffered(true);
+        dttabla1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        dttabla1.setGridColor(new java.awt.Color(255, 255, 255));
+        dttabla1.setGrosorBordeFilas(0);
+        dttabla1.setRowHeight(39);
+        dttabla1.setRowMargin(2);
+        dttabla1.setRowSelectionAllowed(false);
+        dttabla1.setSelectionForeground(new java.awt.Color(153, 153, 153));
+        dttabla1.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        dttabla1.setShowGrid(false);
+        rSScrollPane2.setViewportView(dttabla1);
+
+        jpanelRound1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 480, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
+            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-
-    }//GEN-LAST:event_button2ActionPerformed
-
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
 
         
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+
+      
+    }//GEN-LAST:event_button3ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,18 +346,29 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
-    private componentes.Button button2;
+    private componentes.Button button3;
+    private componentes.Button button4;
+    private componentes.Button button5;
+    private componentes.Button button6;
     private rojerusan.RSTableMetro dttabla;
+    private rojerusan.RSTableMetro dttabla1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton3;
     private Vista.Clases.JpanelRound jpanelRound1;
     private Vista.Clases.PanelRound panelRound1;
     private ComboxPerzonalizado.RComboBox rComboBox2;
     private necesario.RSScrollPane rSScrollPane1;
+    private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtcodigo;
     private componentes.TextFieldShadown txtcodigo1;
     private componentes.TextFieldShadown txtcodigo2;
+    private componentes.TextFieldShadown txtcodigo3;
     // End of variables declaration//GEN-END:variables
 }

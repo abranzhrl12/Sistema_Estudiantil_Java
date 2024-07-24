@@ -366,10 +366,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblAdm_Estudiante.setText("Estudiantes");
 
         lblAdm_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        lblAdm_Veiculos.setText("Veiculos");
+        lblAdm_Veiculos.setText("Vehículos");
 
         lblAdm_tipoVeicuo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        lblAdm_tipoVeicuo.setText("Tipo de Veiculos");
+        lblAdm_tipoVeicuo.setText("Tipo de Vehículos");
 
         lblAdm_tipoEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_tipoEmpleado.setText("Tipo Empleados");
@@ -458,7 +458,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         lblVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/auto-32.png"))); // NOI18N
-        lblVeiculo.setText("Veiculos");
+        lblVeiculo.setText("Vehículos");
         lblVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVeiculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -647,10 +647,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pRegistrarVeiculos.setBackground(new java.awt.Color(255, 255, 255));
 
         lbl_agregar_veiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        lbl_agregar_veiculo.setText("Agregar Veículo");
+        lbl_agregar_veiculo.setText("Agregar Vehículo");
 
         lbl_agregar_Tipo_veiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
-        lbl_agregar_Tipo_veiculo.setText("Registrar Tipo de Veiculo");
+        lbl_agregar_Tipo_veiculo.setText("Registrar Tipo de Vehículo");
 
         javax.swing.GroupLayout pRegistrarVeiculosLayout = new javax.swing.GroupLayout(pRegistrarVeiculos);
         pRegistrarVeiculos.setLayout(pRegistrarVeiculosLayout);

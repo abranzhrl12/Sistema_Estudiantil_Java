@@ -18,12 +18,6 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
 
     public Frm_R_Prog_Estudio() {
         initComponents();
-        ScrollPanelPersonalizado customScrollPane = new ScrollPanelPersonalizado(dttabla);
-        rSScrollPane1.setViewportView(customScrollPane);
-        rSScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
-        tableModel = new DefaultTableModel(new String[]{"Código", "Nombre"}, 0);
-        dttabla.setModel(tableModel);
-        cargarProgramas();
         
 //          jScrollPane1.getVerticalScrollBar().setUI(new ModernScrollBarUI());
    
@@ -49,10 +43,15 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
         txtcodigoPrograma = new componentes.TextFieldShadown();
         jLabel12 = new javax.swing.JLabel();
         txtNombrePrograma = new componentes.TextFieldShadown();
-        rSScrollPane1 = new necesario.RSScrollPane();
-        dttabla = new rojerusan.RSTableMetro();
         button2 = new componentes.Button();
         button1 = new componentes.Button();
+        jLabel2 = new javax.swing.JLabel();
+        rSScrollPane2 = new necesario.RSScrollPane();
+        dttabla1 = new rojerusan.RSTableMetro();
+        button5 = new componentes.Button();
+        button6 = new componentes.Button();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        button4 = new componentes.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,48 +63,6 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Programa de Estudio:");
-
-        rSScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        rSScrollPane1.setForeground(new java.awt.Color(255, 102, 102));
-        rSScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        rSScrollPane1.setColorBackground(new java.awt.Color(255, 255, 255));
-        rSScrollPane1.setOpaque(false);
-        rSScrollPane1.setPreferredSize(new java.awt.Dimension(450, 200));
-        rSScrollPane1.setRequestFocusEnabled(false);
-
-        dttabla.setBackground(new java.awt.Color(204, 204, 204));
-        dttabla.setForeground(new java.awt.Color(255, 255, 255));
-        dttabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "CODIGO", "NOMBRE"
-            }
-        ));
-        dttabla.setAltoHead(40);
-        dttabla.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        dttabla.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
-        dttabla.setColorBordeFilas(new java.awt.Color(0, 0, 204));
-        dttabla.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        dttabla.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        dttabla.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
-        dttabla.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
-        dttabla.setColorForegroundHead(new java.awt.Color(102, 102, 102));
-        dttabla.setColorSelBackgound(new java.awt.Color(102, 102, 102));
-        dttabla.setColorSelForeground(new java.awt.Color(102, 102, 102));
-        dttabla.setDoubleBuffered(true);
-        dttabla.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        dttabla.setGridColor(new java.awt.Color(255, 255, 255));
-        dttabla.setGrosorBordeFilas(0);
-        dttabla.setPreferredScrollableViewportSize(new java.awt.Dimension(450, 300));
-        dttabla.setRowHeight(39);
-        dttabla.setRowMargin(2);
-        dttabla.setRowSelectionAllowed(false);
-        dttabla.setSelectionForeground(new java.awt.Color(153, 153, 153));
-        dttabla.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        dttabla.setShowGrid(false);
-        rSScrollPane1.setViewportView(dttabla);
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -129,54 +86,161 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("Registro de Programa de Estudio");
+
+        rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
+        rSScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        rSScrollPane2.setColorBackground(new java.awt.Color(255, 255, 255));
+
+        dttabla1.setBackground(new java.awt.Color(204, 204, 204));
+        dttabla1.setForeground(new java.awt.Color(255, 255, 255));
+        dttabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"0242", " 1251"},
+                {"1365", "1425"},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "CÓDIGO", "PROG. DE ESTUDIO"
+            }
+        ));
+        dttabla1.setAltoHead(40);
+        dttabla1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        dttabla1.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorBordeFilas(new java.awt.Color(0, 0, 204));
+        dttabla1.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
+        dttabla1.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
+        dttabla1.setColorForegroundHead(new java.awt.Color(102, 102, 102));
+        dttabla1.setColorSelBackgound(new java.awt.Color(102, 102, 102));
+        dttabla1.setColorSelForeground(new java.awt.Color(102, 102, 102));
+        dttabla1.setDoubleBuffered(true);
+        dttabla1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        dttabla1.setGridColor(new java.awt.Color(255, 255, 255));
+        dttabla1.setGrosorBordeFilas(0);
+        dttabla1.setRowHeight(39);
+        dttabla1.setRowMargin(2);
+        dttabla1.setRowSelectionAllowed(false);
+        dttabla1.setSelectionForeground(new java.awt.Color(153, 153, 153));
+        dttabla1.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        dttabla1.setShowGrid(false);
+        rSScrollPane2.setViewportView(dttabla1);
+
+        button5.setBackground(new java.awt.Color(255, 255, 51));
+        button5.setBorder(null);
+        button5.setForeground(new java.awt.Color(0, 0, 0));
+        button5.setText("Guardar");
+        button5.setEnabled(false);
+        button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        button6.setBackground(new java.awt.Color(255, 255, 51));
+        button6.setBorder(null);
+        button6.setForeground(new java.awt.Color(0, 0, 0));
+        button6.setText("Eliminar");
+        button6.setEnabled(false);
+        button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jCheckBox1.setText("Abilitar Mantenimiento");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        button4.setBackground(new java.awt.Color(255, 255, 51));
+        button4.setBorder(null);
+        button4.setForeground(new java.awt.Color(0, 0, 0));
+        button4.setText("Modificar");
+        button4.setEnabled(false);
+        button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout PanelProgramasLayout = new javax.swing.GroupLayout(PanelProgramas);
         PanelProgramas.setLayout(PanelProgramasLayout);
         PanelProgramasLayout.setHorizontalGroup(
             PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProgramasLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102))
-            .addGroup(PanelProgramasLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelProgramasLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(rSScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PanelProgramasLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProgramasLayout.createSequentialGroup()
                         .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(txtNombrePrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcodigoPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(PanelProgramasLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(PanelProgramasLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel11))
+                            .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNombrePrograma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                                .addComponent(txtcodigoPrograma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox1)
+                            .addComponent(rSScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43))))
         );
         PanelProgramasLayout.setVerticalGroup(
             PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProgramasLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel11)
                 .addGap(18, 18, 18)
-                .addComponent(txtcodigoPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addComponent(txtNombrePrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(rSScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(89, 89, 89))
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelProgramasLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtcodigoPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtNombrePrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44)
+                .addComponent(jCheckBox1)
+                .addGap(36, 36, 36)
+                .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProgramasLayout.createSequentialGroup()
+                        .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(121, 121, 121))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProgramasLayout.createSequentialGroup()
+                        .addGroup(PanelProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(127, 127, 127))))
         );
 
-        getContentPane().add(PanelProgramas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 720));
+        getContentPane().add(PanelProgramas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,6 +253,10 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
         String a=  programa.registrarPrograma();
         System.out.println(a);
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     public String getCodigoPrograma(){
     return txtcodigoPrograma.getText().trim();
@@ -233,10 +301,15 @@ public class Frm_R_Prog_Estudio extends javax.swing.JFrame {
     public Vista.Clases.JpanelRound PanelProgramas;
     private componentes.Button button1;
     private componentes.Button button2;
-    private rojerusan.RSTableMetro dttabla;
+    private componentes.Button button4;
+    private componentes.Button button5;
+    private componentes.Button button6;
+    private rojerusan.RSTableMetro dttabla1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private necesario.RSScrollPane rSScrollPane1;
+    private javax.swing.JLabel jLabel2;
+    private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtNombrePrograma;
     private componentes.TextFieldShadown txtcodigoPrograma;
     // End of variables declaration//GEN-END:variables

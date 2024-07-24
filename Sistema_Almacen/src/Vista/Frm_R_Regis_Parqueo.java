@@ -35,27 +35,33 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
         rSScrollPane1 = new necesario.RSScrollPane();
         dttabla = new rojerusan.RSTableMetro();
         jLabel8 = new javax.swing.JLabel();
-        lblclose = new rojerusan.RSLabelImage();
         button2 = new componentes.Button();
         button1 = new componentes.Button();
         txtcodigo2 = new componentes.TextFieldShadown();
         txtcodigo3 = new componentes.TextFieldShadown();
         jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        rSScrollPane2 = new necesario.RSScrollPane();
+        dttabla1 = new rojerusan.RSTableMetro();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        button5 = new componentes.Button();
+        button6 = new componentes.Button();
+        button4 = new componentes.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 420, -1));
+        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Hora:");
-        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-        jpanelRound1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 420, -1));
+        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        jpanelRound1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 420, -1));
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -120,16 +126,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel8.setText("Fecha: ");
-        jpanelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
-
-        lblclose.setBackground(new java.awt.Color(255, 153, 0));
-        lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home.png"))); // NOI18N
-        lblclose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblcloseMouseClicked(evt);
-            }
-        });
-        jpanelRound1.add(lblclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 48, 30));
+        jpanelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -141,7 +138,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 240, 50));
+        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 170, 50));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -153,31 +150,119 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 240, 50));
-        jpanelRound1.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 420, -1));
-        jpanelRound1.add(txtcodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 420, -1));
+        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 170, 50));
+        jpanelRound1.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 420, -1));
+        jpanelRound1.add(txtcodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 420, -1));
 
         jLabel9.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel9.setText("Observación:");
-        jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("Registro de Parqueo");
+        jpanelRound1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
+        rSScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        rSScrollPane2.setColorBackground(new java.awt.Color(255, 255, 255));
+
+        dttabla1.setBackground(new java.awt.Color(204, 204, 204));
+        dttabla1.setForeground(new java.awt.Color(255, 255, 255));
+        dttabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"0242", "12:00", " 01-07-2024", " 1251"},
+                {"1365", "11:00", " 02-07-2024", "1425"},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "CÓDIGO", "HORA", "FECHA", "OBSERVACIÓN"
+            }
+        ));
+        dttabla1.setAltoHead(40);
+        dttabla1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        dttabla1.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorBordeFilas(new java.awt.Color(0, 0, 204));
+        dttabla1.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        dttabla1.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
+        dttabla1.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
+        dttabla1.setColorForegroundHead(new java.awt.Color(102, 102, 102));
+        dttabla1.setColorSelBackgound(new java.awt.Color(102, 102, 102));
+        dttabla1.setColorSelForeground(new java.awt.Color(102, 102, 102));
+        dttabla1.setDoubleBuffered(true);
+        dttabla1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        dttabla1.setGridColor(new java.awt.Color(255, 255, 255));
+        dttabla1.setGrosorBordeFilas(0);
+        dttabla1.setRowHeight(39);
+        dttabla1.setRowMargin(2);
+        dttabla1.setRowSelectionAllowed(false);
+        dttabla1.setSelectionForeground(new java.awt.Color(153, 153, 153));
+        dttabla1.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        dttabla1.setShowGrid(false);
+        rSScrollPane2.setViewportView(dttabla1);
+
+        jpanelRound1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 480, 260));
+
+        jCheckBox1.setText("Abilitar Mantenimiento");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jpanelRound1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
+
+        button5.setBackground(new java.awt.Color(255, 255, 51));
+        button5.setBorder(null);
+        button5.setForeground(new java.awt.Color(0, 0, 0));
+        button5.setText("Guardar");
+        button5.setEnabled(false);
+        button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 110, 50));
+
+        button6.setBackground(new java.awt.Color(255, 255, 51));
+        button6.setBorder(null);
+        button6.setForeground(new java.awt.Color(0, 0, 0));
+        button6.setText("Eliminar");
+        button6.setEnabled(false);
+        button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 120, 50));
+
+        button4.setBackground(new java.awt.Color(255, 255, 51));
+        button4.setBorder(null);
+        button4.setForeground(new java.awt.Color(0, 0, 0));
+        button4.setText("Modificar");
+        button4.setEnabled(false);
+        button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lblcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcloseMouseClicked
-
-    }//GEN-LAST:event_lblcloseMouseClicked
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
 
@@ -186,6 +271,10 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
 
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,15 +314,21 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private componentes.Button button1;
     private componentes.Button button2;
+    private componentes.Button button4;
+    private componentes.Button button5;
+    private componentes.Button button6;
     private rojerusan.RSTableMetro dttabla;
+    private rojerusan.RSTableMetro dttabla1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private Vista.Clases.JpanelRound jpanelRound1;
-    private rojerusan.RSLabelImage lblclose;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
+    private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtcodigo;
     private componentes.TextFieldShadown txtcodigo1;
     private componentes.TextFieldShadown txtcodigo2;
