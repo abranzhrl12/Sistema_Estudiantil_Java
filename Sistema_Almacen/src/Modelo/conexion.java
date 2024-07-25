@@ -46,16 +46,23 @@ public class conexion {
         }
     }
      
-     public static ResultSet getConsulta(String consulta) {
-         
-        try (Statement stmt = con.createStatement();
-             ResultSet rs = stmt.executeQuery(consulta)) {
+    public static ResultSet getConsulta(String consulta) {
+
+        ResultSet resultado = null;
+        Statement stmt = null;
+        try {
+            stmt = con.createStatement();
+            resultado = stmt.executeQuery(consulta);
             System.out.println("Consulta ejecutada correctamente.");
-            return rs; // Este retorno puede llevar problemas porque el ResultSet se cierra al salir del try.
+            
         } catch (SQLException e) {
+            
+            e.printStackTrace();
             System.out.println("Error al ejecutar la consulta: " + e.getMessage());
-            return null;
+            
+        } finally {
+
         }
-        
-    }  
+        return resultado;
+    }
 }

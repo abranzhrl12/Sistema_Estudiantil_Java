@@ -24,12 +24,13 @@ import javax.swing.SwingUtilities;
 public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFactory{
     private WebcamPanel panel=null;
     private Webcam webcam=null;
+    
     private Executor executor=Executors.newSingleThreadExecutor(this);
+    
     public ReadQrcode() {
         initComponents();
        new Controlador.ConfiguracionLectorQR().initWebcam(webcam, panel, panelCamara);
        
-      
     }
 
     /**

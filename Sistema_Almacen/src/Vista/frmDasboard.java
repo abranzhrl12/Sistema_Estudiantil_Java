@@ -6,8 +6,11 @@ package Vista;
 
 import Modelo.conexion;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -19,7 +22,10 @@ public class frmDasboard extends javax.swing.JFrame {
      * Creates new form frmDasboard
      */
      DefaultTableModel EmpleadosModel = new DefaultTableModel();
-      String titulos[] = {"Codigo","Apellido Pate", "Apellido Mat","Nombre","Ciudad","direccion","Usuario" , "Clave"};
+     
+      String titulos[] = {"Codigo","DNI","Nombres y Apellidos", "Programa de Estudio","Hora de Ingreso","Fecha Ingreso"};
+      String fecha;
+       String[] PorcentagesIngresos;
       
     
     public frmDasboard() {
@@ -28,28 +34,161 @@ public class frmDasboard extends javax.swing.JFrame {
         EmpleadosModel.setColumnIdentifiers(titulos);
         tablaEstudiantes.setModel(EmpleadosModel);
         
-       
         
+        tablaEstudiantes.getColumnModel().getColumn(0).setPreferredWidth(10);
+        tablaEstudiantes.getColumnModel().getColumn(1).setPreferredWidth(10);
+        tablaEstudiantes.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tablaEstudiantes.getColumnModel().getColumn(3).setPreferredWidth(200);
+        tablaEstudiantes.getColumnModel().getColumn(4).setPreferredWidth(10);
+        tablaEstudiantes.getColumnModel().getColumn(5).setPreferredWidth(10);
+        
+        
+        //Obtener fecha Actual
+        LocalDate fechaActual = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        fecha = fechaActual.format(formatter);
+       
+        ConsultaTabla();
+        
+        
+      PorcentagesIngresos = new String[8];
+      consultarPorcentagesIngresos();
+      
+      consultarCantidadDeIngresos();
+        
+         
         
     }
     
+    private void consultarCantidadDeIngresos(){
+    
+        String cosulta = "SELECT COUNT(*) AS Total_Registros FROM registro_ingreso WHERE Fecha = '"+fecha+"';";
+
+        conexion cn = new conexion();
+        cn.conectar();
+
+        try {
+            ResultSet rs = cn.getConsulta(cosulta);
+            int contador = 0;
+            if (rs != null) {
+                while (rs.next()) {
+                    
+                    lbl_totalDelDia.setText(rs.getString(1));
+                    
+                } 
+            }
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(rootPane, "Error en la consultaoo" + e.getMessage());
+
+        } finally {
+            cn.cerrarConexion();
+            System.out.println(cosulta);
+        }
+
+
+    }
+    
+   
+    private void consultarPorcentagesIngresos() {
+
+        String consulta = "SELECT p.Nombre AS Programa, "
+                + "CONCAT(ROUND((COUNT(e.cod_Estudiante) * 100.0) / "
+                + "(SELECT COUNT(cod_Estudiante) FROM registro_ingreso WHERE Fecha = '"+fecha+"'), 0), '%') "
+                + "AS Porcentaje_Ingresos FROM estudiante e "
+                + "INNER JOIN programa_estudio p ON e.cod_Programa = p.cod_Programa "
+                + "LEFT JOIN registro_ingreso r ON e.cod_Estudiante = r.cod_Estudiante "
+                + "WHERE r.Fecha = '"+fecha+"' GROUP BY p.Nombre ORDER BY p.Nombre ASC";
+
+        conexion cn = new conexion();
+        cn.conectar();
+
+        try {
+
+            ResultSet rs = cn.getConsulta(consulta);
+            int contador = 0;
+
+            if (rs!=null) {
+                
+                while (rs.next()) {
+
+                PorcentagesIngresos[contador] = rs.getString(2);
+                contador++;
+
+            }
+
+            for (int i = 0; i < PorcentagesIngresos.length; i++) {
+
+                switch (i) {
+
+                    case 0:
+                        lbl_porc_Contabilidad.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 1:
+                        lbl_poc_DSI.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 2:
+                        lbl_porc_electricidad_ind.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 3:
+                        lbl_porc_electronica_ind.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 4:
+                        lbl_Porc_Enf_tec.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 5:
+                        lbl_porc_mecanica_produccion.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 6:
+                        lbl_porc_mecatronica_automotris.setText(PorcentagesIngresos[i]);
+                        break;
+                    case 7:
+                        lbl_porc_quimica.setText(PorcentagesIngresos[i]);
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+            }  
+            }
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(rootPane, "Error en la consultaoo" + e.getMessage());
+
+        } finally {
+            cn.cerrarConexion();
+            System.out.println(consulta);
+        }
+    }
+
+
     
     private void ConsultaTabla() {
+        
+       
+        
+        
         conexion cn = new conexion();
         cn.conectar();
         
-        String  consultaFinal = "";
+        String  consultaFinal = "select e.cod_Estudiante,e.DNI,concat(e.Nombre,e.Ape_Paterno,e.Ape_Materno),p_e.Nombre,r_i.Hora,r_i.Fecha FROM registro_ingreso r_i INNER JOIN estudiante e ON e.cod_Estudiante = r_i.cod_Estudiante INNER JOIN programa_estudio p_e on p_e.cod_Programa = e.cod_Programa where r_i.Fecha = '"+fecha+"' order by r_i.Hora desc ";
+        
         try {
                
             ResultSet rs = cn.getConsulta(consultaFinal);
+            
             limpiarTabla();
+            
+           
+            
             while (rs.next()) {
+                
                 String[] datos = new String[titulos.length];
 
                 for (int i = 0; i < titulos.length; i++) {
 
                     datos[i] = rs.getString(i + 1);
                 }
+                
                 EmpleadosModel.addRow(datos);
 
             }
@@ -105,7 +244,7 @@ public class frmDasboard extends javax.swing.JFrame {
         lbl_porc_electricidad_ind = new javax.swing.JLabel();
         lbl_porc_electronica_ind = new javax.swing.JLabel();
         lbl_porc_mecatronica_automotris = new javax.swing.JLabel();
-        lbl_porc_mecanica_automotriz = new javax.swing.JLabel();
+        lbl_porc_mecanica_produccion = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -120,7 +259,7 @@ public class frmDasboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnIngresosdelDia1 = new Vista.Clases.JpanelRound();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lbl_totalDelDia = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -157,7 +296,7 @@ public class frmDasboard extends javax.swing.JFrame {
         btnIngresosdelDia.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         jLabel9.setText("Química Industrial");
-        btnIngresosdelDia.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 250, -1));
+        btnIngresosdelDia.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 250, -1));
 
         jLabel10.setText("Contabilidad");
         btnIngresosdelDia.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 250, -1));
@@ -166,54 +305,62 @@ public class frmDasboard extends javax.swing.JFrame {
         btnIngresosdelDia.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 250, -1));
 
         jLabel12.setText("Enfermería Técnica");
-        btnIngresosdelDia.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 250, -1));
+        btnIngresosdelDia.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 240, -1));
 
         jLabel13.setText("Electricidad Industrial");
-        btnIngresosdelDia.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 250, -1));
+        btnIngresosdelDia.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 250, -1));
 
         jLabel14.setText("Electrónica Industrial");
-        btnIngresosdelDia.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 250, -1));
+        btnIngresosdelDia.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 250, -1));
 
         jLabel15.setText("Mecatrónica Automotriz");
         btnIngresosdelDia.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 250, -1));
 
         jLabel16.setText("Mecánica de Producción Industrial");
-        btnIngresosdelDia.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 250, -1));
+        btnIngresosdelDia.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 250, -1));
 
+        lbl_porc_quimica.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_porc_quimica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_porc_quimica.setText("10%");
-        btnIngresosdelDia.add(lbl_porc_quimica, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 50, -1));
+        lbl_porc_quimica.setText("0%");
+        btnIngresosdelDia.add(lbl_porc_quimica, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 50, -1));
 
+        lbl_Porc_Enf_tec.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_Porc_Enf_tec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_Porc_Enf_tec.setText("10%");
-        btnIngresosdelDia.add(lbl_Porc_Enf_tec, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 50, -1));
+        lbl_Porc_Enf_tec.setText("0%");
+        btnIngresosdelDia.add(lbl_Porc_Enf_tec, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 50, -1));
 
+        lbl_poc_DSI.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_poc_DSI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_poc_DSI.setText("10%");
+        lbl_poc_DSI.setText("0%");
         btnIngresosdelDia.add(lbl_poc_DSI, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 50, -1));
 
+        lbl_porc_Contabilidad.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_porc_Contabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_porc_Contabilidad.setText("10%");
+        lbl_porc_Contabilidad.setText("0%");
         btnIngresosdelDia.add(lbl_porc_Contabilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 50, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         btnIngresosdelDia.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 10, 110));
 
+        lbl_porc_electricidad_ind.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_porc_electricidad_ind.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_porc_electricidad_ind.setText("10%");
-        btnIngresosdelDia.add(lbl_porc_electricidad_ind, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 50, -1));
+        lbl_porc_electricidad_ind.setText("0%");
+        btnIngresosdelDia.add(lbl_porc_electricidad_ind, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 50, -1));
 
+        lbl_porc_electronica_ind.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_porc_electronica_ind.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_porc_electronica_ind.setText("10%");
-        btnIngresosdelDia.add(lbl_porc_electronica_ind, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 50, -1));
+        lbl_porc_electronica_ind.setText("0%");
+        btnIngresosdelDia.add(lbl_porc_electronica_ind, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 50, -1));
 
+        lbl_porc_mecatronica_automotris.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lbl_porc_mecatronica_automotris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_porc_mecatronica_automotris.setText("10%");
+        lbl_porc_mecatronica_automotris.setText("0%");
         btnIngresosdelDia.add(lbl_porc_mecatronica_automotris, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 50, -1));
 
-        lbl_porc_mecanica_automotriz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_porc_mecanica_automotriz.setText("10%");
-        btnIngresosdelDia.add(lbl_porc_mecanica_automotriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 50, -1));
+        lbl_porc_mecanica_produccion.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lbl_porc_mecanica_produccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_mecanica_produccion.setText("0%");
+        btnIngresosdelDia.add(lbl_porc_mecanica_produccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 50, -1));
         btnIngresosdelDia.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 310, 10));
         btnIngresosdelDia.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 310, 10));
         btnIngresosdelDia.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 310, 10));
@@ -356,9 +503,9 @@ public class frmDasboard extends javax.swing.JFrame {
         jLabel7.setText("Ingresos del Dia");
         btnIngresosdelDia1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 80)); // NOI18N
-        jLabel8.setText("50");
-        btnIngresosdelDia1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 93));
+        lbl_totalDelDia.setFont(new java.awt.Font("Segoe UI Semibold", 0, 80)); // NOI18N
+        lbl_totalDelDia.setText("50");
+        btnIngresosdelDia1.add(lbl_totalDelDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 93));
 
         javax.swing.GroupLayout PanelPrincipalDShLayout = new javax.swing.GroupLayout(PanelPrincipalDSh);
         PanelPrincipalDSh.setLayout(PanelPrincipalDShLayout);
@@ -368,7 +515,7 @@ public class frmDasboard extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
                     .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelPrincipalDShLayout.createSequentialGroup()
                             .addComponent(jLabel1)
@@ -378,7 +525,7 @@ public class frmDasboard extends javax.swing.JFrame {
                             .addComponent(btnIngresosdelDia1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnIngresosdelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGap(65, 65, 65))
         );
         PanelPrincipalDShLayout.setVerticalGroup(
             PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -519,7 +666,6 @@ public class frmDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -533,9 +679,10 @@ public class frmDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_porc_Contabilidad;
     private javax.swing.JLabel lbl_porc_electricidad_ind;
     private javax.swing.JLabel lbl_porc_electronica_ind;
-    private javax.swing.JLabel lbl_porc_mecanica_automotriz;
+    private javax.swing.JLabel lbl_porc_mecanica_produccion;
     private javax.swing.JLabel lbl_porc_mecatronica_automotris;
     private javax.swing.JLabel lbl_porc_quimica;
+    private javax.swing.JLabel lbl_totalDelDia;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
     private rojerusan.RSTableMetro tablaEstudiantes;
