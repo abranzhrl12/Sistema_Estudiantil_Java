@@ -14,6 +14,7 @@ import javax.swing.event.DocumentListener;
 public class ControladorRegistroIngreso {
   private ReadQrcode vistaIngreso;
   private String lectura="";
+  private String dni="";
  private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     public ControladorRegistroIngreso(ReadQrcode vistaIngreso) {
         this.vistaIngreso = vistaIngreso;
@@ -38,20 +39,27 @@ public class ControladorRegistroIngreso {
             }
 
             private void processTextChange() {
-                String codEstudiante = vistaIngreso.getCodigo();
+                dni = vistaIngreso.getCodigo();
                 
-                if (!codEstudiante.isEmpty() && !codEstudiante.equals(lectura)) {
+                if (!dni.isEmpty() && !dni.equals(lectura)) {
                     try {
-                        String resultado = ProcedimientosRegistroIngreso.registrarIngreso(codEstudiante);
-                        lectura=codEstudiante;
-                        SwingUtilities.invokeLater(() -> vistaIngreso.limpiarCodigo());
-                        vistaIngreso.limpiarCodigo();// Limpia el campo después de procesar
-                          vistaIngreso.result_field.setText("");
                         
-                        System.out.println(resultado);  // O mostrar el resultado en la GUI
+                    String codEstudiante = ProcedimientosRegistroIngreso.obtenerCodEstudiantePorDni(dni);
+                        
+                          if (!codEstudiante.equals("NO ENCONTRADO")) {
+                            String resultado = ProcedimientosRegistroIngreso.registrarIngreso(codEstudiante);
+                            lectura = dni;
+                            SwingUtilities.invokeLater(() -> vistaIngreso.limpiarCodigo()); // Limpia el campo después de procesar
+                            System.out.println(resultado);  // O mostrar el resultado en la GUI
+
+                            // Programar la limpieza de 'lectura' después de 10 segundos
                             scheduler.schedule(() -> {
-                            lectura = "";
-                        }, 10, TimeUnit.SECONDS);
+                                lectura = "";
+                            }, 10, TimeUnit.SECONDS);
+                        } else {
+                            System.out.println("Estudiante no encontrado");
+                        }
+                       
                     } catch (SQLException e) {
                         System.err.println("Error en la base de datos al registrar el ingreso: " + e.getMessage());
                     }

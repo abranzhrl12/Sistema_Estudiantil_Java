@@ -137,6 +137,12 @@
               <SubComponents>
                 <Component class="rojerusan.RSTableMetro" name="dttabla">
                   <Properties>
+<<<<<<< HEAD
+=======
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                    </Property>
+>>>>>>> 6e56d02e00ac074caaf676223ad7c41dfd947172
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>

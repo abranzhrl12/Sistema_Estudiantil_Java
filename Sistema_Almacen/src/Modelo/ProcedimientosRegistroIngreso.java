@@ -30,6 +30,24 @@ public class ProcedimientosRegistroIngreso {
 
         return resultado;
     }
+       // Método estático para obtener el código del estudiante por DNI
+    public static String obtenerCodEstudiantePorDni(String dni) throws SQLException {
+        String codEstudiante = "";
+        String sql = "{ CALL obtener_cod_estudiante_por_dni(?, ?) }"; // Llama al procedimiento almacenado
+
+        // Uso de try-with-resources para asegurar que la conexión y el CallableStatement se cierran adecuadamente
+        try (Connection con = conexion.conectar();  // Asegúrate de que este método conecta a tu base de datos
+             CallableStatement cs = con.prepareCall(sql)) {
+            
+            cs.setString(1, dni); // Establece el DNI en el primer parámetro
+            cs.registerOutParameter(2, Types.VARCHAR); // Registra el segundo parámetro como de salida
+            cs.execute(); // Ejecuta el procedimiento almacenado
+            codEstudiante = cs.getString(2); // Obtiene el resultado del parámetro de salida
+            
+        } // Los recursos se cierran automáticamente aquí
+
+        return codEstudiante;
+    }
 }
 
 

@@ -73,10 +73,17 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
+<<<<<<< HEAD
                               <Component id="txtcodigo1" pref="500" max="32767" attributes="0"/>
                               <Component id="panelRound1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
+=======
+                              <Component id="txtcodigo1" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Component id="panelRound1" min="-2" pref="500" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 6e56d02e00ac074caaf676223ad7c41dfd947172
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -116,6 +123,7 @@
                               <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Component id="txtcodigo1" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -125,6 +133,17 @@
                   </Group>
                   <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+=======
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtcodigo1" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="panelRound1" min="-2" pref="295" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+>>>>>>> 6e56d02e00ac074caaf676223ad7c41dfd947172
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -164,6 +183,7 @@
             </Property>
           </Properties>
 
+<<<<<<< HEAD
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -183,6 +203,10 @@
                   </Group>
               </Group>
             </DimensionLayout>
+=======
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+>>>>>>> 6e56d02e00ac074caaf676223ad7c41dfd947172
           </Layout>
           <SubComponents>
             <Container class="necesario.RSScrollPane" name="rSScrollPane1">
@@ -198,6 +222,14 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+<<<<<<< HEAD
+=======
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="20" width="480" height="260"/>
+                </Constraint>
+              </Constraints>
+>>>>>>> 6e56d02e00ac074caaf676223ad7c41dfd947172
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>

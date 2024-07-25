@@ -3,11 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Controlador/LoignControlador.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Controlador/MetodosUtilidades.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Estudiante.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/frm_Generar_Fotocheck.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Turno.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Colores_DIA.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Reporte_Parqueo.java</file>
             <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Login.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/VentanaPrincipal.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/frmDasboard.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/ReadQrcode.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Movilidad.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Tipo_Empleado.java</file>
             <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Modelo/conexion.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Reporte_Estudiante.java</file>
             <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Regis_Parqueo.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/anuevo.java</file>
             <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Reg_Ingreso.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Prog_Estudio.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Datos_Contacto.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Frm_R_Tipo_Movilidad.java</file>
+            <file>file:/C:/Users/jhoyb/OneDrive/Imágenes/Sistema_Estudiantil_Java/Sistema_Almacen/src/Vista/Color_Noche.java</file>
         </group>
     </open-files>
 </project-private>
