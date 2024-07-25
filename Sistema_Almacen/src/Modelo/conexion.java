@@ -12,11 +12,12 @@ public class conexion {
     private static String bd = "bdsistemaingresos";
     private static String url = "jdbc:mysql://localhost:3306/" + bd;
     private static String usuario = "root";
-    private static String clave = "123456";
+    private static String clave = "12345678";
     private static Connection con;
    
     
     public conexion() {
+        
     }
     
     public conexion(String bd, String usuario,String clave ){

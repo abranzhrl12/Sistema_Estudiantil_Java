@@ -216,7 +216,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        panel_r_parqueo.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 480, 260));
+        panel_r_parqueo.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 480, 280));
 
         jCheckBox1.setText("Abilitar Mantenimiento");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +224,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        panel_r_parqueo.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
+        panel_r_parqueo.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, -1));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
@@ -232,7 +232,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
         button5.setText("Guardar");
         button5.setEnabled(false);
         button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        panel_r_parqueo.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 110, 50));
+        panel_r_parqueo.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, 110, 50));
 
         button6.setBackground(new java.awt.Color(255, 255, 51));
         button6.setBorder(null);
@@ -240,7 +240,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
         button6.setText("Eliminar");
         button6.setEnabled(false);
         button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        panel_r_parqueo.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 120, 50));
+        panel_r_parqueo.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 530, 120, 50));
 
         button4.setBackground(new java.awt.Color(255, 255, 51));
         button4.setBorder(null);
@@ -248,7 +248,7 @@ public class Frm_R_Regis_Parqueo extends javax.swing.JFrame {
         button4.setText("Modificar");
         button4.setEnabled(false);
         button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        panel_r_parqueo.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 50));
+        panel_r_parqueo.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 120, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

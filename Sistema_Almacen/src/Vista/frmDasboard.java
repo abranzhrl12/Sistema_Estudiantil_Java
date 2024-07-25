@@ -4,7 +4,10 @@
  */
 package Vista;
 
+import Controlador.MetodosUtilidades;
 import Modelo.conexion;
+import Vista.Clases.MenuScrollBar;
+import java.awt.Color;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -31,6 +34,8 @@ public class frmDasboard extends javax.swing.JFrame {
     public frmDasboard() {
         initComponents();
         
+        
+        
         EmpleadosModel.setColumnIdentifiers(titulos);
         tablaEstudiantes.setModel(EmpleadosModel);
         
@@ -55,6 +60,10 @@ public class frmDasboard extends javax.swing.JFrame {
       consultarPorcentagesIngresos();
       
       consultarCantidadDeIngresos();
+      
+      
+      scroll.getVerticalScrollBar().setUI(new MenuScrollBar());
+      scroll.setBackground(new Color(0, 0, 0, 0));
         
          
         
@@ -254,7 +263,7 @@ public class frmDasboard extends javax.swing.JFrame {
         btnSalir1 = new Vista.Clases.JpanelRound();
         jLabel3 = new javax.swing.JLabel();
         panelRound1 = new Vista.Clases.PanelRound();
-        rSScrollPane1 = new necesario.RSScrollPane();
+        scroll = new necesario.RSScrollPane();
         tablaEstudiantes = new rojerusan.RSTableMetro();
         jLabel4 = new javax.swing.JLabel();
         btnIngresosdelDia1 = new Vista.Clases.JpanelRound();
@@ -413,7 +422,7 @@ public class frmDasboard extends javax.swing.JFrame {
         );
         btnSalir1Layout.setVerticalGroup(
             btnSalir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnSalir1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSalir1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
@@ -423,10 +432,10 @@ public class frmDasboard extends javax.swing.JFrame {
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
         panelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        rSScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
-        rSScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        rSScrollPane1.setColorBackground(new java.awt.Color(255, 255, 255));
+        scroll.setBackground(new java.awt.Color(255, 255, 255));
+        scroll.setForeground(new java.awt.Color(255, 255, 255));
+        scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scroll.setColorBackground(new java.awt.Color(255, 255, 255));
 
         tablaEstudiantes.setBackground(new java.awt.Color(204, 204, 204));
         tablaEstudiantes.setForeground(new java.awt.Color(255, 255, 255));
@@ -473,9 +482,9 @@ public class frmDasboard extends javax.swing.JFrame {
         tablaEstudiantes.setSelectionForeground(new java.awt.Color(153, 153, 153));
         tablaEstudiantes.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         tablaEstudiantes.setShowGrid(false);
-        rSScrollPane1.setViewportView(tablaEstudiantes);
+        scroll.setViewportView(tablaEstudiantes);
 
-        panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 850, 260));
+        panelRound1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 850, 260));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Ultimos Estudiantes que Ingresaron");
@@ -530,15 +539,11 @@ public class frmDasboard extends javax.swing.JFrame {
         PanelPrincipalDShLayout.setVerticalGroup(
             PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrincipalDShLayout.createSequentialGroup()
-                .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPrincipalDShLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalDShLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)))
+                .addGap(45, 45, 45)
+                .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnIngresosdelDia1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnIngresosdelDia, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
@@ -579,6 +584,8 @@ public class frmDasboard extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
@@ -684,7 +691,7 @@ public class frmDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_porc_quimica;
     private javax.swing.JLabel lbl_totalDelDia;
     private Vista.Clases.PanelRound panelRound1;
-    private necesario.RSScrollPane rSScrollPane1;
+    private necesario.RSScrollPane scroll;
     private rojerusan.RSTableMetro tablaEstudiantes;
     // End of variables declaration//GEN-END:variables
 }

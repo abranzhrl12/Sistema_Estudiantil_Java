@@ -75,13 +75,13 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
                                 .addGap(6, 6, 6)
                                 .addComponent(result_field, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1))))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         lectorQRPanelLayout.setVerticalGroup(
             lectorQRPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lectorQRPanelLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(panelCamara, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addComponent(panelCamara, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -89,13 +89,13 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
                 .addGap(48, 48, 48))
         );
 
-        jPanel1.add(lectorQRPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 760, 600));
+        jPanel1.add(lectorQRPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -37,8 +37,10 @@ public class LoignControlador {
     }
       
          public static void cambiarVentanas(JFrame ventanaActual, JFrame ventanaSiguiente) {
-          ventanaActual.setVisible(false);
+             
+         ventanaActual.setVisible(false);
          ventanaSiguiente.setVisible(true);
+         
         }
       
 }

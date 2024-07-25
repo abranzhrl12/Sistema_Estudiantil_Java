@@ -10,33 +10,41 @@ import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
 import java.util.Arrays;
 import javax.swing.JComponent;
+
 public class Login extends javax.swing.JFrame {
- LoignControlador log=new LoignControlador(this);
- Controlador.MetodosUtilidades metodos=new Controlador.MetodosUtilidades(this);
+
+    LoignControlador log = new LoignControlador(this);
+
+    Controlador.MetodosUtilidades metodos = new Controlador.MetodosUtilidades(this);
+
     public Login() {
+
         initComponents();
-  jPanel3.requestFocusInWindow();
+        jPanel3.requestFocusInWindow();
         this.setLocationRelativeTo(null);
-       inicializarMouseListeners();
+        inicializarMouseListeners();
         setRoundedCorners();
-         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-     private void setRoundedCorners() {
+
+    private void setRoundedCorners() {
         Shape roundShape = new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30);
         setShape(roundShape);
     }
 
-     @Override
+    @Override
     public void setShape(Shape shape) {
         super.setShape(shape);
     }
-     private void inicializarMouseListeners() {
-        metodos.configurarMouseListener(btnIniciarSecion, () -> { 
-            log.validarCredenciales();
-        }, Arrays.asList(new JComponent[]{ }));
 
-       
+    private void inicializarMouseListeners() {
+        
+        metodos.configurarMouseListener(btnIniciarSecion, () -> {
+            log.validarCredenciales();
+        }, Arrays.asList(new JComponent[]{}));
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -22,13 +22,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         
         jScrollPane1.getVerticalScrollBar().setUI(new MenuScrollBar());
-        jScrollPane1.setBackground(new Color(0,0,0,0));
-         metodos.actualizarPanel(PanelPrincipal, new frmDasboard().PanelPrincipalDSh);
+        jScrollPane1.setBackground(new Color(0, 0, 0, 0));
+        metodos.actualizarPanel(PanelPrincipal, new frmDasboard().PanelPrincipalDSh);
         this.setLocationRelativeTo(null);
-        inicializarMouseListeners(); 
-         close.setBackground(new Color(0,0,0,0));
-          minimize.setBackground(new Color(255,255,255));
-           maximize.setBackground(new Color(255,255,255));
+        inicializarMouseListeners();
+        close.setBackground(new Color(0, 0, 0, 0));
+        minimize.setBackground(new Color(255, 255, 255));
+        maximize.setBackground(new Color(255, 255, 255));
            
         //Configurar dimenciones 
 //        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;

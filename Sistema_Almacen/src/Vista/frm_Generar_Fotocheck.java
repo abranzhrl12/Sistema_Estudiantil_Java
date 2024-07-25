@@ -89,7 +89,6 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
         rSScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         rSScrollPane1.setColorBackground(new java.awt.Color(255, 255, 255));
 
-        dttabla.setBackground(new java.awt.Color(204, 204, 204));
         dttabla.setForeground(new java.awt.Color(255, 255, 255));
         dttabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
