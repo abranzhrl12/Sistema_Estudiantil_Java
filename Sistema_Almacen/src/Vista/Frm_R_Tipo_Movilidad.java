@@ -26,7 +26,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Vista.Clases.JpanelRound();
+        panel_tipo_movilidad = new Vista.Clases.JpanelRound();
         panelRound1 = new Vista.Clases.PanelRound();
         rSScrollPane1 = new necesario.RSScrollPane();
         dttabla = new rojerusan.RSTableMetro();
@@ -46,8 +46,8 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_tipo_movilidad.setBackground(new java.awt.Color(255, 255, 255));
+        panel_tipo_movilidad.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -108,12 +108,12 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
 
-        jpanelRound1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
-        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 420, -1));
+        panel_tipo_movilidad.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
+        panel_tipo_movilidad.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        panel_tipo_movilidad.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -125,7 +125,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 180, 50));
+        panel_tipo_movilidad.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 180, 50));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -137,22 +137,22 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 180, 50));
+        panel_tipo_movilidad.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 180, 50));
 
         jLabel14.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel14.setText("Tipo:");
-        jpanelRound1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+        panel_tipo_movilidad.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
 
         rComboBox2.setBorder(null);
         rComboBox2.setForeground(new java.awt.Color(51, 51, 51));
         rComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Moto", "Mototaxi", "Auto", "Camioneta", "Cuatrimoto", "Minivan" }));
-        jpanelRound1.add(rComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 400, 40));
+        panel_tipo_movilidad.add(rComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 400, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Registro del Tipo de Movilidad");
-        jpanelRound1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        panel_tipo_movilidad.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,7 +206,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        jpanelRound1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 480, 260));
+        panel_tipo_movilidad.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 480, 260));
 
         jCheckBox1.setText("Abilitar Mantenimiento");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +214,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
+        panel_tipo_movilidad.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
@@ -222,7 +222,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
         button5.setText("Guardar");
         button5.setEnabled(false);
         button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 110, 50));
+        panel_tipo_movilidad.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 110, 50));
 
         button6.setBackground(new java.awt.Color(255, 255, 51));
         button6.setBorder(null);
@@ -230,7 +230,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
         button6.setText("Eliminar");
         button6.setEnabled(false);
         button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 120, 50));
+        panel_tipo_movilidad.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 120, 50));
 
         button4.setBackground(new java.awt.Color(255, 255, 51));
         button4.setBorder(null);
@@ -238,7 +238,7 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
         button4.setText("Modificar");
         button4.setEnabled(false);
         button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 50));
+        panel_tipo_movilidad.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,14 +246,14 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
+                .addComponent(panel_tipo_movilidad, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+                .addComponent(panel_tipo_movilidad, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -319,8 +319,8 @@ public class Frm_R_Tipo_Movilidad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
-    private Vista.Clases.JpanelRound jpanelRound1;
     private Vista.Clases.PanelRound panelRound1;
+    public Vista.Clases.JpanelRound panel_tipo_movilidad;
     private ComboxPerzonalizado.RComboBox rComboBox2;
     private necesario.RSScrollPane rSScrollPane1;
     private necesario.RSScrollPane rSScrollPane2;

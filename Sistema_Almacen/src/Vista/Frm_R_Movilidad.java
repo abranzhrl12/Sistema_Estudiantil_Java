@@ -26,7 +26,7 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Vista.Clases.JpanelRound();
+        panelRegistMovilidad = new Vista.Clases.JpanelRound();
         panelRound1 = new Vista.Clases.PanelRound();
         rSScrollPane1 = new necesario.RSScrollPane();
         dttabla = new rojerusan.RSTableMetro();
@@ -54,8 +54,8 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRegistMovilidad.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegistMovilidad.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -116,31 +116,31 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
 
-        jpanelRound1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
-        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 420, -1));
+        panelRegistMovilidad.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
+        panelRegistMovilidad.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-        jpanelRound1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 420, -1));
+        panelRegistMovilidad.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        panelRegistMovilidad.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 420, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Placa:");
-        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
-        jpanelRound1.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, -1));
+        panelRegistMovilidad.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        panelRegistMovilidad.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, -1));
 
         jLabel13.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel13.setText("Color:");
-        jpanelRound1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        panelRegistMovilidad.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel14.setText("Tipo:");
-        jpanelRound1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+        panelRegistMovilidad.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
 
         rComboBox2.setBorder(null);
         rComboBox2.setForeground(new java.awt.Color(51, 51, 51));
         rComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Moto", "Mototaxi", "Auto", "Camioneta", "Cuatrimoto", "Minivan" }));
-        jpanelRound1.add(rComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 400, 40));
+        panelRegistMovilidad.add(rComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 400, 40));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -152,13 +152,13 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 190, 50));
+        panelRegistMovilidad.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 190, 50));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Registro de Movilidad");
-        jpanelRound1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        panelRegistMovilidad.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         button3.setBackground(new java.awt.Color(255, 255, 51));
         button3.setBorder(null);
@@ -170,7 +170,7 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
                 button3ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 180, 50));
+        panelRegistMovilidad.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 180, 50));
 
         jCheckBox1.setText("Abilitar Mantenimiento");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +178,7 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, -1));
+        panelRegistMovilidad.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, -1));
 
         button4.setBackground(new java.awt.Color(255, 255, 51));
         button4.setBorder(null);
@@ -186,7 +186,7 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         button4.setText("Guardar");
         button4.setEnabled(false);
         button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, 100, 50));
+        panelRegistMovilidad.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, 100, 50));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
@@ -194,7 +194,7 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         button5.setText("Modificar");
         button5.setEnabled(false);
         button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 100, 50));
+        panelRegistMovilidad.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 100, 50));
 
         button6.setBackground(new java.awt.Color(255, 255, 51));
         button6.setBorder(null);
@@ -202,15 +202,15 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         button6.setText("Eliminar");
         button6.setEnabled(false);
         button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 100, 50));
+        panelRegistMovilidad.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 100, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
         jLabel1.setText("Buscar Movilidad");
-        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
+        panelRegistMovilidad.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
 
         jRadioButton1.setSelected(true);
         jRadioButton1.setText("Placa");
-        jpanelRound1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, -1, -1));
+        panelRegistMovilidad.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, -1, -1));
 
         jRadioButton3.setText("Código");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -218,8 +218,8 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, -1, -1));
-        jpanelRound1.add(txtcodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 420, -1));
+        panelRegistMovilidad.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, -1, -1));
+        panelRegistMovilidad.add(txtcodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 420, -1));
 
         rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -273,18 +273,18 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        jpanelRound1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 480, 260));
+        panelRegistMovilidad.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 480, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
+            .addComponent(panelRegistMovilidad, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelRegistMovilidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -361,7 +361,7 @@ public class Frm_R_Movilidad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton3;
-    private Vista.Clases.JpanelRound jpanelRound1;
+    public Vista.Clases.JpanelRound panelRegistMovilidad;
     private Vista.Clases.PanelRound panelRound1;
     private ComboxPerzonalizado.RComboBox rComboBox2;
     private necesario.RSScrollPane rSScrollPane1;

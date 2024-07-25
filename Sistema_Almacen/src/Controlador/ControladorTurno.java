@@ -17,6 +17,7 @@ import java.util.List;
  * @author Abraham
  */
 public class ControladorTurno {
+    
     private ProcimientosRegistrarTurno procimientosRegistrarTurno;
     private Frm_R_Turno turno;
     

@@ -23,7 +23,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Vista.Clases.JpanelRound();
+        panel_turno = new Vista.Clases.JpanelRound();
         txtHoraFinalTurno = new componentes.TextFieldShadown();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -47,18 +47,18 @@ public class Frm_R_Turno extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpanelRound1.add(txtHoraFinalTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 470, -1));
+        panel_turno.setBackground(new java.awt.Color(255, 255, 255));
+        panel_turno.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_turno.add(txtHoraFinalTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 470, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        panel_turno.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Hora_Inicial:");
-        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
-        jpanelRound1.add(txtCodigoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 420, -1));
+        panel_turno.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        panel_turno.add(txtCodigoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 420, -1));
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -119,17 +119,17 @@ public class Frm_R_Turno extends javax.swing.JFrame {
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
 
-        jpanelRound1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
+        panel_turno.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
 
         jLabel8.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel8.setText("Hora_Final: ");
-        jpanelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
-        jpanelRound1.add(txtHoraInicialTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 430, -1));
+        panel_turno.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
+        panel_turno.add(txtHoraInicialTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 430, -1));
 
         jLabel13.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel13.setText("Turno:");
-        jpanelRound1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
-        jpanelRound1.add(txtNombreTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 420, -1));
+        panel_turno.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        panel_turno.add(txtNombreTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 420, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -141,7 +141,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 180, 50));
+        panel_turno.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 180, 50));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -153,13 +153,13 @@ public class Frm_R_Turno extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 180, 50));
+        panel_turno.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 180, 50));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Registro del Turno");
-        jpanelRound1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        panel_turno.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -213,7 +213,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        jpanelRound1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 480, 260));
+        panel_turno.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 480, 260));
 
         jCheckBox1.setText("Abilitar Mantenimiento");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +221,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
+        panel_turno.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
@@ -229,7 +229,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
         button5.setText("Guardar");
         button5.setEnabled(false);
         button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 110, 50));
+        panel_turno.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 110, 50));
 
         button6.setBackground(new java.awt.Color(255, 255, 51));
         button6.setBorder(null);
@@ -237,7 +237,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
         button6.setText("Eliminar");
         button6.setEnabled(false);
         button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 120, 50));
+        panel_turno.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 120, 50));
 
         button4.setBackground(new java.awt.Color(255, 255, 51));
         button4.setBorder(null);
@@ -245,7 +245,7 @@ public class Frm_R_Turno extends javax.swing.JFrame {
         button4.setText("Modificar");
         button4.setEnabled(false);
         button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 50));
+        panel_turno.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -253,14 +253,14 @@ public class Frm_R_Turno extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
+                .addComponent(panel_turno, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+                .addComponent(panel_turno, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -339,8 +339,8 @@ return txtHoraFinalTurno.getText().trim();
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
-    private Vista.Clases.JpanelRound jpanelRound1;
     private Vista.Clases.PanelRound panelRound1;
+    public Vista.Clases.JpanelRound panel_turno;
     private necesario.RSScrollPane rSScrollPane1;
     private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtCodigoTurno;

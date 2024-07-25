@@ -37,7 +37,7 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
     private void initComponents() {
 
         rgBuscarEstudiante = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
+        panel_generar_fotocheck = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -63,22 +63,22 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(250, 251, 253));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_generar_fotocheck.setBackground(new java.awt.Color(250, 251, 253));
+        panel_generar_fotocheck.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
         jLabel1.setText("Buscar Estudiante");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 113, 140, -1));
+        panel_generar_fotocheck.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 113, 140, -1));
 
         jRadioButton1.setSelected(true);
         jRadioButton1.setText("Codigo");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 115, -1, -1));
+        panel_generar_fotocheck.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 115, -1, -1));
 
         jRadioButton2.setText("Nombre");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 115, -1, -1));
+        panel_generar_fotocheck.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 115, -1, -1));
 
         jRadioButton3.setText("DNI");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 115, -1, -1));
+        panel_generar_fotocheck.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 115, -1, -1));
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -138,16 +138,16 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 480, 300));
 
-        jPanel1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 204, 500, 340));
+        panel_generar_fotocheck.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 204, 500, 340));
 
         txtcodigo1.setShadowColor(new java.awt.Color(0, 51, 153));
-        jPanel1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 149, 500, 49));
+        panel_generar_fotocheck.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 149, 500, 49));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Generar Fotocheck");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 29, 906, -1));
+        panel_generar_fotocheck.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 29, 906, -1));
 
         btnElegirRuta.setBackground(new java.awt.Color(0, 102, 153));
         btnElegirRuta.setBorder(null);
@@ -164,7 +164,7 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
                 btnElegirRutaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnElegirRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 110, 54));
+        panel_generar_fotocheck.add(btnElegirRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 110, 54));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
@@ -176,7 +176,7 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
                 button5ActionPerformed(evt);
             }
         });
-        jPanel1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 165, 54));
+        panel_generar_fotocheck.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 165, 54));
 
         btnGuardarFotocheck.setBackground(new java.awt.Color(102, 102, 255));
         btnGuardarFotocheck.setBorder(null);
@@ -189,7 +189,7 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
                 btnGuardarFotocheckActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardarFotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 110, 54));
+        panel_generar_fotocheck.add(btnGuardarFotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 110, 54));
 
         panelFotocheck.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         panelFotocheck.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 70, 10));
@@ -216,11 +216,11 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PlantillaFotocheck.png"))); // NOI18N
         panelFotocheck.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel1.add(panelFotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, -1, 380));
+        panel_generar_fotocheck.add(panelFotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, -1, 380));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Vista Previa");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 169, -1));
+        panel_generar_fotocheck.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 169, -1));
 
         button7.setBackground(new java.awt.Color(255, 255, 51));
         button7.setBorder(null);
@@ -232,17 +232,17 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
                 button7ActionPerformed(evt);
             }
         });
-        jPanel1.add(button7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 164, 54));
+        panel_generar_fotocheck.add(button7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 164, 54));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel_generar_fotocheck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel_generar_fotocheck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -366,7 +366,6 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -375,6 +374,7 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Nombre_y_Ape;
     private javax.swing.JPanel panelFotocheck;
     private Vista.Clases.PanelRound panelRound1;
+    public javax.swing.JPanel panel_generar_fotocheck;
     private necesario.RSScrollPane rSScrollPane1;
     private javax.swing.ButtonGroup rgBuscarEstudiante;
     private componentes.TextFieldShadown txtcodigo1;

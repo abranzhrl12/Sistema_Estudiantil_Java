@@ -308,6 +308,9 @@
                               <Color id="Default Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblInicioMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -468,6 +471,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Agregar Estudiante"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_Agregar_EstudianteMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lbl_Generar_Fotocheck">
                           <Properties>
@@ -476,6 +482,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Generar Fotocheck"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_Generar_FotocheckMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -547,6 +556,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Estudiantes"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_EstudianteMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_Veiculos">
                           <Properties>
@@ -555,6 +567,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Veh&#xed;culos"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_VeiculosMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_tipoVeicuo">
                           <Properties>
@@ -563,6 +578,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Tipo de Veh&#xed;culos"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_tipoVeicuoMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_tipoEmpleado">
                           <Properties>
@@ -571,6 +589,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Tipo Empleados"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_tipoEmpleadoMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_Empleados">
                           <Properties>
@@ -579,6 +600,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Empleados"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_EmpleadosMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_ProgramaEstudio">
                           <Properties>
@@ -598,6 +622,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Turnos"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_TurnosMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_R_parqueo">
                           <Properties>
@@ -606,6 +633,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Registros de Parqueo"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_R_parqueoMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblAdm_R_ingresos">
                           <Properties>
@@ -614,6 +644,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Registros de Ingresos"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdm_R_ingresosMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblDatosDeContacto">
                           <Properties>
@@ -622,6 +655,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Datos de Contacto"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblDatosDeContactoMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -866,6 +902,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Reportes de Parqueo"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_reporte_parqueoMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lbl_reporte_ingreso">
                           <Properties>
@@ -874,6 +913,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Reportes de Ingresos"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_reporte_ingresoMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -917,6 +959,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Agregar Veh&#xed;culo"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_agregar_veiculoMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lbl_agregar_Tipo_veiculo">
                           <Properties>
@@ -925,6 +970,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Registrar Tipo de Veh&#xed;culo"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_agregar_Tipo_veiculoMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>

@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import Modelo.conexion;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author jhoyb
@@ -13,9 +18,62 @@ public class frmDasboard extends javax.swing.JFrame {
     /**
      * Creates new form frmDasboard
      */
+     DefaultTableModel EmpleadosModel = new DefaultTableModel();
+      String titulos[] = {"Codigo","Apellido Pate", "Apellido Mat","Nombre","Ciudad","direccion","Usuario" , "Clave"};
+      
+    
     public frmDasboard() {
         initComponents();
+        
+        EmpleadosModel.setColumnIdentifiers(titulos);
+        tablaEstudiantes.setModel(EmpleadosModel);
+        
+       
+        
+        
     }
+    
+    
+    private void ConsultaTabla() {
+        conexion cn = new conexion();
+        cn.conectar();
+        
+        String  consultaFinal = "";
+        try {
+               
+            ResultSet rs = cn.getConsulta(consultaFinal);
+            limpiarTabla();
+            while (rs.next()) {
+                String[] datos = new String[titulos.length];
+
+                for (int i = 0; i < titulos.length; i++) {
+
+                    datos[i] = rs.getString(i + 1);
+                }
+                EmpleadosModel.addRow(datos);
+
+            }
+            
+        } catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(rootPane, "Error en la consulta" + e.getMessage() );
+            
+        } finally {
+            cn.cerrarConexion();
+            System.out.println(consultaFinal);
+        }
+    }
+ 
+    private void limpiarTabla() {
+        int x = EmpleadosModel.getRowCount();
+        for (int i = 0; i < x; i++) {
+            EmpleadosModel.removeRow(0);
+        }
+
+        
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,7 +85,7 @@ public class frmDasboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        PanelPrincipal = new javax.swing.JPanel();
+        PanelPrincipalDSh = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnIngresosdelDia = new Vista.Clases.JpanelRound();
         jLabel5 = new javax.swing.JLabel();
@@ -58,7 +116,7 @@ public class frmDasboard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         panelRound1 = new Vista.Clases.PanelRound();
         rSScrollPane1 = new necesario.RSScrollPane();
-        dttabla = new rojerusan.RSTableMetro();
+        tablaEstudiantes = new rojerusan.RSTableMetro();
         jLabel4 = new javax.swing.JLabel();
         btnIngresosdelDia1 = new Vista.Clases.JpanelRound();
         jLabel7 = new javax.swing.JLabel();
@@ -68,8 +126,8 @@ public class frmDasboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelPrincipal.setBackground(new java.awt.Color(243, 243, 249));
-        PanelPrincipal.setAutoscrolls(true);
+        PanelPrincipalDSh.setBackground(new java.awt.Color(243, 243, 249));
+        PanelPrincipalDSh.setAutoscrolls(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
@@ -223,9 +281,9 @@ public class frmDasboard extends javax.swing.JFrame {
         rSScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         rSScrollPane1.setColorBackground(new java.awt.Color(255, 255, 255));
 
-        dttabla.setBackground(new java.awt.Color(204, 204, 204));
-        dttabla.setForeground(new java.awt.Color(255, 255, 255));
-        dttabla.setModel(new javax.swing.table.DefaultTableModel(
+        tablaEstudiantes.setBackground(new java.awt.Color(204, 204, 204));
+        tablaEstudiantes.setForeground(new java.awt.Color(255, 255, 255));
+        tablaEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"12321", "fdsfsd", null, null, null},
                 {"121", "fdsfsd", null, null, null},
@@ -247,28 +305,28 @@ public class frmDasboard extends javax.swing.JFrame {
                 "CODIGO", "NOMBRES Y APELLIDOS", "PROGRAMA ESTUDIO", "HORA INGRESO", "SEMESTRE"
             }
         ));
-        dttabla.setAltoHead(40);
-        dttabla.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        dttabla.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
-        dttabla.setColorBordeFilas(new java.awt.Color(0, 0, 204));
-        dttabla.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        dttabla.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        dttabla.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
-        dttabla.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
-        dttabla.setColorForegroundHead(new java.awt.Color(102, 102, 102));
-        dttabla.setColorSelBackgound(new java.awt.Color(102, 102, 102));
-        dttabla.setColorSelForeground(new java.awt.Color(102, 102, 102));
-        dttabla.setDoubleBuffered(true);
-        dttabla.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        dttabla.setGridColor(new java.awt.Color(255, 255, 255));
-        dttabla.setGrosorBordeFilas(0);
-        dttabla.setRowHeight(39);
-        dttabla.setRowMargin(2);
-        dttabla.setRowSelectionAllowed(false);
-        dttabla.setSelectionForeground(new java.awt.Color(153, 153, 153));
-        dttabla.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        dttabla.setShowGrid(false);
-        rSScrollPane1.setViewportView(dttabla);
+        tablaEstudiantes.setAltoHead(40);
+        tablaEstudiantes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tablaEstudiantes.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        tablaEstudiantes.setColorBordeFilas(new java.awt.Color(0, 0, 204));
+        tablaEstudiantes.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tablaEstudiantes.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tablaEstudiantes.setColorFilasForeground1(new java.awt.Color(153, 153, 153));
+        tablaEstudiantes.setColorFilasForeground2(new java.awt.Color(153, 153, 153));
+        tablaEstudiantes.setColorForegroundHead(new java.awt.Color(102, 102, 102));
+        tablaEstudiantes.setColorSelBackgound(new java.awt.Color(102, 102, 102));
+        tablaEstudiantes.setColorSelForeground(new java.awt.Color(102, 102, 102));
+        tablaEstudiantes.setDoubleBuffered(true);
+        tablaEstudiantes.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        tablaEstudiantes.setGridColor(new java.awt.Color(255, 255, 255));
+        tablaEstudiantes.setGrosorBordeFilas(0);
+        tablaEstudiantes.setRowHeight(39);
+        tablaEstudiantes.setRowMargin(2);
+        tablaEstudiantes.setRowSelectionAllowed(false);
+        tablaEstudiantes.setSelectionForeground(new java.awt.Color(153, 153, 153));
+        tablaEstudiantes.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        tablaEstudiantes.setShowGrid(false);
+        rSScrollPane1.setViewportView(tablaEstudiantes);
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 850, 260));
 
@@ -302,41 +360,39 @@ public class frmDasboard extends javax.swing.JFrame {
         jLabel8.setText("50");
         btnIngresosdelDia1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 93));
 
-        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
-        PanelPrincipal.setLayout(PanelPrincipalLayout);
-        PanelPrincipalLayout.setHorizontalGroup(
-            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelPrincipalDShLayout = new javax.swing.GroupLayout(PanelPrincipalDSh);
+        PanelPrincipalDSh.setLayout(PanelPrincipalDShLayout);
+        PanelPrincipalDShLayout.setHorizontalGroup(
+            PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalDShLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(428, 428, 428)
-                        .addComponent(btnSalir1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(65, Short.MAX_VALUE))
-                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(btnIngresosdelDia1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIngresosdelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelPrincipalDShLayout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(413, 413, 413)
+                            .addComponent(btnSalir1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelPrincipalDShLayout.createSequentialGroup()
+                            .addComponent(btnIngresosdelDia1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnIngresosdelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
-        PanelPrincipalLayout.setVerticalGroup(
-            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+        PanelPrincipalDShLayout.setVerticalGroup(
+            PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalDShLayout.createSequentialGroup()
+                .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelPrincipalDShLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jLabel1))
-                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalDShLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)))
+                .addGroup(PanelPrincipalDShLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnIngresosdelDia1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnIngresosdelDia, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
@@ -350,11 +406,11 @@ public class frmDasboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipalDSh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipalDSh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -446,11 +502,10 @@ public class frmDasboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelPrincipal;
+    public javax.swing.JPanel PanelPrincipalDSh;
     private Vista.Clases.JpanelRound btnIngresosdelDia;
     private Vista.Clases.JpanelRound btnIngresosdelDia1;
     private Vista.Clases.JpanelRound btnSalir1;
-    private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -483,5 +538,6 @@ public class frmDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_porc_quimica;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
+    private rojerusan.RSTableMetro tablaEstudiantes;
     // End of variables declaration//GEN-END:variables
 }

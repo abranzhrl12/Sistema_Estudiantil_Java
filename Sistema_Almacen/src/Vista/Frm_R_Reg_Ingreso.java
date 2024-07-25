@@ -26,7 +26,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Vista.Clases.JpanelRound();
+        panelR_ingreso = new Vista.Clases.JpanelRound();
         txtcodigo = new componentes.TextFieldShadown();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -48,18 +48,18 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpanelRound1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 420, -1));
+        panelR_ingreso.setBackground(new java.awt.Color(255, 255, 255));
+        panelR_ingreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelR_ingreso.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 420, -1));
 
         jLabel11.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel11.setText("Codigo:");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        panelR_ingreso.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel12.setText("Hora:");
-        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
-        jpanelRound1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 420, -1));
+        panelR_ingreso.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        panelR_ingreso.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 420, -1));
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
         panelRound1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -120,11 +120,11 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
 
         panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 790, 230));
 
-        jpanelRound1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
+        panelR_ingreso.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 10, 10));
 
         jLabel8.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel8.setText("Fecha: ");
-        jpanelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        panelR_ingreso.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -136,7 +136,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 190, 50));
+        panelR_ingreso.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 190, 50));
 
         button1.setBackground(new java.awt.Color(255, 255, 51));
         button1.setBorder(null);
@@ -148,14 +148,14 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, 190, 50));
-        jpanelRound1.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 420, -1));
+        panelR_ingreso.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, 190, 50));
+        panelR_ingreso.add(txtcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 420, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Registro de Ingreso del Estudiante");
-        jpanelRound1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        panelR_ingreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
@@ -163,7 +163,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
         button5.setText("Guardar");
         button5.setEnabled(false);
         button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 510, 90, 50));
+        panelR_ingreso.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 510, 90, 50));
 
         button6.setBackground(new java.awt.Color(255, 255, 51));
         button6.setBorder(null);
@@ -171,7 +171,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
         button6.setText("Eliminar");
         button6.setEnabled(false);
         button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 510, 100, 50));
+        panelR_ingreso.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 510, 100, 50));
 
         jCheckBox1.setText("Abilitar Mantenimiento");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +179,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jpanelRound1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, -1, -1));
+        panelR_ingreso.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, -1, -1));
 
         button4.setBackground(new java.awt.Color(255, 255, 51));
         button4.setBorder(null);
@@ -187,7 +187,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
         button4.setText("Modificar");
         button4.setEnabled(false);
         button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, 100, 50));
+        panelR_ingreso.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, 100, 50));
 
         rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -241,7 +241,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        jpanelRound1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 480, 260));
+        panelR_ingreso.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 480, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -249,14 +249,14 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
+                .addComponent(panelR_ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+                .addComponent(panelR_ingreso, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -323,7 +323,7 @@ public class Frm_R_Reg_Ingreso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
-    private Vista.Clases.JpanelRound jpanelRound1;
+    public Vista.Clases.JpanelRound panelR_ingreso;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
     private necesario.RSScrollPane rSScrollPane2;

@@ -50,6 +50,7 @@ public class ProcedimientosEmpleados {
         return resultado;
     }
   public static List<Empleado> obtenerEmpleados() throws SQLException {
+      
         List<Empleado> empleados = new ArrayList<>();
         CallableStatement cs = null;
         Connection con = null;
@@ -85,6 +86,7 @@ public class ProcedimientosEmpleados {
         }
         return empleados;
     }
+  
   // Método para eliminar un empleado
     public static String eliminarEmpleado(String cod_Empleado) throws SQLException {
         CallableStatement cs = null;

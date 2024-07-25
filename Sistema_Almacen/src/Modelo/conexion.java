@@ -12,7 +12,7 @@ public class conexion {
     private static String bd = "bdsistemaingresos";
     private static String url = "jdbc:mysql://localhost:3306/" + bd;
     private static String usuario = "root";
-    private static String clave = "123456";
+    private static String clave = "12345678";
     private static Connection con;
    
     
@@ -47,6 +47,7 @@ public class conexion {
     }
      
      public static ResultSet getConsulta(String consulta) {
+         
         try (Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery(consulta)) {
             System.out.println("Consulta ejecutada correctamente.");
@@ -55,5 +56,6 @@ public class conexion {
             System.out.println("Error al ejecutar la consulta: " + e.getMessage());
             return null;
         }
+        
     }  
 }

@@ -26,7 +26,7 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panel_report_parqueo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         rSScrollPane2 = new necesario.RSScrollPane();
         dttabla1 = new rojerusan.RSTableMetro();
@@ -47,14 +47,14 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_report_parqueo.setBackground(new java.awt.Color(255, 255, 255));
+        panel_report_parqueo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Generar Reporte de Parqueo");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        panel_report_parqueo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,11 +108,11 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        jPanel1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 930, 260));
+        panel_report_parqueo.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 930, 260));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
         jLabel1.setText("Elegir rango de fecha");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        panel_report_parqueo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
         jRadioButton1.setText("Reporte por Unidad");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,16 +120,16 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+        panel_report_parqueo.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
         jRadioButton2.setSelected(true);
         jRadioButton2.setText("Reporte Global");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-        jPanel1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 420, -1));
+        panel_report_parqueo.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        panel_report_parqueo.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 420, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
         jLabel3.setText("Buscar Código");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        panel_report_parqueo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         jRadioButton3.setText("Por Defecto");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -137,22 +137,22 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
+        panel_report_parqueo.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
 
         jRadioButton4.setSelected(true);
         jRadioButton4.setText("Manualmente");
-        jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+        panel_report_parqueo.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Último Día", "Última Semana", "Último mes", "Último año", "Todo" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 120, 30));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 110, 30));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 110, 30));
+        panel_report_parqueo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 120, 30));
+        panel_report_parqueo.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 110, 30));
+        panel_report_parqueo.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 110, 30));
 
         jLabel4.setText("Fecha Final");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, -1, -1));
+        panel_report_parqueo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, -1, -1));
 
         jLabel5.setText("Fecha de Inicio");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
+        panel_report_parqueo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -164,7 +164,7 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jPanel1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 180, 50));
+        panel_report_parqueo.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 180, 50));
 
         button3.setBackground(new java.awt.Color(255, 255, 51));
         button3.setBorder(null);
@@ -176,17 +176,17 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
                 button3ActionPerformed(evt);
             }
         });
-        jPanel1.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 300, 180, 50));
+        panel_report_parqueo.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 300, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
+            .addComponent(panel_report_parqueo, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
+            .addComponent(panel_report_parqueo, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
         );
 
         pack();
@@ -253,13 +253,13 @@ public class Frm_R_Reporte_Parqueo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    public javax.swing.JPanel panel_report_parqueo;
     private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtcodigo;
     // End of variables declaration//GEN-END:variables

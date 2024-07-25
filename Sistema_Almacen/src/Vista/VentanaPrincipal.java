@@ -23,7 +23,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         jScrollPane1.getVerticalScrollBar().setUI(new MenuScrollBar());
         jScrollPane1.setBackground(new Color(0,0,0,0));
-       
+         metodos.actualizarPanel(PanelPrincipal, new frmDasboard().PanelPrincipalDSh);
         this.setLocationRelativeTo(null);
         inicializarMouseListeners(); 
          close.setBackground(new Color(0,0,0,0));
@@ -42,18 +42,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     private void inicializarMouseListeners() {  
         
-        metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {
-            metodos.actualizarPanel(PanelPrincipal, new Frm_R_Estudiante().panel_r_3);
-        }, Arrays.asList(new JComponent[]{lblEstudianteIC}));
-
-        metodos.configurarMouseListener(btnLectorQR, () -> {
-            
-        }, Arrays.asList(new JComponent[]{lblLector}));
+//        metodos.configurarMouseListener(btnRegistrarEstudiante, () -> {
+//            metodos.actualizarPanel(PanelPrincipal, new Frm_R_Estudiante().panel_r_3);
+//        }, Arrays.asList(new JComponent[]{lblEstudianteIC}));
+//
+//        metodos.configurarMouseListener(btnLectorQR, () -> {
+//            
+//        }, Arrays.asList(new JComponent[]{lblLector}));
 
 
         metodos.configurarMouseListener(btnLectorQR, () -> {
             ReadQrcode readQR = new ReadQrcode();
             metodos.actualizarPanel(PanelPrincipal, readQR.lectorQRPanel);
+            
         }, Arrays.asList(new JComponent[]{ /* Agregar aquí los componentes a ignorar */ }));
     }
     @SuppressWarnings("unchecked")
@@ -214,6 +215,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/home-32_1.png"))); // NOI18N
         lblInicio.setText("Inicio");
         lblInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblInicioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
@@ -335,9 +341,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lbl_Agregar_Estudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lbl_Agregar_Estudiante.setText("Agregar Estudiante");
+        lbl_Agregar_Estudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_Agregar_EstudianteMouseClicked(evt);
+            }
+        });
 
         lbl_Generar_Fotocheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lbl_Generar_Fotocheck.setText("Generar Fotocheck");
+        lbl_Generar_Fotocheck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_Generar_FotocheckMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pRegistrarEstudianteLayout = new javax.swing.GroupLayout(pRegistrarEstudiante);
         pRegistrarEstudiante.setLayout(pRegistrarEstudianteLayout);
@@ -364,18 +380,43 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lblAdm_Estudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_Estudiante.setText("Estudiantes");
+        lblAdm_Estudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_EstudianteMouseClicked(evt);
+            }
+        });
 
         lblAdm_Veiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_Veiculos.setText("Vehículos");
+        lblAdm_Veiculos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_VeiculosMouseClicked(evt);
+            }
+        });
 
         lblAdm_tipoVeicuo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_tipoVeicuo.setText("Tipo de Vehículos");
+        lblAdm_tipoVeicuo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_tipoVeicuoMouseClicked(evt);
+            }
+        });
 
         lblAdm_tipoEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_tipoEmpleado.setText("Tipo Empleados");
+        lblAdm_tipoEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_tipoEmpleadoMouseClicked(evt);
+            }
+        });
 
         lblAdm_Empleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_Empleados.setText("Empleados");
+        lblAdm_Empleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_EmpleadosMouseClicked(evt);
+            }
+        });
 
         lblAdm_ProgramaEstudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_ProgramaEstudio.setText("Programas de Estudio");
@@ -387,15 +428,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lblAdm_Turnos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_Turnos.setText("Turnos");
+        lblAdm_Turnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_TurnosMouseClicked(evt);
+            }
+        });
 
         lblAdm_R_parqueo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_R_parqueo.setText("Registros de Parqueo");
+        lblAdm_R_parqueo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_R_parqueoMouseClicked(evt);
+            }
+        });
 
         lblAdm_R_ingresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblAdm_R_ingresos.setText("Registros de Ingresos");
+        lblAdm_R_ingresos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdm_R_ingresosMouseClicked(evt);
+            }
+        });
 
         lblDatosDeContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lblDatosDeContacto.setText("Datos de Contacto");
+        lblDatosDeContacto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDatosDeContactoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pAdministrarInformacionLayout = new javax.swing.GroupLayout(pAdministrarInformacion);
         pAdministrarInformacion.setLayout(pAdministrarInformacionLayout);
@@ -619,9 +680,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lbl_reporte_parqueo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lbl_reporte_parqueo.setText("Reportes de Parqueo");
+        lbl_reporte_parqueo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_reporte_parqueoMouseClicked(evt);
+            }
+        });
 
         lbl_reporte_ingreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lbl_reporte_ingreso.setText("Reportes de Ingresos");
+        lbl_reporte_ingreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_reporte_ingresoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pReportesLayout = new javax.swing.GroupLayout(pReportes);
         pReportes.setLayout(pReportesLayout);
@@ -648,9 +719,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lbl_agregar_veiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lbl_agregar_veiculo.setText("Agregar Vehículo");
+        lbl_agregar_veiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_agregar_veiculoMouseClicked(evt);
+            }
+        });
 
         lbl_agregar_Tipo_veiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconsHome/arrow-descent-24.png"))); // NOI18N
         lbl_agregar_Tipo_veiculo.setText("Registrar Tipo de Vehículo");
+        lbl_agregar_Tipo_veiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_agregar_Tipo_veiculoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pRegistrarVeiculosLayout = new javax.swing.GroupLayout(pRegistrarVeiculos);
         pRegistrarVeiculos.setLayout(pRegistrarVeiculosLayout);
@@ -893,6 +974,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void lblEstudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEstudiantesMouseClicked
         // TODO add your handling code here:
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Reg_Ingreso().panelR_ingreso);
     }//GEN-LAST:event_lblEstudiantesMouseClicked
 
     private void btnRegistrarEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarEstudianteMouseClicked
@@ -933,6 +1015,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void lblVeiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVeiculoMouseClicked
         // TODO add your handling code here:
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Regis_Parqueo().panel_r_parqueo);
     }//GEN-LAST:event_lblVeiculoMouseClicked
 
     private void lblVeiculoICMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVeiculoICMouseClicked
@@ -1210,6 +1293,102 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         minimize.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_minimizeMouseExited
+
+    private void lblInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicioMouseClicked
+        // TODO add your handling code here:
+        metodos.actualizarPanel(PanelPrincipal, new frmDasboard().PanelPrincipalDSh);
+    }//GEN-LAST:event_lblInicioMouseClicked
+
+    private void lbl_Agregar_EstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Agregar_EstudianteMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Estudiante().panel_r_3);
+    }//GEN-LAST:event_lbl_Agregar_EstudianteMouseClicked
+
+    private void lbl_Generar_FotocheckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Generar_FotocheckMouseClicked
+        // TODO add your handling code here:
+        metodos.actualizarPanel(PanelPrincipal, new frm_Generar_Fotocheck().panel_generar_fotocheck);
+    }//GEN-LAST:event_lbl_Generar_FotocheckMouseClicked
+
+    private void lbl_agregar_veiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_agregar_veiculoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Movilidad().panelRegistMovilidad);
+    }//GEN-LAST:event_lbl_agregar_veiculoMouseClicked
+
+    private void lbl_agregar_Tipo_veiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_agregar_Tipo_veiculoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Tipo_Movilidad().panel_tipo_movilidad);
+    }//GEN-LAST:event_lbl_agregar_Tipo_veiculoMouseClicked
+
+    private void lbl_reporte_parqueoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_reporte_parqueoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Reporte_Parqueo().panel_report_parqueo);
+    }//GEN-LAST:event_lbl_reporte_parqueoMouseClicked
+
+    private void lbl_reporte_ingresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_reporte_ingresoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Reporte_Estudiante().panel_repot_estudiante);
+    }//GEN-LAST:event_lbl_reporte_ingresoMouseClicked
+
+    private void lblAdm_EstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_EstudianteMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Estudiante().panel_r_3);
+    }//GEN-LAST:event_lblAdm_EstudianteMouseClicked
+
+    private void lblDatosDeContactoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDatosDeContactoMouseClicked
+        // TODO add your handling code here:
+        
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Datos_Contacto().panelDAtosContacto);
+    }//GEN-LAST:event_lblDatosDeContactoMouseClicked
+
+    private void lblAdm_VeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_VeiculosMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Movilidad().panelRegistMovilidad);
+    }//GEN-LAST:event_lblAdm_VeiculosMouseClicked
+
+    private void lblAdm_tipoVeicuoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_tipoVeicuoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Tipo_Movilidad().panel_tipo_movilidad);
+    }//GEN-LAST:event_lblAdm_tipoVeicuoMouseClicked
+
+    private void lblAdm_EmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_EmpleadosMouseClicked
+        // TODO add your handling code here:
+        
+       
+    }//GEN-LAST:event_lblAdm_EmpleadosMouseClicked
+
+    private void lblAdm_tipoEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_tipoEmpleadoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Tipo_Empleado().panel_tipo_empleado);
+    }//GEN-LAST:event_lblAdm_tipoEmpleadoMouseClicked
+
+    private void lblAdm_TurnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_TurnosMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Turno().panel_turno);
+        
+    }//GEN-LAST:event_lblAdm_TurnosMouseClicked
+
+    private void lblAdm_R_parqueoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_R_parqueoMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Regis_Parqueo().panel_r_parqueo);
+    }//GEN-LAST:event_lblAdm_R_parqueoMouseClicked
+
+    private void lblAdm_R_ingresosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_R_ingresosMouseClicked
+        // TODO add your handling code here:
+        
+        metodos.actualizarPanel(PanelPrincipal, new Frm_R_Reg_Ingreso().panelR_ingreso);
+    }//GEN-LAST:event_lblAdm_R_ingresosMouseClicked
 
     private void hoverBtnSalir(){
         btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

@@ -26,7 +26,7 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panel_repot_estudiante = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -51,14 +51,14 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_repot_estudiante.setBackground(new java.awt.Color(255, 255, 255));
+        panel_repot_estudiante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Generar Reporte de Estudiante");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        panel_repot_estudiante.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jRadioButton1.setText("Reporte por Estudiante");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -66,16 +66,16 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
+        panel_repot_estudiante.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
         jRadioButton2.setSelected(true);
         jRadioButton2.setText("Reporte Global");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-        jPanel1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 390, -1));
+        panel_repot_estudiante.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        panel_repot_estudiante.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 390, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
         jLabel4.setText("Buscar ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        panel_repot_estudiante.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jRadioButton3.setText("DNI");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -83,11 +83,11 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
+        panel_repot_estudiante.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
         jRadioButton4.setSelected(true);
         jRadioButton4.setText("Código");
-        jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+        panel_repot_estudiante.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         jRadioButton5.setText("Nombre");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
                 jRadioButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
+        panel_repot_estudiante.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
 
         rSScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         rSScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,7 +149,7 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
         dttabla1.setShowGrid(false);
         rSScrollPane2.setViewportView(dttabla1);
 
-        jPanel1.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 930, 260));
+        panel_repot_estudiante.add(rSScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 930, 260));
 
         button2.setBackground(new java.awt.Color(255, 255, 51));
         button2.setBorder(null);
@@ -161,7 +161,7 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        jPanel1.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 180, 50));
+        panel_repot_estudiante.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 180, 50));
 
         button3.setBackground(new java.awt.Color(255, 255, 51));
         button3.setBorder(null);
@@ -173,11 +173,11 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
                 button3ActionPerformed(evt);
             }
         });
-        jPanel1.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 600, 180, 50));
+        panel_repot_estudiante.add(button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 600, 180, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosUtilidades/search-24.png"))); // NOI18N
         jLabel1.setText("Elegir rango de fecha");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
+        panel_repot_estudiante.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
         jRadioButton6.setText("Por Defecto");
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -185,24 +185,24 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
                 jRadioButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, -1, -1));
+        panel_repot_estudiante.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, -1, -1));
 
         jRadioButton7.setSelected(true);
         jRadioButton7.setText("Manualmente");
-        jPanel1.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, -1, -1));
+        panel_repot_estudiante.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar>", "Último Día", "Última Semana", "Último mes", "Último año", "Todo" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 120, 30));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 110, 30));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 110, 30));
+        panel_repot_estudiante.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 120, 30));
+        panel_repot_estudiante.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 110, 30));
+        panel_repot_estudiante.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 110, 30));
 
         jLabel5.setText("Fecha Final");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, -1, -1));
+        panel_repot_estudiante.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, -1, -1));
 
         jLabel6.setText("Fecha de Inicio");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
+        panel_repot_estudiante.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 690));
+        getContentPane().add(panel_repot_estudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -276,7 +276,6 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -286,6 +285,7 @@ public class Frm_R_Reporte_Estudiante extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    public javax.swing.JPanel panel_repot_estudiante;
     private necesario.RSScrollPane rSScrollPane2;
     private componentes.TextFieldShadown txtcodigo;
     // End of variables declaration//GEN-END:variables
