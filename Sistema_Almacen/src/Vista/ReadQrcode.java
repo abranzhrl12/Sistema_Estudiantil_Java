@@ -1,6 +1,8 @@
 
 package Vista;
 
+import Controlador.ControladorRegistroIngreso;
+import Controlador.ControladorTurno;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
@@ -11,6 +13,7 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
+import java.awt.Dimension;
 
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Executor;
@@ -25,12 +28,11 @@ import javax.swing.SwingUtilities;
 public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFactory{
     private WebcamPanel panel=null;
     private Webcam webcam=null;
-    private Executor executor=Executors.newSingleThreadExecutor(this);
+    private ControladorRegistroIngreso ingresos;
     public ReadQrcode() {
         initComponents();
-       new Controlador.ConfiguracionLectorQR().initWebcam(webcam, panel, panelCamara);
-       
-      
+      initWebcam();
+       ingresos = new ControladorRegistroIngreso(this);
     }
 
  
@@ -113,12 +115,22 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
             }
         });
     }
+   private void initWebcam() {
+        Dimension size = WebcamResolution.QVGA.getSize();
+        webcam = Webcam.getWebcams().get(0);
+        webcam.setViewSize(size);
+        panel = new WebcamPanel(webcam);
+        panel.setPreferredSize(size);
+        panel.setFPSDisplayed(true);
+        panelCamara.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 300));
 
+        Executors.newSingleThreadExecutor(this).submit(this);
+    }
   
 
 
-    
-    @Override
+
+      @Override
     public void run() {
         do {
             try {
@@ -149,6 +161,7 @@ public class ReadQrcode extends javax.swing.JFrame implements Runnable,ThreadFac
         } while (true);
     }
     
+    
 @Override
 public Thread newThread(Runnable r){
     Thread t=new Thread(r,"My Thread");
@@ -173,6 +186,6 @@ public Thread newThread(Runnable r){
     private javax.swing.JPanel jPanel1;
     public Vista.Clases.JpanelRound lectorQRPanel;
     private javax.swing.JPanel panelCamara;
-    private javax.swing.JTextField result_field;
+    public javax.swing.JTextField result_field;
     // End of variables declaration//GEN-END:variables
 }
