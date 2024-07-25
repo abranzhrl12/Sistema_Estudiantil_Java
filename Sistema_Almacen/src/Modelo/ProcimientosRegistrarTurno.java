@@ -12,38 +12,32 @@ import java.util.List;
 
 
 public class ProcimientosRegistrarTurno {
-  
+
     
-    public static String registrarTurno(
-        String cod_Turno,
-        String Nombre,
-        String Hora_Inicio,
-        String Hora_Fin
-    ) throws SQLException {
+ public static String registrarTurno(
+    String cod_Turno,
+    String Nombre,
+    String Hora_Inicio,
+    String Hora_Fin
+) throws SQLException {
+
+    String resultado = "";
+    // Uso de try-with-resources para asegurar que todos los recursos se cierran adecuadamente
+    try (Connection con = conexion.conectar();  // Asegúrate de que este método conecta a tu base de datos
+         CallableStatement cs = con.prepareCall("{call RegistrarTurno(?,?,?,?,?)}")) {
         
-        CallableStatement cs = null;
-        Connection con = null;
-        String resultado = "";
-        try {
-            con = conexion.conectar(); // Asegúrate de que este método conecta a tu base de datos
-            cs = con.prepareCall("{call RegistrarTurno(?,?,?,?,?)}");
-            cs.setString(1, cod_Turno);
-            cs.setString(2, Nombre);
-            cs.setString(3, Hora_Inicio);
-            cs.setString(4, Hora_Fin);
-            cs.registerOutParameter(5, Types.VARCHAR); // Registro del parámetro de salida
-            cs.execute();
-            resultado = cs.getString(5);
-        } finally {
-            if (cs != null) {
-                cs.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-        return resultado;
-    }  
+        cs.setString(1, cod_Turno);
+        cs.setString(2, Nombre);
+        cs.setString(3, Hora_Inicio);
+        cs.setString(4, Hora_Fin);
+        cs.registerOutParameter(5, Types.VARCHAR); // Registro del parámetro de salida
+        cs.execute();
+        resultado = cs.getString(5); // Recuperar el resultado del parámetro de salida
+        
+    } // Los recursos se cierran automáticamente aquí
+
+    return resultado;
+}  
   
   // Método para traer todos los turnos
     public static List<Turno> obtenerTodosLosTurnos() throws SQLException {
