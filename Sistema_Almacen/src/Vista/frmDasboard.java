@@ -39,15 +39,15 @@ public class frmDasboard extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        lbl_porc_quimica = new javax.swing.JLabel();
+        lbl_Porc_Enf_tec = new javax.swing.JLabel();
+        lbl_poc_DSI = new javax.swing.JLabel();
+        lbl_porc_Contabilidad = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        lbl_porc_electricidad_ind = new javax.swing.JLabel();
+        lbl_porc_electronica_ind = new javax.swing.JLabel();
+        lbl_porc_mecatronica_automotris = new javax.swing.JLabel();
+        lbl_porc_mecanica_automotriz = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -122,40 +122,40 @@ public class frmDasboard extends javax.swing.JFrame {
         jLabel16.setText("Mecánica de Producción Industrial");
         btnIngresosdelDia.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 250, -1));
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("10%");
-        btnIngresosdelDia.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 50, -1));
+        lbl_porc_quimica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_quimica.setText("10%");
+        btnIngresosdelDia.add(lbl_porc_quimica, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 50, -1));
 
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("10%");
-        btnIngresosdelDia.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 50, -1));
+        lbl_Porc_Enf_tec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Porc_Enf_tec.setText("10%");
+        btnIngresosdelDia.add(lbl_Porc_Enf_tec, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 50, -1));
 
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("10%");
-        btnIngresosdelDia.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 50, -1));
+        lbl_poc_DSI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_poc_DSI.setText("10%");
+        btnIngresosdelDia.add(lbl_poc_DSI, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 50, -1));
 
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("10%");
-        btnIngresosdelDia.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 50, -1));
+        lbl_porc_Contabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_Contabilidad.setText("10%");
+        btnIngresosdelDia.add(lbl_porc_Contabilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 50, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         btnIngresosdelDia.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 10, 110));
 
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("10%");
-        btnIngresosdelDia.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 50, -1));
+        lbl_porc_electricidad_ind.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_electricidad_ind.setText("10%");
+        btnIngresosdelDia.add(lbl_porc_electricidad_ind, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 50, -1));
 
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("10%");
-        btnIngresosdelDia.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 50, -1));
+        lbl_porc_electronica_ind.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_electronica_ind.setText("10%");
+        btnIngresosdelDia.add(lbl_porc_electronica_ind, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 50, -1));
 
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("10%");
-        btnIngresosdelDia.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 50, -1));
+        lbl_porc_mecatronica_automotris.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_mecatronica_automotris.setText("10%");
+        btnIngresosdelDia.add(lbl_porc_mecatronica_automotris, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 50, -1));
 
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("10%");
-        btnIngresosdelDia.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 50, -1));
+        lbl_porc_mecanica_automotriz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_porc_mecanica_automotriz.setText("10%");
+        btnIngresosdelDia.add(lbl_porc_mecanica_automotriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 50, -1));
         btnIngresosdelDia.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 310, 10));
         btnIngresosdelDia.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 310, 10));
         btnIngresosdelDia.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 310, 10));
@@ -163,7 +163,7 @@ public class frmDasboard extends javax.swing.JFrame {
         btnIngresosdelDia.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 310, 10));
         btnIngresosdelDia.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 310, 10));
 
-        btnSalir1.setBackground(new java.awt.Color(0, 102, 255));
+        btnSalir1.setBackground(new java.awt.Color(0, 153, 153));
         btnSalir1.setRoundBottomLeft(50);
         btnSalir1.setRoundBottomRight(50);
         btnSalir1.setRoundTopLeft(50);
@@ -459,15 +459,7 @@ public class frmDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -481,6 +473,14 @@ public class frmDasboard extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JLabel lbl_Porc_Enf_tec;
+    private javax.swing.JLabel lbl_poc_DSI;
+    private javax.swing.JLabel lbl_porc_Contabilidad;
+    private javax.swing.JLabel lbl_porc_electricidad_ind;
+    private javax.swing.JLabel lbl_porc_electronica_ind;
+    private javax.swing.JLabel lbl_porc_mecanica_automotriz;
+    private javax.swing.JLabel lbl_porc_mecatronica_automotris;
+    private javax.swing.JLabel lbl_porc_quimica;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
     // End of variables declaration//GEN-END:variables

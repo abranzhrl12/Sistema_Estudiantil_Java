@@ -4,12 +4,22 @@
  */
 package Vista;
 
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+
 /**
  *
  * @author jhoyb
  */
 public class frm_Generar_Fotocheck extends javax.swing.JFrame {
 
+     String rutaDestino = "";
     /**
      * Creates new form frm_Generar_Fotocheck
      */
@@ -26,6 +36,7 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rgBuscarEstudiante = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -36,14 +47,19 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
         dttabla = new rojerusan.RSTableMetro();
         txtcodigo1 = new componentes.TextFieldShadown();
         jLabel2 = new javax.swing.JLabel();
-        button4 = new componentes.Button();
+        btnElegirRuta = new componentes.Button();
         button5 = new componentes.Button();
-        button6 = new componentes.Button();
-        jPanel2 = new javax.swing.JPanel();
+        btnGuardarFotocheck = new componentes.Button();
+        panelFotocheck = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        lblQr = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lbl_Nombre_y_Ape = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        button7 = new componentes.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,9 +136,9 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
         dttabla.setShowGrid(false);
         rSScrollPane1.setViewportView(dttabla);
 
-        panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 480, 340));
+        panelRound1.add(rSScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 480, 300));
 
-        jPanel1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 204, 500, 372));
+        jPanel1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 204, 500, 340));
 
         txtcodigo1.setShadowColor(new java.awt.Color(0, 51, 153));
         jPanel1.add(txtcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 149, 500, 49));
@@ -133,56 +149,90 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
         jLabel2.setText("Generar Fotocheck");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 29, 906, -1));
 
-        button4.setBackground(new java.awt.Color(255, 255, 51));
-        button4.setBorder(null);
-        button4.setForeground(new java.awt.Color(0, 0, 0));
-        button4.setText("Guardar en");
-        button4.setEnabled(false);
-        button4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 594, 128, 54));
+        btnElegirRuta.setBackground(new java.awt.Color(0, 102, 153));
+        btnElegirRuta.setBorder(null);
+        btnElegirRuta.setForeground(new java.awt.Color(255, 255, 255));
+        btnElegirRuta.setText("Guardar en");
+        btnElegirRuta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnElegirRuta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnElegirRutaMouseClicked(evt);
+            }
+        });
+        btnElegirRuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElegirRutaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnElegirRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 110, 54));
 
         button5.setBackground(new java.awt.Color(255, 255, 51));
         button5.setBorder(null);
         button5.setForeground(new java.awt.Color(0, 0, 0));
         button5.setText("Seleccionar");
-        button5.setEnabled(false);
         button5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         button5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button5ActionPerformed(evt);
             }
         });
-        jPanel1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 594, 165, 54));
+        jPanel1.add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 165, 54));
 
-        button6.setBackground(new java.awt.Color(255, 255, 51));
-        button6.setBorder(null);
-        button6.setForeground(new java.awt.Color(0, 0, 0));
-        button6.setText("Limpiar Seleccion");
-        button6.setEnabled(false);
-        button6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        button6.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarFotocheck.setBackground(new java.awt.Color(102, 102, 255));
+        btnGuardarFotocheck.setBorder(null);
+        btnGuardarFotocheck.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardarFotocheck.setText("Guardar");
+        btnGuardarFotocheck.setEnabled(false);
+        btnGuardarFotocheck.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGuardarFotocheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button6ActionPerformed(evt);
+                btnGuardarFotocheckActionPerformed(evt);
             }
         });
-        jPanel1.add(button6, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 594, 164, 54));
+        jPanel1.add(btnGuardarFotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 110, 54));
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelFotocheck.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelFotocheck.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 70, 10));
 
-        jLabel6.setText("jLabel6");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+        jLabel7.setText("23346468");
+        panelFotocheck.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
+
+        lblQr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-qr-92.png"))); // NOI18N
+        panelFotocheck.add(lblQr, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 110, 110));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Desarrollo de Sistemas de Información");
+        panelFotocheck.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 210, -1));
+
+        lbl_Nombre_y_Ape.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Nombre_y_Ape.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Nombre_y_Ape.setText("Soy Un Ejemplo");
+        panelFotocheck.add(lbl_Nombre_y_Ape, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 160, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icon-256x256.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        panelFotocheck.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PlantillaFotocheck.png"))); // NOI18N
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        panelFotocheck.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, -1, 380));
+        jPanel1.add(panelFotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, -1, 380));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Vista Previa");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 169, -1));
+
+        button7.setBackground(new java.awt.Color(255, 255, 51));
+        button7.setBorder(null);
+        button7.setForeground(new java.awt.Color(0, 0, 0));
+        button7.setText("Limpiar Seleccion");
+        button7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(button7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 164, 54));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,9 +252,71 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_button5ActionPerformed
 
-    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+    private void btnGuardarFotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFotocheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_button6ActionPerformed
+        
+               
+        BufferedImage image = new BufferedImage(panelFotocheck.getWidth(), panelFotocheck.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics = image.createGraphics();
+        panelFotocheck.paint(graphics);
+        graphics.dispose();
+
+        // Crear un archivo para guardar la imagen
+        File archivoImagen = new File(rutaDestino, "MiFotocheck.png");
+
+        try {
+            // Guardar la imagen como PNG
+            ImageIO.write(image, "PNG", archivoImagen);
+            System.out.println("Imagen guardada en : "+ rutaDestino + archivoImagen.getAbsolutePath());
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(rootPane, "Error al guardar la Imagen");
+        }
+    }//GEN-LAST:event_btnGuardarFotocheckActionPerformed
+
+    private void btnElegirRutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElegirRutaMouseClicked
+        // TODO add your handling code here:
+        
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // Mostrar solo directorios
+
+        // Mostrar la ventana de selección de ruta de destino
+        int respuesta = fileChooser.showDialog(null, "Seleccionar carpeta");
+
+        if (respuesta == JFileChooser.APPROVE_OPTION) {
+            // Obtener la carpeta seleccionada
+            File carpetaSeleccionada = fileChooser.getSelectedFile();
+            rutaDestino = carpetaSeleccionada.getAbsolutePath();
+
+            // Aquí puedes utilizar la ruta de destino según tus necesidades
+            System.out.println("Ruta de destino seleccionada: " + rutaDestino);
+        }
+        
+        
+        if (rutaDestino.length()== 0) {
+            btnGuardarFotocheck.setEnabled(false);
+            
+        } else {
+        
+            btnGuardarFotocheck.setEnabled(true);
+        }
+        
+    }//GEN-LAST:event_btnElegirRutaMouseClicked
+
+    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button7ActionPerformed
+
+    private void btnElegirRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElegirRutaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnElegirRutaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,9 +354,10 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private componentes.Button button4;
+    private componentes.Button btnElegirRuta;
+    private componentes.Button btnGuardarFotocheck;
     private componentes.Button button5;
-    private componentes.Button button6;
+    private componentes.Button button7;
     private rojerusan.RSTableMetro dttabla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -252,13 +365,18 @@ public class frm_Generar_Fotocheck extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblQr;
+    private javax.swing.JLabel lbl_Nombre_y_Ape;
+    private javax.swing.JPanel panelFotocheck;
     private Vista.Clases.PanelRound panelRound1;
     private necesario.RSScrollPane rSScrollPane1;
+    private javax.swing.ButtonGroup rgBuscarEstudiante;
     private componentes.TextFieldShadown txtcodigo1;
     // End of variables declaration//GEN-END:variables
 }

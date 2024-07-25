@@ -21,6 +21,7 @@ public class Frm_R_Estudiante extends javax.swing.JFrame{
     ControladorEstudiante cEstudiante=new ControladorEstudiante(this);
     
 MetodosUtilidades qr = new MetodosUtilidades(this);
+
    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private Timer timer;
     public Frm_R_Estudiante() {
@@ -227,10 +228,10 @@ MetodosUtilidades qr = new MetodosUtilidades(this);
         );
         jpanelRound1Layout.setVerticalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        panelRoundshadow2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 0, -1, 37));
+        panelRoundshadow2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 0, 30, 30));
 
         jLabel8.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
         jLabel8.setText("Fecha ");

@@ -1021,7 +1021,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void lblAdm_ProgramaEstudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdm_ProgramaEstudioMouseClicked
         // TODO add your handling code here:   
-        metodos.actualizarPanel(PanelPrincipal,new Frm_R_Prog_Estudio().PanelProgramas);      
+        metodos.actualizarPanel(PanelPrincipal,new Frm_R_Prog_Estudio().PanelProgramas); 
+        
     }//GEN-LAST:event_lblAdm_ProgramaEstudioMouseClicked
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
